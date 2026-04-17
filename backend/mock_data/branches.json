@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Downtown Central Kitchen",
+        "code": "BR-001",
+        "address": "123 Main Street, Downtown District",
+        "contact_name": "John Smith",
+        "phone": "+1-555-0101",
+        "email": "downtown@cloudkitchen.com",
+        "status": "active",
+        "created_at": "2026-01-15 08:00:00"
+    },
+    {
+        "name": "Westside Hub",
+        "code": "BR-002",
+        "address": "456 West Avenue, Westside",
+        "contact_name": "Sarah Johnson",
+        "phone": "+1-555-0102",
+        "email": "westside@cloudkitchen.com",
+        "status": "active",
+        "created_at": "2026-02-01 08:00:00"
+    },
+    {
+        "name": "Eastside Kitchen",
+        "code": "BR-003",
+        "address": "789 East Boulevard, Eastside",
+        "contact_name": "Mike Chen",
+        "phone": "+1-555-0103",
+        "email": "eastside@cloudkitchen.com",
+        "status": "active",
+        "created_at": "2026-03-01 08:00:00"
+    },
+    {
+        "name": "North Station",
+        "code": "BR-004",
+        "address": "321 North Road, Uptown",
+        "contact_name": "Lisa Park",
+        "phone": "+1-555-0104",
+        "email": "north@cloudkitchen.com",
+        "status": "inactive",
+        "created_at": "2026-03-15 08:00:00"
+    }
+]

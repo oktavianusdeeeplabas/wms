@@ -1,0 +1,265 @@
+2026-04-15 03:19:55,037 - main - INFO - === Logging system initialized ===
+2026-04-15 03:19:55,037 - main - INFO - Log file: logs/app_20260415_031955.log
+2026-04-15 03:19:55,037 - main - INFO - Log level: INFO
+2026-04-15 03:19:55,038 - main - INFO - Timestamp: 20260415_031955
+2026-04-15 03:19:55,916 - main - INFO - Included router: routers.aihub.router
+2026-04-15 03:19:55,935 - main - INFO - Included router: routers.auth.router
+2026-04-15 03:19:55,983 - main - INFO - Included router: routers.bins.router
+2026-04-15 03:19:55,986 - main - INFO - Included router: routers.health.router
+2026-04-15 03:19:56,034 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-15 03:19:56,085 - main - INFO - Included router: routers.products.router
+2026-04-15 03:19:56,145 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-15 03:19:56,210 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-15 03:19:56,233 - main - INFO - Included router: routers.settings.router
+2026-04-15 03:19:56,284 - main - INFO - Included router: routers.stock_movements.router
+2026-04-15 03:19:56,330 - main - INFO - Included router: routers.storage.router
+2026-04-15 03:19:56,485 - main - INFO - Included router: routers.suppliers.router
+2026-04-15 03:19:56,493 - main - INFO - Included router: routers.user.router
+2026-04-15 03:19:56,535 - main - INFO - Included router: routers.warehouses.router
+2026-04-15 03:19:56,587 - main - INFO - Included router: routers.zones.router
+2026-04-15 03:19:56,589 - main - INFO - === Application startup initiated ===
+2026-04-15 03:19:56,589 - services.database - INFO - Ignore creating tables
+2026-04-15 03:19:56,589 - services.mock_data - INFO - Ignore initialize data
+2026-04-15 03:19:56,590 - services.auth - INFO - Ignore initialize admin
+2026-04-15 03:19:56,590 - main - INFO - === Application startup completed successfully ===
+2026-04-15 03:20:01,976 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:01,977 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-15 03:20:01,978 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-15 03:20:01,978 - core.database - INFO - Starting database initialization...
+2026-04-15 03:20:01,978 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-15 03:20:01,978 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-15 03:20:01,981 - core.database - INFO - Creating async database engine...
+2026-04-15 03:20:01,981 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-15 03:20:02,072 - core.database - INFO - Database engine created successfully
+2026-04-15 03:20:02,072 - core.database - INFO - Creating async session maker...
+2026-04-15 03:20:02,073 - core.database - INFO - Async session maker created successfully
+2026-04-15 03:20:02,073 - core.database - INFO - Database connection initialized successfully
+2026-04-15 03:20:02,074 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-15 03:20:02,074 - core.database - INFO - 🔧 Starting table creation...
+2026-04-15 03:20:02,083 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:02,084 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0010s
+2026-04-15 03:20:02,085 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:20:02,093 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:02,094 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0010s
+2026-04-15 03:20:02,095 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:02,101 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-15 03:20:02,101 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-15 03:20:02,134 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 03:20:02,140 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:02,141 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 03:20:02,141 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:03,533 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 03:20:03,534 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4513s
+2026-04-15 03:20:03,537 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:20:03,538 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4444s
+2026-04-15 03:20:03,596 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:20:03,598 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4579s
+2026-04-15 03:20:04,019 - core.database - INFO - Tables initialized successfully
+2026-04-15 03:20:04,020 - core.database - DEBUG - [DB_OP] Create tables completed in 1.9457s
+2026-04-15 03:20:04,082 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-15 03:20:04,083 - core.database - DEBUG - [DB_OP] Database session created successfully in 2.1066s
+2026-04-15 03:20:04,083 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:04,659 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:20:04,660 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.6838s
+2026-04-15 03:20:26,262 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:26,262 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 03:20:26,263 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:20:26,523 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:26,523 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-04-15 03:20:26,524 - routers.receiving_lines - DEBUG - Querying receiving_liness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:20:26,526 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:26,526 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:20:26,526 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:20:26,529 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:26,529 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:20:26,530 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:26,533 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:26,533 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:20:26,533 - routers.suppliers - DEBUG - Querying supplierss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:26,775 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:20:26,776 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5138s
+2026-04-15 03:20:27,058 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-15 03:20:27,059 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5296s
+2026-04-15 03:20:27,085 - routers.receiving_lines - DEBUG - Found 5 receiving_liness
+2026-04-15 03:20:27,086 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5629s
+2026-04-15 03:20:27,087 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:20:27,088 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5620s
+2026-04-15 03:20:27,255 - routers.suppliers - DEBUG - Found 5 supplierss
+2026-04-15 03:20:27,256 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7230s
+2026-04-15 03:20:34,208 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:34,208 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-15 03:20:34,209 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:20:34,708 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:20:34,709 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5017s
+2026-04-15 03:20:37,007 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:37,010 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0032s
+2026-04-15 03:20:37,011 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=200, fields=None
+2026-04-15 03:20:37,013 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:37,013 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:20:37,014 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:20:37,303 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:20:37,305 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0016s
+2026-04-15 03:20:37,306 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:20:37,511 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:20:37,512 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4989s
+2026-04-15 03:20:37,513 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:20:37,514 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5073s
+2026-04-15 03:20:37,817 - routers.zones - DEBUG - Found 5 zoness
+2026-04-15 03:20:37,819 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5154s
+2026-04-15 03:24:35,349 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:24:35,351 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0016s
+2026-04-15 03:24:35,352 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=200, fields=None
+2026-04-15 03:24:35,355 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:24:35,355 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:24:35,356 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:24:35,357 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:24:35,357 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:24:35,358 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:24:35,359 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 03:24:35,731 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:24:35,734 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3790s
+2026-04-15 03:24:35,854 - routers.zones - DEBUG - Found 5 zoness
+2026-04-15 03:24:35,855 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4980s
+2026-04-15 03:24:35,912 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:24:35,913 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5636s
+2026-04-15 03:28:37,505 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:28:37,505 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 03:28:37,506 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:28:37,508 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:28:37,509 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:28:37,509 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:28:37,510 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:28:37,510 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:28:37,511 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=200, fields=None
+2026-04-15 03:28:37,512 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 03:28:38,008 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:28:38,009 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5045s
+2026-04-15 03:28:38,010 - routers.zones - DEBUG - Found 5 zoness
+2026-04-15 03:28:38,011 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5020s
+2026-04-15 03:28:38,137 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:28:38,138 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6277s
+2026-04-15 03:31:28,144 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:31:28,144 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 03:31:28,145 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:31:28,152 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:31:28,153 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 03:31:28,153 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:31:28,155 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 03:31:28,156 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:31:28,156 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:31:28,157 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:31:28,158 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:31:28,158 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:31:28,158 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:31:28,658 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:31:28,659 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5028s
+2026-04-15 03:31:28,721 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:31:28,722 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5643s
+2026-04-15 03:31:28,764 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 03:31:28,765 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6208s
+2026-04-15 03:31:28,772 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:31:28,773 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6207s
+2026-04-15 03:31:38,737 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:31:38,737 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 03:31:38,738 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:31:39,113 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:31:39,114 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3772s
+2026-04-15 03:34:09,197 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:09,200 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0030s
+2026-04-15 03:34:09,202 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:09,204 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:09,204 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:34:09,204 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:09,208 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:09,208 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:34:09,208 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:09,211 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:09,212 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 03:34:09,212 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:34:09,213 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-15 03:34:09,703 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:34:09,704 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5067s
+2026-04-15 03:34:09,705 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:34:09,705 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4977s
+2026-04-15 03:34:09,706 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 03:34:09,707 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4951s
+2026-04-15 03:34:09,707 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:34:09,707 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5036s
+2026-04-15 03:34:18,477 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 03:34:18,483 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:18,484 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-15 03:34:18,484 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:34:18,983 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:34:18,984 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5008s
+2026-04-15 03:34:29,356 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:29,357 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 03:34:29,357 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:29,358 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:29,358 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:34:29,359 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:29,359 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:29,360 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:34:29,360 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:29,362 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:29,362 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:34:29,362 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:34:29,363 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-15 03:34:29,730 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:34:29,732 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3735s
+2026-04-15 03:34:29,793 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:34:29,794 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4377s
+2026-04-15 03:34:29,857 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:34:29,860 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5003s
+2026-04-15 03:34:29,862 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 03:34:29,863 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5008s
+2026-04-15 03:34:47,098 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:47,098 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-15 03:34:47,100 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:34:47,101 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:47,101 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:34:47,102 - routers.receiving_lines - DEBUG - Querying receiving_liness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:34:47,102 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:47,102 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-15 03:34:47,103 - routers.suppliers - DEBUG - Querying supplierss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:47,103 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:47,104 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-15 03:34:47,104 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:34:47,104 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:34:47,104 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-15 03:34:47,105 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 03:34:47,105 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-15 03:34:47,474 - routers.receiving_lines - DEBUG - Found 5 receiving_liness
+2026-04-15 03:34:47,475 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3739s
+2026-04-15 03:34:47,476 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:34:47,476 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3783s
+2026-04-15 03:34:47,480 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:34:47,481 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3762s
+2026-04-15 03:34:47,603 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-15 03:34:47,604 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5003s
+2026-04-15 03:34:47,604 - routers.suppliers - DEBUG - Found 5 supplierss
+2026-04-15 03:34:47,605 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5028s
+2026-04-15 03:35:28,166 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:35:28,167 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-15 03:35:28,167 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:35:28,169 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:35:28,169 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:35:28,169 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:35:28,170 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:35:28,170 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 03:35:28,171 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 03:35:28,172 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 03:35:28,172 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 03:35:28,173 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 03:35:28,174 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-15 03:35:28,539 - routers.products - DEBUG - Found 8 productss
+2026-04-15 03:35:28,540 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3742s
+2026-04-15 03:35:28,546 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 03:35:28,547 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3749s
+2026-04-15 03:35:28,608 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 03:35:28,609 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4404s
+2026-04-15 03:35:28,673 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 03:35:28,674 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5037s
+2026-04-15 03:36:11,049 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-15 03:36:11,377 - core.database - INFO - Database connection closed and engine disposed
+2026-04-15 03:36:11,377 - services.database - INFO - Database connections closed
+2026-04-15 03:36:11,378 - services.database - DEBUG - [DB_OP] Database close completed in 0.3283s

@@ -1,0 +1,37 @@
+[
+    {
+        "warehouse_id": 1,
+        "name": "Ambient Storage",
+        "code": "Z-AMB-01",
+        "temperature_type": "ambient",
+        "status": "active"
+    },
+    {
+        "warehouse_id": 1,
+        "name": "Chilled Section",
+        "code": "Z-CHL-01",
+        "temperature_type": "chilled",
+        "status": "active"
+    },
+    {
+        "warehouse_id": 2,
+        "name": "Frozen Section A",
+        "code": "Z-FRZ-01",
+        "temperature_type": "frozen",
+        "status": "active"
+    },
+    {
+        "warehouse_id": 2,
+        "name": "Frozen Section B",
+        "code": "Z-FRZ-02",
+        "temperature_type": "frozen",
+        "status": "active"
+    },
+    {
+        "warehouse_id": 3,
+        "name": "Dry Goods Main",
+        "code": "Z-DRY-01",
+        "temperature_type": "ambient",
+        "status": "active"
+    }
+]

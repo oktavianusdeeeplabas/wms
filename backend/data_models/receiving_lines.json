@@ -1,0 +1,38 @@
+{
+    "title": "receiving_lines",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "receiving_document_id": {
+            "type": "integer"
+        },
+        "product_id": {
+            "type": "integer"
+        },
+        "expected_quantity": {
+            "type": "number"
+        },
+        "received_quantity": {
+            "type": "number"
+        },
+        "lot_number": {
+            "type": "string"
+        },
+        "expiry_date": {
+            "type": "string"
+        },
+        "qc_status": {
+            "type": "string"
+        },
+        "notes": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "receiving_document_id",
+        "product_id"
+    ]
+}

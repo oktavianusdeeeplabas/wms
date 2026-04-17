@@ -1,0 +1,58 @@
+[
+    {
+        "zone_id": 1,
+        "name": "Bin A-01",
+        "code": "BIN-A01",
+        "capacity": 100,
+        "status": "active"
+    },
+    {
+        "zone_id": 1,
+        "name": "Bin A-02",
+        "code": "BIN-A02",
+        "capacity": 100,
+        "status": "active"
+    },
+    {
+        "zone_id": 2,
+        "name": "Bin B-01",
+        "code": "BIN-B01",
+        "capacity": 80,
+        "status": "active"
+    },
+    {
+        "zone_id": 2,
+        "name": "Bin B-02",
+        "code": "BIN-B02",
+        "capacity": 80,
+        "status": "active"
+    },
+    {
+        "zone_id": 3,
+        "name": "Bin C-01",
+        "code": "BIN-C01",
+        "capacity": 200,
+        "status": "active"
+    },
+    {
+        "zone_id": 4,
+        "name": "Bin D-01",
+        "code": "BIN-D01",
+        "capacity": 200,
+        "status": "active"
+    },
+    {
+        "zone_id": 5,
+        "name": "Bin E-01",
+        "code": "BIN-E01",
+        "capacity": 300,
+        "status": "active"
+    },
+    {
+        "zone_id": 5,
+        "name": "Bin E-02",
+        "code": "BIN-E02",
+        "capacity": 300,
+        "status": "active"
+    }
+]

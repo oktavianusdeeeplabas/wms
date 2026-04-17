@@ -1,0 +1,76 @@
+{
+    "title": "stock_transfers",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "transfer_number": {
+            "type": "string",
+            "description": "Transfer document number"
+        },
+        "from_warehouse_id": {
+            "type": "integer",
+            "description": "Source warehouse ID"
+        },
+        "to_warehouse_id": {
+            "type": "integer",
+            "description": "Destination warehouse ID"
+        },
+        "from_branch_id": {
+            "type": "integer",
+            "description": "Source branch ID"
+        },
+        "to_branch_id": {
+            "type": "integer",
+            "description": "Destination branch ID"
+        },
+        "product_id": {
+            "type": "integer",
+            "description": "Product being transferred"
+        },
+        "quantity": {
+            "type": "number",
+            "description": "Transfer quantity"
+        },
+        "lot_number": {
+            "type": "string",
+            "description": "Lot number being transferred"
+        },
+        "status": {
+            "type": "string",
+            "description": "pending, in_transit, received, cancelled"
+        },
+        "requested_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Request date"
+        },
+        "shipped_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Shipped date"
+        },
+        "received_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Received date"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Transfer notes"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+        }
+    },
+    "required": [
+        "id",
+        "transfer_number",
+        "from_warehouse_id",
+        "to_warehouse_id"
+    ]
+}

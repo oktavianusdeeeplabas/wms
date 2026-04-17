@@ -1,0 +1,31 @@
+2026-04-15 23:55:49,697 - main - INFO - === Logging system initialized ===
+2026-04-15 23:55:49,698 - main - INFO - Log file: logs/app_20260415_235549.log
+2026-04-15 23:55:49,698 - main - INFO - Log level: INFO
+2026-04-15 23:55:49,698 - main - INFO - Timestamp: 20260415_235549
+2026-04-15 23:55:50,683 - main - INFO - Included router: routers.aihub.router
+2026-04-15 23:55:50,706 - main - INFO - Included router: routers.auth.router
+2026-04-15 23:55:50,747 - main - INFO - Included router: routers.bins.router
+2026-04-15 23:55:50,794 - main - INFO - Included router: routers.bom_lines.router
+2026-04-15 23:55:50,854 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-15 23:55:50,900 - main - INFO - Included router: routers.branches.router
+2026-04-15 23:55:50,907 - main - INFO - Included router: routers.health.router
+2026-04-15 23:55:50,962 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-15 23:55:51,026 - main - INFO - Included router: routers.products.router
+2026-04-15 23:55:51,089 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-15 23:55:51,244 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-15 23:55:51,265 - main - INFO - Included router: routers.settings.router
+2026-04-15 23:55:51,321 - main - INFO - Included router: routers.stock_movements.router
+2026-04-15 23:55:51,381 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-15 23:55:51,420 - main - INFO - Included router: routers.storage.router
+2026-04-15 23:55:51,464 - main - INFO - Included router: routers.suppliers.router
+2026-04-15 23:55:51,472 - main - INFO - Included router: routers.user.router
+2026-04-15 23:55:51,518 - main - INFO - Included router: routers.warehouses.router
+2026-04-15 23:55:51,563 - main - INFO - Included router: routers.zones.router
+2026-04-15 23:55:51,564 - main - INFO - === Application startup initiated ===
+2026-04-15 23:55:51,564 - services.database - INFO - Ignore creating tables
+2026-04-15 23:55:51,564 - services.mock_data - INFO - Ignore initialize data
+2026-04-15 23:55:51,565 - services.auth - INFO - Ignore initialize admin
+2026-04-15 23:55:51,565 - main - INFO - === Application startup completed successfully ===
+2026-04-15 23:56:15,027 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-15 23:56:15,028 - services.database - INFO - Database connections closed
+2026-04-15 23:56:15,028 - services.database - DEBUG - [DB_OP] Database close completed in 0.0004s

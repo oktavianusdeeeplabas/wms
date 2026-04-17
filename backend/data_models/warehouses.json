@@ -1,0 +1,40 @@
+{
+    "title": "warehouses",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "name": {
+            "type": "string",
+            "description": "Warehouse name"
+        },
+        "code": {
+            "type": "string",
+            "description": "Warehouse code"
+        },
+        "address": {
+            "type": "string",
+            "description": "Warehouse address"
+        },
+        "branch_id": {
+            "type": "integer",
+            "description": "Branch ID reference"
+        },
+        "status": {
+            "type": "string",
+            "description": "Status"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Created timestamp"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "code"
+    ]
+}

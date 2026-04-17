@@ -1,0 +1,149 @@
+2026-04-17 09:26:29,703 - main - INFO - === Logging system initialized ===
+2026-04-17 09:26:29,703 - main - INFO - Log file: logs/app_20260417_092629.log
+2026-04-17 09:26:29,703 - main - INFO - Log level: INFO
+2026-04-17 09:26:29,703 - main - INFO - Timestamp: 20260417_092629
+2026-04-17 09:26:29,778 - main - INFO - === Logging system initialized ===
+2026-04-17 09:26:29,778 - main - INFO - Log file: logs/app_20260417_092629.log
+2026-04-17 09:26:29,778 - main - INFO - Log level: INFO
+2026-04-17 09:26:29,778 - main - INFO - Timestamp: 20260417_092629
+2026-04-17 09:26:30,777 - main - INFO - Included router: routers.aihub.router
+2026-04-17 09:26:30,846 - main - INFO - Included router: routers.auth.router
+2026-04-17 09:26:30,883 - main - INFO - Included router: routers.aihub.router
+2026-04-17 09:26:30,894 - main - INFO - Included router: routers.bins.router
+2026-04-17 09:26:30,907 - main - INFO - Included router: routers.auth.router
+2026-04-17 09:26:30,939 - main - INFO - Included router: routers.bom_lines.router
+2026-04-17 09:26:30,952 - main - INFO - Included router: routers.bins.router
+2026-04-17 09:26:30,988 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-17 09:26:31,000 - main - INFO - Included router: routers.bom_lines.router
+2026-04-17 09:26:31,047 - main - INFO - Included router: routers.branches.router
+2026-04-17 09:26:31,050 - main - INFO - Included router: routers.health.router
+2026-04-17 09:26:31,057 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-17 09:26:31,107 - main - INFO - Included router: routers.branches.router
+2026-04-17 09:26:31,110 - main - INFO - Included router: routers.health.router
+2026-04-17 09:26:31,184 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-17 09:26:31,237 - main - INFO - Included router: routers.products.router
+2026-04-17 09:26:31,259 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-17 09:26:31,288 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-17 09:26:31,310 - main - INFO - Included router: routers.products.router
+2026-04-17 09:26:31,333 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-17 09:26:31,357 - main - INFO - Included router: routers.settings.router
+2026-04-17 09:26:31,362 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-17 09:26:31,412 - main - INFO - Included router: routers.stock_movements.router
+2026-04-17 09:26:31,417 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-17 09:26:31,437 - main - INFO - Included router: routers.settings.router
+2026-04-17 09:26:31,473 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-17 09:26:31,497 - main - INFO - Included router: routers.stock_movements.router
+2026-04-17 09:26:31,518 - main - INFO - Included router: routers.storage.router
+2026-04-17 09:26:31,561 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-17 09:26:31,577 - main - INFO - Included router: routers.suppliers.router
+2026-04-17 09:26:31,586 - main - INFO - Included router: routers.user.router
+2026-04-17 09:26:31,608 - main - INFO - Included router: routers.storage.router
+2026-04-17 09:26:31,640 - main - INFO - Included router: routers.warehouses.router
+2026-04-17 09:26:31,664 - main - INFO - Included router: routers.suppliers.router
+2026-04-17 09:26:31,674 - main - INFO - Included router: routers.user.router
+2026-04-17 09:26:31,687 - main - INFO - Included router: routers.zones.router
+2026-04-17 09:26:31,689 - main - INFO - === Application startup initiated ===
+2026-04-17 09:26:31,689 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 09:26:31,689 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 09:26:31,689 - core.database - INFO - Starting database initialization...
+2026-04-17 09:26:31,690 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-17 09:26:31,690 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-17 09:26:31,690 - core.database - INFO - Creating async database engine...
+2026-04-17 09:26:31,691 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-17 09:26:31,728 - main - INFO - Included router: routers.warehouses.router
+2026-04-17 09:26:31,788 - main - INFO - Included router: routers.zones.router
+2026-04-17 09:26:31,789 - main - INFO - === Application startup initiated ===
+2026-04-17 09:26:31,789 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 09:26:31,789 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 09:26:31,789 - core.database - INFO - Starting database initialization...
+2026-04-17 09:26:31,789 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-17 09:26:31,789 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-17 09:26:31,790 - core.database - INFO - Creating async database engine...
+2026-04-17 09:26:31,790 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-17 09:26:31,818 - core.database - INFO - Database engine created successfully
+2026-04-17 09:26:31,818 - core.database - INFO - Creating async session maker...
+2026-04-17 09:26:31,818 - core.database - INFO - Async session maker created successfully
+2026-04-17 09:26:31,818 - core.database - INFO - Database connection initialized successfully
+2026-04-17 09:26:31,818 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-17 09:26:31,818 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-17 09:26:31,818 - core.database - INFO - 🔧 Starting table creation...
+2026-04-17 09:26:31,850 - core.database - INFO - Database engine created successfully
+2026-04-17 09:26:31,850 - core.database - INFO - Creating async session maker...
+2026-04-17 09:26:31,850 - core.database - INFO - Async session maker created successfully
+2026-04-17 09:26:31,852 - core.database - INFO - Database connection initialized successfully
+2026-04-17 09:26:31,852 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-17 09:26:31,852 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-17 09:26:31,852 - core.database - INFO - 🔧 Starting table creation...
+2026-04-17 09:26:32,112 - core.database - INFO - Tables initialized successfully
+2026-04-17 09:26:32,115 - core.database - DEBUG - [DB_OP] Create tables completed in 0.2973s
+2026-04-17 09:26:32,117 - services.database - INFO - 🔧 Table creation completed
+2026-04-17 09:26:32,117 - services.database - INFO - Database initialized successfully
+2026-04-17 09:26:32,117 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.4283s
+2026-04-17 09:26:32,119 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-04-17 09:26:32,120 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-04-17 09:26:32,125 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-04-17 09:26:32,130 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-04-17 09:26:32,131 - core.database - ERROR - Failed to create tables: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(users, 2200) already exists.
+[SQL: 
+CREATE TABLE users (
+	id VARCHAR(255) NOT NULL, 
+	email VARCHAR(255) NOT NULL, 
+	name VARCHAR(255), 
+	role VARCHAR(50) NOT NULL, 
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT now(), 
+	last_login TIMESTAMP WITH TIME ZONE, 
+	PRIMARY KEY (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-17 09:26:32,131 - services.database - ERROR - Failed to initialize database: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(users, 2200) already exists.
+[SQL: 
+CREATE TABLE users (
+	id VARCHAR(255) NOT NULL, 
+	email VARCHAR(255) NOT NULL, 
+	name VARCHAR(255), 
+	role VARCHAR(50) NOT NULL, 
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT now(), 
+	last_login TIMESTAMP WITH TIME ZONE, 
+	PRIMARY KEY (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-17 09:26:32,133 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-04-17 09:26:32,644 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-04-17 09:26:32,652 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-04-17 09:26:32,660 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-04-17 09:26:32,660 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-04-17 09:26:32,667 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-04-17 09:26:32,668 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-04-17 09:26:32,670 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-04-17 09:26:32,671 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-04-17 09:26:32,671 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-04-17 09:26:32,671 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-04-17 09:26:32,703 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-04-17 09:26:32,707 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-04-17 09:26:32,708 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-04-17 09:26:32,710 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-04-17 09:26:32,710 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-04-17 09:26:32,712 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-04-17 09:26:32,714 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-04-17 09:26:32,722 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-04-17 09:26:32,742 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-04-17 09:26:32,747 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-04-17 09:26:32,749 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-04-17 09:26:32,750 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 09:26:32,750 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 09:26:32,750 - core.database - INFO - Starting database initialization...
+2026-04-17 09:26:32,750 - core.database - INFO - Database already initialized
+2026-04-17 09:26:32,750 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-17 09:26:32,750 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-17 09:26:32,750 - core.database - INFO - Tables already initialized
+2026-04-17 09:26:32,750 - services.database - INFO - 🔧 Table creation completed
+2026-04-17 09:26:32,750 - services.database - INFO - Database initialized successfully
+2026-04-17 09:26:32,750 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0000s
+2026-04-17 09:26:32,750 - services.auth - WARNING - Admin user ID or email not configured, skipping admin initialization
+2026-04-17 09:26:32,750 - main - INFO - === Application startup completed successfully ===

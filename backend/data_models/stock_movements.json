@@ -1,0 +1,51 @@
+{
+    "title": "stock_movements",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "product_id": {
+            "type": "integer"
+        },
+        "lot_id": {
+            "type": "integer"
+        },
+        "movement_type": {
+            "type": "string"
+        },
+        "quantity": {
+            "type": "number"
+        },
+        "from_zone_id": {
+            "type": "integer"
+        },
+        "from_bin_id": {
+            "type": "integer"
+        },
+        "to_zone_id": {
+            "type": "integer"
+        },
+        "to_bin_id": {
+            "type": "integer"
+        },
+        "reference_type": {
+            "type": "string"
+        },
+        "reference_id": {
+            "type": "integer"
+        },
+        "notes": {
+            "type": "string"
+        },
+        "created_at": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "product_id",
+        "movement_type",
+        "quantity"
+    ]
+}

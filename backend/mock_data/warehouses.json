@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Main Warehouse",
+        "code": "WH-001",
+        "address": "123 Industrial Ave, Kitchen District",
+        "status": "active",
+        "created_at": "2026-04-01 08:00:00"
+    },
+    {
+        "name": "Cold Storage Facility",
+        "code": "WH-002",
+        "address": "456 Frozen Blvd, Cold Zone",
+        "status": "active",
+        "created_at": "2026-04-01 08:00:00"
+    },
+    {
+        "name": "Dry Goods Depot",
+        "code": "WH-003",
+        "address": "789 Pantry Lane",
+        "status": "active",
+        "created_at": "2026-04-02 09:00:00"
+    }
+]

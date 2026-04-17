@@ -1,0 +1,30 @@
+{
+    "title": "bins",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "zone_id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "code": {
+            "type": "string"
+        },
+        "capacity": {
+            "type": "integer"
+        },
+        "status": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "zone_id",
+        "name",
+        "code"
+    ]
+}

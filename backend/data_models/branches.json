@@ -1,0 +1,48 @@
+{
+    "title": "branches",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "name": {
+            "type": "string",
+            "description": "Branch name"
+        },
+        "code": {
+            "type": "string",
+            "description": "Branch code"
+        },
+        "address": {
+            "type": "string",
+            "description": "Branch address"
+        },
+        "contact_name": {
+            "type": "string",
+            "description": "Branch manager name"
+        },
+        "phone": {
+            "type": "string",
+            "description": "Contact phone"
+        },
+        "email": {
+            "type": "string",
+            "description": "Contact email"
+        },
+        "status": {
+            "type": "string",
+            "description": "active or inactive"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "code"
+    ]
+}

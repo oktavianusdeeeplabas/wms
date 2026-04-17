@@ -1,0 +1,71 @@
+2026-04-15 23:18:12,420 - main - INFO - === Logging system initialized ===
+2026-04-15 23:18:12,420 - main - INFO - Log file: logs/app_20260415_231812.log
+2026-04-15 23:18:12,420 - main - INFO - Log level: INFO
+2026-04-15 23:18:12,421 - main - INFO - Timestamp: 20260415_231812
+2026-04-15 23:18:13,359 - main - INFO - Included router: routers.aihub.router
+2026-04-15 23:18:13,379 - main - INFO - Included router: routers.auth.router
+2026-04-15 23:18:13,421 - main - INFO - Included router: routers.bins.router
+2026-04-15 23:18:13,463 - main - INFO - Included router: routers.bom_lines.router
+2026-04-15 23:18:13,509 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-15 23:18:13,551 - main - INFO - Included router: routers.branches.router
+2026-04-15 23:18:13,552 - main - INFO - Included router: routers.health.router
+2026-04-15 23:18:13,597 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-15 23:18:13,642 - main - INFO - Included router: routers.products.router
+2026-04-15 23:18:13,683 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-15 23:18:13,813 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-15 23:18:13,833 - main - INFO - Included router: routers.settings.router
+2026-04-15 23:18:13,878 - main - INFO - Included router: routers.stock_movements.router
+2026-04-15 23:18:13,927 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-15 23:18:13,959 - main - INFO - Included router: routers.storage.router
+2026-04-15 23:18:14,001 - main - INFO - Included router: routers.suppliers.router
+2026-04-15 23:18:14,047 - main - INFO - Included router: routers.user.router
+2026-04-15 23:18:14,090 - main - INFO - Included router: routers.warehouses.router
+2026-04-15 23:18:14,128 - main - INFO - Included router: routers.zones.router
+2026-04-15 23:18:14,129 - main - INFO - === Application startup initiated ===
+2026-04-15 23:18:14,129 - services.database - INFO - Ignore creating tables
+2026-04-15 23:18:14,129 - services.mock_data - INFO - Ignore initialize data
+2026-04-15 23:18:14,130 - services.auth - INFO - Ignore initialize admin
+2026-04-15 23:18:14,130 - main - INFO - === Application startup completed successfully ===
+2026-04-15 23:18:18,922 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:18:18,922 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-15 23:18:18,922 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-15 23:18:18,922 - core.database - INFO - Starting database initialization...
+2026-04-15 23:18:18,922 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-15 23:18:18,922 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-15 23:18:18,923 - core.database - INFO - Creating async database engine...
+2026-04-15 23:18:18,923 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-15 23:18:18,965 - core.database - INFO - Database engine created successfully
+2026-04-15 23:18:18,966 - core.database - INFO - Creating async session maker...
+2026-04-15 23:18:18,966 - core.database - INFO - Async session maker created successfully
+2026-04-15 23:18:18,966 - core.database - INFO - Database connection initialized successfully
+2026-04-15 23:18:18,966 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-15 23:18:18,966 - core.database - INFO - 🔧 Starting table creation...
+2026-04-15 23:18:18,972 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:18:18,972 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:18:18,972 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:18:18,976 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:18:18,976 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:18:18,976 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 23:18:18,981 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:18:18,981 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:18:18,981 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:18:18,989 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-15 23:18:18,989 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-15 23:18:19,000 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 23:18:20,356 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 23:18:20,357 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.3852s
+2026-04-15 23:18:20,358 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 23:18:20,358 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.3821s
+2026-04-15 23:18:20,415 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 23:18:20,416 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4348s
+2026-04-15 23:18:21,101 - core.database - INFO - Tables initialized successfully
+2026-04-15 23:18:21,101 - core.database - DEBUG - [DB_OP] Create tables completed in 2.1350s
+2026-04-15 23:18:21,164 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-15 23:18:21,165 - core.database - DEBUG - [DB_OP] Database session created successfully in 2.2431s
+2026-04-15 23:18:21,165 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:18:21,735 - routers.products - DEBUG - Found 8 productss
+2026-04-15 23:18:21,736 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.8146s
+2026-04-15 23:18:30,630 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-15 23:18:30,892 - core.database - INFO - Database connection closed and engine disposed
+2026-04-15 23:18:30,893 - services.database - INFO - Database connections closed
+2026-04-15 23:18:30,893 - services.database - DEBUG - [DB_OP] Database close completed in 0.2626s

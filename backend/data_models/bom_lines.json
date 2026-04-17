@@ -1,0 +1,48 @@
+{
+    "title": "bom_lines",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "recipe_id": {
+            "type": "integer",
+            "description": "Parent recipe ID"
+        },
+        "product_id": {
+            "type": "integer",
+            "description": "Ingredient product ID"
+        },
+        "quantity": {
+            "type": "number",
+            "description": "Required quantity"
+        },
+        "unit": {
+            "type": "string",
+            "description": "Unit of measure"
+        },
+        "is_optional": {
+            "type": "boolean",
+            "description": "Whether ingredient is optional"
+        },
+        "substitution_allowed": {
+            "type": "boolean",
+            "description": "Whether substitution is allowed"
+        },
+        "wastage_factor": {
+            "type": "number",
+            "description": "Wastage factor percentage e.g. 0.05 for 5 percent"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Line notes"
+        }
+    },
+    "required": [
+        "id",
+        "recipe_id",
+        "product_id",
+        "quantity"
+    ]
+}

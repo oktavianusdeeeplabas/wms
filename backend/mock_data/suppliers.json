@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Fresh Farms Co.",
+        "code": "SUP-001",
+        "contact_name": "John Smith",
+        "email": "john@freshfarms.com",
+        "phone": "555-0101",
+        "address": "100 Farm Road",
+        "status": "active"
+    },
+    {
+        "name": "Ocean Catch Seafood",
+        "code": "SUP-002",
+        "contact_name": "Maria Garcia",
+        "email": "maria@oceancatch.com",
+        "phone": "555-0102",
+        "address": "200 Harbor St",
+        "status": "active"
+    },
+    {
+        "name": "Premium Meats Ltd",
+        "code": "SUP-003",
+        "contact_name": "Robert Chen",
+        "email": "robert@premiummeats.com",
+        "phone": "555-0103",
+        "address": "300 Butcher Ave",
+        "status": "active"
+    },
+    {
+        "name": "Spice World Trading",
+        "code": "SUP-004",
+        "contact_name": "Aisha Patel",
+        "email": "aisha@spiceworld.com",
+        "phone": "555-0104",
+        "address": "400 Spice Market",
+        "status": "active"
+    },
+    {
+        "name": "Dairy Direct",
+        "code": "SUP-005",
+        "contact_name": "Emma Wilson",
+        "email": "emma@dairydirect.com",
+        "phone": "555-0105",
+        "address": "500 Milk Lane",
+        "status": "inactive"
+    }
+]

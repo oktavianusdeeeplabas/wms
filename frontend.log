@@ -1,0 +1,106 @@
+
+> shadcnui@ dev C:\Users\oktav\Documents\trae_projects\wms\frontend
+> vite "--host" "0.0.0.0" "--port" "3000"
+
+Port 3000 is in use, trying another one...
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m2447[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://169.254.83.107:[1m3001[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.12:[1m3001[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/config[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/products?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/inventory_lots?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/receiving_documents?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/stock_movements?limit=200&sort=-created_at[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/branches?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/warehouses?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/stock_transfers?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/auth/me[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/config[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/products?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/inventory_lots?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/receiving_documents?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/stock_movements?limit=200&sort=-created_at[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/branches?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/warehouses?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/entities/stock_transfers?limit=200[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m09.34.26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/v1/auth/me[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m10.10.17[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.12.04[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.12.23[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Branches.tsx, /src/pages/Inventory.tsx, /src/pages/Receiving.tsx, /src/pages/Picking.tsx, /src/pages/Transfers.tsx, /src/pages/Production.tsx, /src/pages/BomRecipes.tsx, /src/pages/MasterData.tsx[22m
+[2m10.26.51[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.27.26[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.27.41[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.27.49[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.28.48[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.29.21[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/MasterData.tsx, /src/index.css[22m
+[2m10.29.35[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Receiving.tsx, /src/index.css[22m
+[2m10.30.00[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Receiving.tsx, /src/index.css[22m
+[2m10.30.31[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Inventory.tsx, /src/index.css[22m
+[2m10.31.41[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Reports.tsx[22m
+[2m10.31.55[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Reports.tsx[22m
+[2m10.44.46[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2m10.46.44[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.tsx, /src/index.css[22m
+[2m10.46.52[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.tsx, /src/index.css[22m
+[2m10.46.59[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2m10.47.29[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/Branches.tsx, /src/pages/Inventory.tsx, /src/pages/Receiving.tsx, /src/pages/Picking.tsx, /src/pages/Transfers.tsx, /src/pages/Production.tsx, /src/pages/BomRecipes.tsx, /src/pages/MasterData.tsx, /src/pages/Manufacturing.tsx[22m
+[2m10.49.37[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Manufacturing.tsx, /src/index.css[22m
+[2m10.50.38[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Manufacturing.tsx, /src/index.css[22m
+[2m10.51.32[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Manufacturing.tsx, /src/index.css[22m
+[2m10.51.38[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Manufacturing.tsx, /src/index.css[22m

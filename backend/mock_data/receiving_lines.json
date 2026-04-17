@@ -1,0 +1,52 @@
+[
+    {
+        "receiving_document_id": 1,
+        "product_id": 3,
+        "expected_quantity": 400,
+        "received_quantity": 350,
+        "lot_number": "LOT-2026-004",
+        "expiry_date": "2026-09-15",
+        "qc_status": "accepted",
+        "notes": "50kg short"
+    },
+    {
+        "receiving_document_id": 2,
+        "product_id": 2,
+        "expected_quantity": 50,
+        "received_quantity": 45,
+        "lot_number": "LOT-2026-003",
+        "expiry_date": "2026-04-17",
+        "qc_status": "accepted",
+        "notes": ""
+    },
+    {
+        "receiving_document_id": 3,
+        "product_id": 1,
+        "expected_quantity": 200,
+        "received_quantity": 0,
+        "lot_number": "",
+        "expiry_date": "",
+        "qc_status": "pending",
+        "notes": "Awaiting delivery"
+    },
+    {
+        "receiving_document_id": 4,
+        "product_id": 6,
+        "expected_quantity": 20,
+        "received_quantity": 0,
+        "lot_number": "",
+        "expiry_date": "",
+        "qc_status": "pending",
+        "notes": ""
+    },
+    {
+        "receiving_document_id": 5,
+        "product_id": 5,
+        "expected_quantity": 30,
+        "received_quantity": 15,
+        "lot_number": "LOT-2026-011",
+        "expiry_date": "2026-04-25",
+        "qc_status": "in_progress",
+        "notes": "Partial delivery"
+    }
+]

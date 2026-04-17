@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Chicken Breast",
+        "sku": "PRD-001",
+        "category": "Meat",
+        "unit": "kg",
+        "min_stock": 50,
+        "max_stock": 500,
+        "reorder_point": 100,
+        "cost_price": 8.5,
+        "status": "active"
+    },
+    {
+        "name": "Atlantic Salmon Fillet",
+        "sku": "PRD-002",
+        "category": "Seafood",
+        "unit": "kg",
+        "min_stock": 20,
+        "max_stock": 200,
+        "reorder_point": 40,
+        "cost_price": 22.0,
+        "status": "active"
+    },
+    {
+        "name": "Basmati Rice",
+        "sku": "PRD-003",
+        "category": "Dry Goods",
+        "unit": "kg",
+        "min_stock": 100,
+        "max_stock": 1000,
+        "reorder_point": 200,
+        "cost_price": 3.5,
+        "status": "active"
+    },
+    {
+        "name": "Extra Virgin Olive Oil",
+        "sku": "PRD-004",
+        "category": "Oils",
+        "unit": "liter",
+        "min_stock": 30,
+        "max_stock": 300,
+        "reorder_point": 60,
+        "cost_price": 12.0,
+        "status": "active"
+    },
+    {
+        "name": "Fresh Mozzarella",
+        "sku": "PRD-005",
+        "category": "Dairy",
+        "unit": "kg",
+        "min_stock": 15,
+        "max_stock": 150,
+        "reorder_point": 30,
+        "cost_price": 14.0,
+        "status": "active"
+    },
+    {
+        "name": "Cumin Powder",
+        "sku": "PRD-006",
+        "category": "Spices",
+        "unit": "kg",
+        "min_stock": 5,
+        "max_stock": 50,
+        "reorder_point": 10,
+        "cost_price": 18.0,
+        "status": "active"
+    },
+    {
+        "name": "All-Purpose Flour",
+        "sku": "PRD-007",
+        "category": "Dry Goods",
+        "unit": "kg",
+        "min_stock": 80,
+        "max_stock": 800,
+        "reorder_point": 150,
+        "cost_price": 1.8,
+        "status": "active"
+    },
+    {
+        "name": "Heavy Cream",
+        "sku": "PRD-008",
+        "category": "Dairy",
+        "unit": "liter",
+        "min_stock": 20,
+        "max_stock": 200,
+        "reorder_point": 40,
+        "cost_price": 6.5,
+        "status": "active"
+    }
+]

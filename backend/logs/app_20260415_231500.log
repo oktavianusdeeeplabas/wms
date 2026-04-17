@@ -1,0 +1,464 @@
+2026-04-15 23:15:00,284 - main - INFO - === Logging system initialized ===
+2026-04-15 23:15:00,284 - main - INFO - Log file: logs/app_20260415_231500.log
+2026-04-15 23:15:00,285 - main - INFO - Log level: INFO
+2026-04-15 23:15:00,285 - main - INFO - Timestamp: 20260415_231500
+2026-04-15 23:15:11,900 - main - INFO - Included router: routers.aihub.router
+2026-04-15 23:15:12,066 - main - INFO - Included router: routers.auth.router
+2026-04-15 23:15:12,173 - main - INFO - Included router: routers.bins.router
+2026-04-15 23:15:12,275 - main - INFO - Included router: routers.bom_lines.router
+2026-04-15 23:15:12,388 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-15 23:15:12,479 - main - INFO - Included router: routers.branches.router
+2026-04-15 23:15:12,505 - main - INFO - Included router: routers.health.router
+2026-04-15 23:15:12,585 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-15 23:15:12,679 - main - INFO - Included router: routers.products.router
+2026-04-15 23:15:12,792 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-15 23:15:12,965 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-15 23:15:13,027 - main - INFO - Included router: routers.settings.router
+2026-04-15 23:15:13,145 - main - INFO - Included router: routers.stock_movements.router
+2026-04-15 23:15:13,292 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-15 23:15:13,388 - main - INFO - Included router: routers.storage.router
+2026-04-15 23:15:13,498 - main - INFO - Included router: routers.suppliers.router
+2026-04-15 23:15:13,554 - main - INFO - Included router: routers.user.router
+2026-04-15 23:15:13,804 - main - INFO - Included router: routers.warehouses.router
+2026-04-15 23:15:13,892 - main - INFO - Included router: routers.zones.router
+2026-04-15 23:15:13,894 - main - INFO - === Application startup initiated ===
+2026-04-15 23:15:13,894 - services.database - INFO - Ignore creating tables
+2026-04-15 23:15:13,895 - services.mock_data - INFO - Ignore initialize data
+2026-04-15 23:15:13,895 - services.auth - INFO - Ignore initialize admin
+2026-04-15 23:15:13,895 - main - INFO - === Application startup completed successfully ===
+2026-04-15 23:15:19,999 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:19,999 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-15 23:15:20,000 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-15 23:15:20,000 - core.database - INFO - Starting database initialization...
+2026-04-15 23:15:20,000 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-15 23:15:20,001 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-15 23:15:20,002 - core.database - INFO - Creating async database engine...
+2026-04-15 23:15:20,002 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-15 23:15:20,081 - core.database - INFO - Database engine created successfully
+2026-04-15 23:15:20,082 - core.database - INFO - Creating async session maker...
+2026-04-15 23:15:20,082 - core.database - INFO - Async session maker created successfully
+2026-04-15 23:15:20,082 - core.database - INFO - Database connection initialized successfully
+2026-04-15 23:15:20,082 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-15 23:15:20,082 - core.database - INFO - 🔧 Starting table creation...
+2026-04-15 23:15:20,116 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:20,117 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 23:15:20,117 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 23:15:20,167 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-15 23:15:20,168 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-15 23:15:20,309 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 23:15:20,336 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:20,337 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 23:15:20,337 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:20,440 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:20,441 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 23:15:20,441 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:21,785 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 23:15:21,786 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.6697s
+2026-04-15 23:15:21,790 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 23:15:21,791 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4544s
+2026-04-15 23:15:21,854 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 23:15:21,856 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.4154s
+2026-04-15 23:15:22,526 - core.database - INFO - Tables initialized successfully
+2026-04-15 23:15:22,526 - core.database - DEBUG - [DB_OP] Create tables completed in 2.4444s
+2026-04-15 23:15:22,593 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:22,594 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 23:15:22,594 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:22,598 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:22,598 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:15:22,599 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-15 23:15:22,599 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-15 23:15:22,600 - core.database - DEBUG - [DB_OP] Database session created successfully in 2.6006s
+2026-04-15 23:15:22,600 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:23,173 - routers.branches - DEBUG - Found 4 branchess
+2026-04-15 23:15:23,173 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5801s
+2026-04-15 23:15:23,174 - services.warehouses - ERROR - Error fetching warehouses list: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-15 23:15:23,175 - routers.warehouses - ERROR - Error querying warehousess: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/warehouses.py", line 107, in query_warehousess
+    result = await service.get_list(
+  File "/workspace/app/backend/services/warehouses.py", line 75, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-15 23:15:23,535 - core.database - ERROR - Database session error: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/warehouses.py", line 107, in query_warehousess
+    result = await service.get_list(
+  File "/workspace/app/backend/services/warehouses.py", line 75, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/warehouses.py", line 119, in query_warehousess
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-15 23:15:23,595 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.9966s
+2026-04-15 23:15:23,596 - routers.products - DEBUG - Found 8 productss
+2026-04-15 23:15:23,597 - core.database - DEBUG - [DB_OP] Database session cleanup after 3.5976s
+2026-04-15 23:15:23,660 - core.database - ERROR - Failed to create database session: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/warehouses.py", line 107, in query_warehousess
+    result = await service.get_list(
+  File "/workspace/app/backend/services/warehouses.py", line 75, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/188c5821f00e4f4fa19e4d2ba0b23e87/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/warehouses.py", line 119, in query_warehousess
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column warehouses.branch_id does not exist
+[SQL: SELECT warehouses.id, warehouses.name, warehouses.code, warehouses.address, warehouses.branch_id, warehouses.status, warehouses.created_at 
+FROM warehouses ORDER BY warehouses.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (200, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-15 23:15:24,221 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:24,222 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-15 23:15:24,222 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:24,224 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:24,224 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 23:15:24,224 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:24,226 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:24,226 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:15:24,226 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:15:24,228 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:15:24,228 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 23:15:24,229 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 23:15:24,608 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 23:15:24,609 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3833s
+2026-04-15 23:15:24,730 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 23:15:24,732 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5078s
+2026-04-15 23:15:24,738 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 23:15:24,740 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5114s
+2026-04-15 23:15:24,789 - routers.products - DEBUG - Found 8 productss
+2026-04-15 23:15:24,790 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5693s
+2026-04-15 23:17:44,377 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:44,378 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-15 23:17:44,378 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:44,380 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:44,380 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:17:44,380 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:44,381 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:44,381 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-15 23:17:44,382 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:44,383 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:44,383 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:17:44,383 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 23:17:44,384 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-15 23:17:44,821 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 23:17:44,823 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4428s
+2026-04-15 23:17:44,887 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 23:17:44,888 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5057s
+2026-04-15 23:17:44,889 - routers.products - DEBUG - Found 8 productss
+2026-04-15 23:17:44,890 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5123s
+2026-04-15 23:17:44,890 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 23:17:44,890 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5091s
+2026-04-15 23:17:45,298 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:45,299 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 23:17:45,299 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:45,313 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:45,313 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-15 23:17:45,313 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:45,565 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:45,565 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-15 23:17:45,565 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=100, fields=None
+2026-04-15 23:17:45,659 - core.auth - DEBUG - Authentication token validated for user hash: cac403a5
+2026-04-15 23:17:45,660 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-15 23:17:45,660 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-15 23:17:45,660 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-15 23:17:45,680 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-15 23:17:45,681 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3831s
+2026-04-15 23:17:45,690 - routers.products - DEBUG - Found 8 productss
+2026-04-15 23:17:45,691 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3780s
+2026-04-15 23:17:46,040 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-15 23:17:46,040 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3807s
+2026-04-15 23:17:46,073 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-15 23:17:46,074 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5092s
+2026-04-15 23:18:02,638 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-15 23:18:02,901 - core.database - INFO - Database connection closed and engine disposed
+2026-04-15 23:18:02,901 - services.database - INFO - Database connections closed
+2026-04-15 23:18:02,901 - services.database - DEBUG - [DB_OP] Database close completed in 0.2629s

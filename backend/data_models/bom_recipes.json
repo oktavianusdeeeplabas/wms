@@ -1,0 +1,64 @@
+{
+    "title": "bom_recipes",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "name": {
+            "type": "string",
+            "description": "Recipe name"
+        },
+        "code": {
+            "type": "string",
+            "description": "Recipe code"
+        },
+        "product_id": {
+            "type": "integer",
+            "description": "Output product ID"
+        },
+        "category": {
+            "type": "string",
+            "description": "Recipe category e.g. sauce, dough, main, dessert"
+        },
+        "yield_quantity": {
+            "type": "number",
+            "description": "Yield quantity"
+        },
+        "yield_unit": {
+            "type": "string",
+            "description": "Yield unit e.g. kg, portions"
+        },
+        "prep_time_minutes": {
+            "type": "integer",
+            "description": "Preparation time in minutes"
+        },
+        "cook_time_minutes": {
+            "type": "integer",
+            "description": "Cooking time in minutes"
+        },
+        "version": {
+            "type": "integer",
+            "description": "Recipe version number"
+        },
+        "status": {
+            "type": "string",
+            "description": "active, inactive, draft"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Recipe notes or instructions"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "code"
+    ]
+}

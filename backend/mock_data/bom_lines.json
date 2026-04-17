@@ -1,0 +1,172 @@
+[
+    {
+        "recipe_id": 1,
+        "product_id": 1,
+        "quantity": 2.5,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.05,
+        "notes": "Boneless chicken thigh"
+    },
+    {
+        "recipe_id": 1,
+        "product_id": 4,
+        "quantity": 3.0,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.02,
+        "notes": "Steamed jasmine rice"
+    },
+    {
+        "recipe_id": 1,
+        "product_id": 5,
+        "quantity": 0.5,
+        "unit": "liter",
+        "is_optional": false,
+        "substitution_allowed": true,
+        "wastage_factor": 0.01,
+        "notes": "Teriyaki sauce"
+    },
+    {
+        "recipe_id": 1,
+        "product_id": 3,
+        "quantity": 1.0,
+        "unit": "kg",
+        "is_optional": true,
+        "substitution_allowed": true,
+        "wastage_factor": 0.1,
+        "notes": "Mixed vegetables"
+    },
+    {
+        "recipe_id": 2,
+        "product_id": 2,
+        "quantity": 1.5,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.08,
+        "notes": "Fresh salmon fillet"
+    },
+    {
+        "recipe_id": 2,
+        "product_id": 4,
+        "quantity": 2.0,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.03,
+        "notes": "Sushi rice seasoned"
+    },
+    {
+        "recipe_id": 2,
+        "product_id": 3,
+        "quantity": 0.3,
+        "unit": "kg",
+        "is_optional": true,
+        "substitution_allowed": true,
+        "wastage_factor": 0.05,
+        "notes": "Avocado slices"
+    },
+    {
+        "recipe_id": 3,
+        "product_id": 3,
+        "quantity": 4.0,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.05,
+        "notes": "Crushed tomatoes"
+    },
+    {
+        "recipe_id": 3,
+        "product_id": 5,
+        "quantity": 0.1,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.02,
+        "notes": "Fresh basil leaves"
+    },
+    {
+        "recipe_id": 3,
+        "product_id": 8,
+        "quantity": 0.2,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.01,
+        "notes": "Garlic cloves minced"
+    },
+    {
+        "recipe_id": 4,
+        "product_id": 7,
+        "quantity": 5.0,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.03,
+        "notes": "Bread flour"
+    },
+    {
+        "recipe_id": 4,
+        "product_id": 8,
+        "quantity": 0.1,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.0,
+        "notes": "Sea salt"
+    },
+    {
+        "recipe_id": 4,
+        "product_id": 5,
+        "quantity": 0.5,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.0,
+        "notes": "Sourdough starter"
+    },
+    {
+        "recipe_id": 6,
+        "product_id": 6,
+        "quantity": 0.8,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.02,
+        "notes": "Dark chocolate 70%"
+    },
+    {
+        "recipe_id": 6,
+        "product_id": 5,
+        "quantity": 0.4,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.01,
+        "notes": "Unsalted butter"
+    },
+    {
+        "recipe_id": 6,
+        "product_id": 8,
+        "quantity": 0.3,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.02,
+        "notes": "Granulated sugar"
+    },
+    {
+        "recipe_id": 6,
+        "product_id": 7,
+        "quantity": 0.2,
+        "unit": "kg",
+        "is_optional": false,
+        "substitution_allowed": false,
+        "wastage_factor": 0.01,
+        "notes": "All-purpose flour"
+    }
+]

@@ -1,0 +1,91 @@
+2026-04-17 11:00:40,376 - main - INFO - === Logging system initialized ===
+2026-04-17 11:00:40,376 - main - INFO - Log file: logs/app_20260417_110040.log
+2026-04-17 11:00:40,376 - main - INFO - Log level: INFO
+2026-04-17 11:00:40,376 - main - INFO - Timestamp: 20260417_110040
+2026-04-17 11:00:41,272 - main - INFO - Included router: routers.aihub.router
+2026-04-17 11:00:41,290 - main - INFO - Included router: routers.auth.router
+2026-04-17 11:00:41,319 - main - INFO - Included router: routers.bins.router
+2026-04-17 11:00:41,351 - main - INFO - Included router: routers.bom_lines.router
+2026-04-17 11:00:41,392 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-17 11:00:41,423 - main - INFO - Included router: routers.branches.router
+2026-04-17 11:00:41,426 - main - INFO - Included router: routers.health.router
+2026-04-17 11:00:41,553 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-17 11:00:41,586 - main - INFO - Included router: routers.label_templates.router
+2026-04-17 11:00:41,616 - main - INFO - Included router: routers.products.router
+2026-04-17 11:00:41,646 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-17 11:00:41,681 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-17 11:00:41,693 - main - INFO - Included router: routers.settings.router
+2026-04-17 11:00:41,726 - main - INFO - Included router: routers.stock_movements.router
+2026-04-17 11:00:41,771 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-17 11:00:41,807 - main - INFO - Included router: routers.storage.router
+2026-04-17 11:00:41,839 - main - INFO - Included router: routers.suppliers.router
+2026-04-17 11:00:41,846 - main - INFO - Included router: routers.user.router
+2026-04-17 11:00:41,871 - main - INFO - Included router: routers.warehouses.router
+2026-04-17 11:00:41,894 - main - INFO - Included router: routers.zones.router
+2026-04-17 11:00:41,895 - main - INFO - === Application startup initiated ===
+2026-04-17 11:00:41,895 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 11:00:41,895 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 11:00:41,895 - core.database - INFO - Starting database initialization...
+2026-04-17 11:00:41,895 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-17 11:00:41,895 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-17 11:00:41,895 - core.database - INFO - Creating async database engine...
+2026-04-17 11:00:41,895 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-17 11:00:41,927 - core.database - INFO - Database engine created successfully
+2026-04-17 11:00:41,928 - core.database - INFO - Creating async session maker...
+2026-04-17 11:00:41,928 - core.database - INFO - Async session maker created successfully
+2026-04-17 11:00:41,928 - core.database - INFO - Database connection initialized successfully
+2026-04-17 11:00:41,928 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-17 11:00:41,928 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-17 11:00:41,928 - core.database - INFO - 🔧 Starting table creation...
+2026-04-17 11:00:42,013 - core.database - INFO - Tables initialized successfully
+2026-04-17 11:00:42,013 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0848s
+2026-04-17 11:00:42,014 - services.database - INFO - 🔧 Table creation completed
+2026-04-17 11:00:42,014 - services.database - INFO - Database initialized successfully
+2026-04-17 11:00:42,014 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.1195s
+2026-04-17 11:00:42,014 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-04-17 11:00:42,015 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-04-17 11:00:42,016 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-04-17 11:00:42,020 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-04-17 11:00:42,021 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-04-17 11:00:42,297 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-04-17 11:00:42,297 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-04-17 11:00:42,312 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-04-17 11:00:42,315 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-04-17 11:00:42,315 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-04-17 11:00:42,315 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-04-17 11:00:42,317 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-04-17 11:00:42,317 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-04-17 11:00:42,317 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-04-17 11:00:42,319 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-04-17 11:00:42,320 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-04-17 11:00:42,321 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-04-17 11:00:42,335 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-04-17 11:00:42,336 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-04-17 11:00:42,337 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-04-17 11:00:42,337 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-04-17 11:00:42,337 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-04-17 11:00:42,338 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-04-17 11:00:42,341 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-04-17 11:00:42,349 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-04-17 11:00:42,351 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-04-17 11:00:42,352 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 11:00:42,352 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 11:00:42,352 - core.database - INFO - Starting database initialization...
+2026-04-17 11:00:42,352 - core.database - INFO - Database already initialized
+2026-04-17 11:00:42,352 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-17 11:00:42,352 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-17 11:00:42,352 - core.database - INFO - Tables already initialized
+2026-04-17 11:00:42,352 - services.database - INFO - 🔧 Table creation completed
+2026-04-17 11:00:42,352 - services.database - INFO - Database initialized successfully
+2026-04-17 11:00:42,352 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0000s
+2026-04-17 11:00:42,353 - services.auth - WARNING - Admin user ID or email not configured, skipping admin initialization
+2026-04-17 11:00:42,353 - main - INFO - === Application startup completed successfully ===
+2026-04-17 11:00:48,378 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-17 11:00:48,378 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-17 11:00:48,405 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0269s
+2026-04-17 11:03:19,283 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-17 11:03:19,283 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-17 11:03:19,307 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0242s
+2026-04-17 11:03:19,541 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-17 11:03:19,542 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0010s
+2026-04-17 11:03:19,553 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0118s

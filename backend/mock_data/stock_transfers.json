@@ -1,0 +1,44 @@
+[
+    {
+        "transfer_number": "TRF-2026-003",
+        "from_warehouse_id": 1,
+        "to_warehouse_id": 3,
+        "from_branch_id": 1,
+        "to_branch_id": 3,
+        "product_id": 7,
+        "quantity": 40,
+        "lot_number": "LOT-2026-008",
+        "status": "pending",
+        "requested_date": "2026-04-15 08:00:00",
+        "notes": "Flour transfer for new bakery station",
+        "created_at": "2026-04-15 08:00:00"
+    },
+    {
+        "transfer_number": "TRF-2026-004",
+        "from_warehouse_id": 3,
+        "to_warehouse_id": 2,
+        "from_branch_id": 3,
+        "to_branch_id": 2,
+        "product_id": 4,
+        "quantity": 30,
+        "lot_number": "LOT-2026-004",
+        "status": "pending",
+        "requested_date": "2026-04-15 11:00:00",
+        "notes": "Rice supply for westside branch",
+        "created_at": "2026-04-15 11:00:00"
+    },
+    {
+        "transfer_number": "TRF-2026-005",
+        "from_warehouse_id": 2,
+        "to_warehouse_id": 3,
+        "from_branch_id": 2,
+        "to_branch_id": 3,
+        "product_id": 6,
+        "quantity": 15,
+        "lot_number": "LOT-2026-007",
+        "status": "cancelled",
+        "requested_date": "2026-04-08 09:00:00",
+        "notes": "Cancelled - eastside has sufficient stock",
+        "created_at": "2026-04-08 09:00:00"
+    }
+]

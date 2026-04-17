@@ -1,0 +1,28 @@
+2026-04-17 01:08:59,383 - main - INFO - === Logging system initialized ===
+2026-04-17 01:08:59,384 - main - INFO - Log file: logs/app_20260417_010859.log
+2026-04-17 01:08:59,384 - main - INFO - Log level: INFO
+2026-04-17 01:08:59,384 - main - INFO - Timestamp: 20260417_010859
+2026-04-17 01:09:03,886 - main - INFO - Included router: routers.aihub.router
+2026-04-17 01:09:03,923 - main - INFO - Included router: routers.auth.router
+2026-04-17 01:09:03,979 - main - INFO - Included router: routers.bins.router
+2026-04-17 01:09:04,070 - main - INFO - Included router: routers.bom_lines.router
+2026-04-17 01:09:04,148 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-17 01:09:04,330 - main - INFO - Included router: routers.branches.router
+2026-04-17 01:09:04,337 - main - INFO - Included router: routers.health.router
+2026-04-17 01:09:04,411 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-17 01:09:04,503 - main - INFO - Included router: routers.products.router
+2026-04-17 01:09:04,591 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-17 01:09:04,669 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-17 01:09:04,695 - main - INFO - Included router: routers.settings.router
+2026-04-17 01:09:04,794 - main - INFO - Included router: routers.stock_movements.router
+2026-04-17 01:09:04,871 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-17 01:09:04,935 - main - INFO - Included router: routers.storage.router
+2026-04-17 01:09:05,003 - main - INFO - Included router: routers.suppliers.router
+2026-04-17 01:09:05,029 - main - INFO - Included router: routers.user.router
+2026-04-17 01:09:05,091 - main - INFO - Included router: routers.warehouses.router
+2026-04-17 01:09:05,179 - main - INFO - Included router: routers.zones.router
+2026-04-17 01:09:05,181 - main - INFO - === Application startup initiated ===
+2026-04-17 01:09:05,182 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-17 01:09:05,182 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-17 01:09:05,182 - core.database - INFO - Starting database initialization...
+2026-04-17 01:09:05,182 - services.database - ERROR - Failed to initialize database: 'Settings' object has no attribute 'database_url'

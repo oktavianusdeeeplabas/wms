@@ -1,0 +1,47 @@
+{
+    "title": "inventory_lots",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "product_id": {
+            "type": "integer"
+        },
+        "lot_number": {
+            "type": "string"
+        },
+        "batch_number": {
+            "type": "string"
+        },
+        "zone_id": {
+            "type": "integer"
+        },
+        "bin_id": {
+            "type": "integer"
+        },
+        "quantity": {
+            "type": "number"
+        },
+        "received_date": {
+            "type": "string"
+        },
+        "expiry_date": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        },
+        "supplier_id": {
+            "type": "integer"
+        },
+        "cost_per_unit": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "id",
+        "product_id",
+        "lot_number"
+    ]
+}

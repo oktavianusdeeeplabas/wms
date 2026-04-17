@@ -1,0 +1,30 @@
+{
+    "title": "zones",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "warehouse_id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "code": {
+            "type": "string"
+        },
+        "temperature_type": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "warehouse_id",
+        "name",
+        "code"
+    ]
+}
