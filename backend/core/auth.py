@@ -13,6 +13,47 @@ from jose.exceptions import ExpiredSignatureError, JWSSignatureError, JWTClaimsE
 logger = logging.getLogger(__name__)
 
 
+def _get_setting(name: str, default: Optional[str] = None) -> Optional[str]:
+    """Safely read dynamic settings without raising AttributeError."""
+    return getattr(settings, name, default)
+
+
+def _require_oidc_settings(*names: str) -> Dict[str, str]:
+    """Resolve required OIDC settings or raise a clear configuration error."""
+    resolved: Dict[str, str] = {}
+    missing: list[str] = []
+
+    for name in names:
+        value = _get_setting(name)
+        if value:
+          resolved[name] = value
+        else:
+          missing.append(name.upper())
+
+    if missing:
+        raise ValueError(f"Missing OIDC configuration: {', '.join(missing)}")
+
+    return resolved
+
+
+def _require_jwt_settings() -> Dict[str, str]:
+    """Resolve required JWT settings or raise a clear configuration error."""
+    resolved = {
+        "jwt_secret_key": _get_setting("jwt_secret_key"),
+        "jwt_algorithm": _get_setting("jwt_algorithm", "HS256"),
+        "jwt_expire_minutes": _get_setting("jwt_expire_minutes", "60"),
+    }
+
+    if not resolved["jwt_secret_key"]:
+        raise ValueError("Missing JWT configuration: JWT_SECRET_KEY")
+
+    return {
+        "jwt_secret_key": str(resolved["jwt_secret_key"]),
+        "jwt_algorithm": str(resolved["jwt_algorithm"] or "HS256"),
+        "jwt_expire_minutes": str(resolved["jwt_expire_minutes"] or "60"),
+    }
+
+
 def generate_state() -> str:
     """Generate a secure state parameter for OIDC."""
     return secrets.token_urlsafe(32)
@@ -36,7 +77,8 @@ def generate_code_challenge(code_verifier: str) -> str:
 
 async def get_jwks() -> Dict[str, Any]:
     """Get JWKS (JSON Web Key Set) from OIDC provider."""
-    jwks_url = f"{settings.oidc_issuer_url}/.well-known/jwks.json"
+    oidc = _require_oidc_settings("oidc_issuer_url")
+    jwks_url = f"{oidc['oidc_issuer_url']}/.well-known/jwks.json"
     try:
         async with httpx.AsyncClient(timeout=60.0) as client:
             logger.info(f"Fetching JWKS from: {jwks_url}")
@@ -75,14 +117,12 @@ class AccessTokenError(Exception):
 
 def create_access_token(claims: Dict[str, Any], expires_minutes: Optional[int] = None) -> str:
     """Create signed JWT access token from provided claims."""
-    if not settings.jwt_secret_key:
-        logger.error("JWT secret key is not configured")
-        raise ValueError("JWT secret key is not configured")
+    jwt_settings = _require_jwt_settings()
 
     now = datetime.now(timezone.utc)
     token_claims = claims.copy()
 
-    expiry_minutes = expires_minutes if expires_minutes is not None else int(settings.jwt_expire_minutes)
+    expiry_minutes = expires_minutes if expires_minutes is not None else int(jwt_settings["jwt_expire_minutes"])
     expire_at = now + timedelta(minutes=expiry_minutes)
 
     token_claims.update(
@@ -93,7 +133,11 @@ def create_access_token(claims: Dict[str, Any], expires_minutes: Optional[int] =
         }
     )
 
-    token = jwt.encode(token_claims, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
+    token = jwt.encode(
+        token_claims,
+        jwt_settings["jwt_secret_key"],
+        algorithm=jwt_settings["jwt_algorithm"],
+    )
     # Log user hash instead of actual user ID to avoid exposing sensitive information
     user_id = token_claims.get("sub", "unknown")
     user_hash = hashlib.sha256(str(user_id).encode()).hexdigest()[:8] if user_id != "unknown" else "unknown"
@@ -101,14 +145,51 @@ def create_access_token(claims: Dict[str, Any], expires_minutes: Optional[int] =
     return token
 
 
+def hash_password(password: str) -> str:
+    """Hash a password using PBKDF2-HMAC-SHA256."""
+    if not password:
+        raise ValueError("Password is required")
+
+    iterations = 100_000
+    salt = secrets.token_hex(16)
+    password_hash = hashlib.pbkdf2_hmac(
+        "sha256",
+        password.encode("utf-8"),
+        salt.encode("utf-8"),
+        iterations,
+    ).hex()
+    return f"pbkdf2_sha256${iterations}${salt}${password_hash}"
+
+
+def verify_password(password: str, stored_hash: str) -> bool:
+    """Verify a PBKDF2-HMAC-SHA256 password hash."""
+    try:
+        algorithm, iterations_raw, salt, expected_hash = stored_hash.split("$", 3)
+        if algorithm != "pbkdf2_sha256":
+            return False
+        iterations = int(iterations_raw)
+    except (ValueError, TypeError):
+        return False
+
+    actual_hash = hashlib.pbkdf2_hmac(
+        "sha256",
+        password.encode("utf-8"),
+        salt.encode("utf-8"),
+        iterations,
+    ).hex()
+    return secrets.compare_digest(actual_hash, expected_hash)
+
+
 def decode_access_token(token: str) -> Dict[str, Any]:
     """Decode and validate JWT access token."""
-    if not settings.jwt_secret_key:
-        logger.error("JWT secret key is not configured")
-        raise AccessTokenError("Authentication service is misconfigured")
+    try:
+        jwt_settings = _require_jwt_settings()
+    except ValueError as exc:
+        logger.error(str(exc))
+        raise AccessTokenError("Authentication service is misconfigured") from exc
 
     try:
-        payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
         # Log user hash instead of actual user ID to avoid exposing sensitive information
         user_id = payload.get("sub", "unknown")
         user_hash = hashlib.sha256(str(user_id).encode()).hexdigest()[:8] if user_id != "unknown" else "unknown"
@@ -139,7 +220,7 @@ async def validate_id_token(id_token: str) -> Optional[Dict[str, Any]]:
             jwks = await get_jwks()
         except Exception as e:
             logger.error(
-                f"ID token validation failed: Failed to fetch JWKS from issuer {settings.oidc_issuer_url}: {e}"
+                f"ID token validation failed: Failed to fetch JWKS from issuer {_get_setting('oidc_issuer_url', '')}: {e}"
             )
             raise IDTokenValidationError("Unable to retrieve authentication keys", "jwks_fetch_error")
 
@@ -192,8 +273,8 @@ async def validate_id_token(id_token: str) -> Optional[Dict[str, Any]]:
                 id_token,
                 pem_key,
                 algorithms=["RS256"],
-                issuer=settings.oidc_issuer_url,
-                audience=settings.oidc_client_id,
+                issuer=_require_oidc_settings("oidc_issuer_url")["oidc_issuer_url"],
+                audience=_require_oidc_settings("oidc_client_id")["oidc_client_id"],
             )
             # Log user hash instead of actual user ID to avoid exposing sensitive information
             user_id = payload.get("sub", "unknown")
@@ -236,10 +317,12 @@ def build_authorization_url(
     """Build OIDC authorization URL with optional PKCE support."""
     import urllib.parse
 
+    oidc = _require_oidc_settings("oidc_client_id", "oidc_scope", "oidc_issuer_url")
+
     params = {
-        "client_id": settings.oidc_client_id,
+        "client_id": oidc["oidc_client_id"],
         "response_type": "code",
-        "scope": settings.oidc_scope,
+        "scope": oidc["oidc_scope"],
         "redirect_uri": redirect_uri or f"{settings.backend_url}/api/v1/auth/callback",
         "state": state,
         "nonce": nonce,
@@ -250,7 +333,7 @@ def build_authorization_url(
         params["code_challenge"] = code_challenge
         params["code_challenge_method"] = "S256"
 
-    auth_url = f"{settings.oidc_issuer_url}/authorize?" + urllib.parse.urlencode(params)
+    auth_url = f"{oidc['oidc_issuer_url']}/authorize?" + urllib.parse.urlencode(params)
     return auth_url
 
 
@@ -258,10 +341,12 @@ def build_logout_url(id_token: Optional[str] = None) -> str:
     """Build OIDC logout URL."""
     import urllib.parse
 
-    params = {"post_logout_redirect_uri": f"{settings.frontend_url}/logout-callback"}
+    oidc = _require_oidc_settings("frontend_url", "oidc_issuer_url")
+
+    params = {"post_logout_redirect_uri": f"{oidc['frontend_url']}/logout-callback"}
 
     if id_token:
         params["id_token_hint"] = id_token
 
-    logout_url = f"{settings.oidc_issuer_url}/logout?" + urllib.parse.urlencode(params)
+    logout_url = f"{oidc['oidc_issuer_url']}/logout?" + urllib.parse.urlencode(params)
     return logout_url

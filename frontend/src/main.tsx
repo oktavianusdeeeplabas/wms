@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
+import { AuthProvider } from './contexts/AuthContext.tsx';
 import './index.css';
 import { loadRuntimeConfig } from './lib/config.ts';
 
@@ -27,7 +28,11 @@ async function initializeApp() {
   }
 
   // Render the app
-  createRoot(document.getElementById('root')!).render(<App />);
+  createRoot(document.getElementById('root')!).render(
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  );
 }
 
 // Initialize the app

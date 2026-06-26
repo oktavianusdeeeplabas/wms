@@ -90,16 +90,30 @@ class AIHubService:
 
     def __init__(self):
         self.client: Optional[AsyncOpenAI] = None
-        if settings.app_ai_base_url and settings.app_ai_key:
+        base_url = self._get_setting("app_ai_base_url", "openai_base_url", "app_ai_url")
+        api_key = self._get_setting("app_ai_key", "openai_api_key", "app_ai_api_key")
+        if base_url and api_key:
             self.client = AsyncOpenAI(
-                api_key=settings.app_ai_key,
-                base_url=settings.app_ai_base_url.rstrip("/"),
+                api_key=api_key,
+                base_url=base_url.rstrip("/"),
             )
+
+    @staticmethod
+    def _get_setting(*names: str) -> Optional[str]:
+        """Read the first available dynamic setting name without raising AttributeError."""
+        for name in names:
+            value = getattr(settings, name, None)
+            if value:
+                return value
+        return None
 
     def _require_ai_client(self) -> AsyncOpenAI:
         """Return the configured AI client or raise a configuration error."""
         if not self.client:
-            raise ValueError("AI service not configured. Set APP_AI_BASE_URL and APP_AI_KEY.")
+            raise ValueError(
+                "AI service not configured. Set APP_AI_BASE_URL and APP_AI_KEY "
+                "(or OPENAI_BASE_URL and OPENAI_API_KEY)."
+            )
         return self.client
 
     def _convert_message(self, msg) -> dict:

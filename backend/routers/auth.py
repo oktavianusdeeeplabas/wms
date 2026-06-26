@@ -21,6 +21,9 @@ from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.responses import RedirectResponse
 from models.auth import User
 from schemas.auth import (
+    LocalAuthResponse,
+    LocalLoginRequest,
+    LocalRegisterRequest,
     PlatformTokenExchangeRequest,
     TokenExchangeResponse,
     UserResponse,
@@ -76,26 +79,30 @@ def derive_name_from_email(email: str) -> str:
 @router.get("/login")
 async def login(request: Request, db: AsyncSession = Depends(get_db)):
     """Start OIDC login flow with PKCE."""
-    state = generate_state()
-    nonce = generate_nonce()
-    code_verifier = generate_code_verifier()
-    code_challenge = generate_code_challenge(code_verifier)
+    try:
+        state = generate_state()
+        nonce = generate_nonce()
+        code_verifier = generate_code_verifier()
+        code_challenge = generate_code_challenge(code_verifier)
 
-    # Store state, nonce, and code verifier in database
-    auth_service = AuthService(db)
-    await auth_service.store_oidc_state(state, nonce, code_verifier)
+        # Store state, nonce, and code verifier in database
+        auth_service = AuthService(db)
+        await auth_service.store_oidc_state(state, nonce, code_verifier)
 
-    # Build redirect_uri dynamically from request
-    backend_url = get_dynamic_backend_url(request)
-    redirect_uri = f"{backend_url}/api/v1/auth/callback"
-    logger.info("[login] Starting OIDC flow with redirect_uri=%s", redirect_uri)
+        # Build redirect_uri dynamically from request
+        backend_url = get_dynamic_backend_url(request)
+        redirect_uri = f"{backend_url}/api/v1/auth/callback"
+        logger.info("[login] Starting OIDC flow with redirect_uri=%s", redirect_uri)
 
-    auth_url = build_authorization_url(state, nonce, code_challenge, redirect_uri=redirect_uri)
-    return RedirectResponse(
-        url=auth_url,
-        status_code=status.HTTP_302_FOUND,
-        headers={"X-Request-ID": state},
-    )
+        auth_url = build_authorization_url(state, nonce, code_challenge, redirect_uri=redirect_uri)
+        return RedirectResponse(
+            url=auth_url,
+            status_code=status.HTTP_302_FOUND,
+            headers={"X-Request-ID": state},
+        )
+    except ValueError as e:
+        logger.error("[login] OIDC configuration error: %s", e)
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(e))
 
 
 @router.get("/callback")
@@ -149,7 +156,7 @@ async def callback(
         if code_verifier:
             token_data["code_verifier"] = code_verifier
 
-        token_url = f"{settings.oidc_issuer_url}/token"
+        token_url = f"{getattr(settings, 'oidc_issuer_url', '')}/token"
         try:
             async with httpx.AsyncClient() as client:
                 token_response = await client.post(
@@ -215,6 +222,8 @@ async def callback(
     except IDTokenValidationError as e:
         # Redirect to error page with validation details
         return redirect_with_error(f"Authentication failed: {e.message}")
+    except ValueError as e:
+        return redirect_with_error(f"Configuration error: {e}")
     except HTTPException as e:
         # Redirect to error page with the original detail message
         return redirect_with_error(str(e.detail))
@@ -225,12 +234,67 @@ async def callback(
         )
 
 
+@router.post("/local/login", response_model=LocalAuthResponse)
+async def local_login(payload: LocalLoginRequest, db: AsyncSession = Depends(get_db)):
+    """Login using local username/password and issue JWT token."""
+    auth_service = AuthService(db)
+    user = await auth_service.authenticate_local_user(payload.username, payload.password)
+    if not user:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
+
+    token, _expires_at, claims = await auth_service.issue_app_token(user=user)
+    return LocalAuthResponse(
+        token=token,
+        user=UserResponse(
+            id=user.id,
+            email=user.email,
+            name=user.name,
+            role=user.role,
+            branch_id=user.branch_id,
+            warehouse_id=user.warehouse_id,
+            permissions=claims.get("permissions", []),
+            last_login=user.last_login,
+        ),
+    )
+
+
+@router.post("/local/register", response_model=LocalAuthResponse, status_code=status.HTTP_201_CREATED)
+async def local_register(payload: LocalRegisterRequest, db: AsyncSession = Depends(get_db)):
+    """Register a local username/password user and issue JWT token."""
+    auth_service = AuthService(db)
+    try:
+        user = await auth_service.create_local_user(
+            username=payload.username,
+            password=payload.password,
+            email=payload.email,
+            name=payload.name,
+            role="viewer",
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(e))
+
+    token, _expires_at, claims = await auth_service.issue_app_token(user=user)
+    return LocalAuthResponse(
+        token=token,
+        user=UserResponse(
+            id=user.id,
+            email=user.email,
+            name=user.name,
+            role=user.role,
+            branch_id=user.branch_id,
+            warehouse_id=user.warehouse_id,
+            permissions=claims.get("permissions", []),
+            last_login=user.last_login,
+        ),
+    )
+
+
 @router.post("/token/exchange", response_model=TokenExchangeResponse)
 async def exchange_platform_token(
     payload: PlatformTokenExchangeRequest,
     db: AsyncSession = Depends(get_db),
 ):
-    """Exchange Platform token for app token. Admin gets admin role, team members get user role."""
+    """Exchange Platform token for app token. Admin gets admin role, team members get viewer role by default."""
     logger.info("[token/exchange] Received platform token exchange request")
 
     verify_url = f"{settings.oidc_issuer_url}/platform/tokens/verify"
@@ -285,7 +349,7 @@ async def exchange_platform_token(
 
     platform_user_id = str(raw_user_id)
     is_admin = platform_user_id == str(settings.admin_user_id)
-    role = "admin" if is_admin else "user"
+    role = "admin" if is_admin else "viewer"
 
     logger.info(f"[token/exchange] User verified: platform_user_id={platform_user_id}, role={role}")
     auth_service = AuthService(db)
@@ -317,5 +381,4 @@ async def get_current_user_info(current_user: UserResponse = Depends(get_current
 @router.get("/logout")
 async def logout():
     """Logout user."""
-    logout_url = build_logout_url()
-    return {"redirect_url": logout_url}
+    return {"redirect_url": "/login"}

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Cash",
+    "code": "CASH",
+    "description": "Cash payment",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Bank Transfer",
+    "code": "BANK_TRANSFER",
+    "description": "Payment by bank transfer",
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Credit Card",
+    "code": "CREDIT_CARD",
+    "description": "Credit card payment",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "E-Wallet",
+    "code": "EWALLET",
+    "description": "Digital wallet payment",
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "name": "Cash on Delivery",
+    "code": "COD",
+    "description": "Cash on delivery",
+    "status": "active"
+  },
+  {
+    "id": 6,
+    "name": "Net 14",
+    "code": "NET_14",
+    "description": "Payment due in 14 days",
+    "status": "active"
+  },
+  {
+    "id": 7,
+    "name": "Net 30",
+    "code": "NET_30",
+    "description": "Payment due in 30 days",
+    "status": "active"
+  }
+]

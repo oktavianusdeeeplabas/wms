@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Jakarta Food Packaging",
+        "code": "MFR-JAKARTA-FOOD-PACKAGING",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "Jakarta Halal Noodle Works",
+        "code": "MFR-JAKARTA-HALAL-NOODLE-WOR",
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "Mitra Sayur Segar",
+        "code": "MFR-MITRA-SAYUR-SEGAR",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "name": "Nusantara Seafood Processing",
+        "code": "MFR-NUSANTARA-SEAFOOD-PROCES",
+        "status": "active"
+    },
+    {
+        "id": 5,
+        "name": "PT. Maju Mapan Central Kitchen",
+        "code": "MFR-PT-MAJU-MAPAN-CENTRAL-KI",
+        "status": "active"
+    },
+    {
+        "id": 6,
+        "name": "Tokyo Halal Dry Goods",
+        "code": "MFR-TOKYO-HALAL-DRY-GOODS",
+        "status": "active"
+    }
+]

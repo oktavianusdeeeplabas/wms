@@ -18,6 +18,18 @@
             "type": "string",
             "description": "Warehouse address"
         },
+        "detail": {
+            "type": "string",
+            "description": "Warehouse detail"
+        },
+        "capacity": {
+            "type": "integer",
+            "description": "Maximum storage capacity"
+        },
+        "manager": {
+            "type": "string",
+            "description": "Person responsible for the warehouse"
+        },
         "branch_id": {
             "type": "integer",
             "description": "Branch ID reference"

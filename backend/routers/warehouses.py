@@ -23,6 +23,9 @@ class WarehousesData(BaseModel):
     name: str
     code: str
     address: str = None
+    detail: str = None
+    capacity: int = None
+    manager: str = None
     branch_id: int = None
     status: str = None
     created_at: Optional[datetime] = None
@@ -33,6 +36,9 @@ class WarehousesUpdateData(BaseModel):
     name: Optional[str] = None
     code: Optional[str] = None
     address: Optional[str] = None
+    detail: Optional[str] = None
+    capacity: Optional[int] = None
+    manager: Optional[str] = None
     branch_id: Optional[int] = None
     status: Optional[str] = None
     created_at: Optional[datetime] = None
@@ -44,6 +50,9 @@ class WarehousesResponse(BaseModel):
     name: str
     code: str
     address: Optional[str] = None
+    detail: Optional[str] = None
+    capacity: Optional[int] = None
+    manager: Optional[str] = None
     branch_id: Optional[int] = None
     status: Optional[str] = None
     created_at: Optional[datetime] = None

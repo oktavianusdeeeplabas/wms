@@ -1,37 +1,14 @@
 [
-    {
-        "warehouse_id": 1,
-        "name": "Ambient Storage",
-        "code": "Z-AMB-01",
-        "temperature_type": "ambient",
-        "status": "active"
-    },
-    {
-        "warehouse_id": 1,
-        "name": "Chilled Section",
-        "code": "Z-CHL-01",
-        "temperature_type": "chilled",
-        "status": "active"
-    },
-    {
-        "warehouse_id": 2,
-        "name": "Frozen Section A",
-        "code": "Z-FRZ-01",
-        "temperature_type": "frozen",
-        "status": "active"
-    },
-    {
-        "warehouse_id": 2,
-        "name": "Frozen Section B",
-        "code": "Z-FRZ-02",
-        "temperature_type": "frozen",
-        "status": "active"
-    },
-    {
-        "warehouse_id": 3,
-        "name": "Dry Goods Main",
-        "code": "Z-DRY-01",
-        "temperature_type": "ambient",
-        "status": "active"
-    }
+    { "id": 1, "warehouse_id": 1, "name": "Broth & Sauce Chiller", "code": "CK-CHL-BROTH", "temperature_type": "chilled", "status": "active" },
+    { "id": 2, "warehouse_id": 1, "name": "Fresh Topping Chiller", "code": "CK-CHL-TOP", "temperature_type": "chilled", "status": "active" },
+    { "id": 3, "warehouse_id": 2, "name": "Frozen Side Dish", "code": "CK-FRZ-SIDE", "temperature_type": "frozen", "status": "active" },
+    { "id": 4, "warehouse_id": 2, "name": "Frozen Seafood", "code": "CK-FRZ-SEA", "temperature_type": "frozen", "status": "active" },
+    { "id": 5, "warehouse_id": 3, "name": "Dry Ingredient Rack", "code": "CK-DRY-ING", "temperature_type": "ambient", "status": "active" },
+    { "id": 6, "warehouse_id": 3, "name": "Packaging Rack", "code": "CK-DRY-PACK", "temperature_type": "ambient", "status": "active" },
+    { "id": 7, "warehouse_id": 4, "name": "Emporium Outlet Chiller", "code": "EMP-CHL-01", "temperature_type": "chilled", "status": "active" },
+    { "id": 8, "warehouse_id": 4, "name": "Emporium Outlet Freezer", "code": "EMP-FRZ-01", "temperature_type": "frozen", "status": "active" },
+    { "id": 9, "warehouse_id": 5, "name": "Senayan City Outlet Chiller", "code": "SCY-CHL-01", "temperature_type": "chilled", "status": "active" },
+    { "id": 10, "warehouse_id": 5, "name": "Senayan City Outlet Freezer", "code": "SCY-FRZ-01", "temperature_type": "frozen", "status": "active" },
+    { "id": 11, "warehouse_id": 6, "name": "Kuningan Outlet Chiller", "code": "KNC-CHL-01", "temperature_type": "chilled", "status": "active" },
+    { "id": 12, "warehouse_id": 7, "name": "Senayan Park Outlet Chiller", "code": "SPK-CHL-01", "temperature_type": "chilled", "status": "active" }
 ]

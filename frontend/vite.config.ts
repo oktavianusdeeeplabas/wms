@@ -17,8 +17,8 @@ function escapeHtmlAttr(str: string): string {
     .replace(/'/g, '&#39;');
 }
 
-process.env.VITE_APP_TITLE ??= process.env.OVERVIEW_TITLE ?? 'shadcnui';
-process.env.VITE_APP_DESCRIPTION ??= process.env.OVERVIEW_DESCRIPTION ?? 'Atoms Generated Project';
+process.env.VITE_APP_TITLE ??= process.env.OVERVIEW_TITLE ?? 'WMS';
+process.env.VITE_APP_DESCRIPTION ??= process.env.OVERVIEW_DESCRIPTION ?? 'Warehouse Management System';
 process.env.VITE_APP_TITLE = escapeHtmlAttr(process.env.VITE_APP_TITLE);
 process.env.VITE_APP_DESCRIPTION = escapeHtmlAttr(process.env.VITE_APP_DESCRIPTION);
 process.env.VITE_APP_LOGO_URL ??= process.env.OVERVIEW_LOGO_URL ?? 'https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico';
@@ -55,10 +55,10 @@ export default defineConfig(({ command }) => {
     },
     server: {
       host: '0.0.0.0', // Listen on all network interfaces.
-      port: parseInt(process.env.VITE_PORT || '3000'),
+      port: parseInt(process.env.VITE_PORT || '3001'),
       proxy: {
         '/api': {
-          target: `http://localhost:8000`,
+          target: `http://127.0.0.1:8000`,
           changeOrigin: true,
         },
       },

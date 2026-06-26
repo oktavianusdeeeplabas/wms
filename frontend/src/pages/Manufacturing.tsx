@@ -18,9 +18,14 @@ import {
   ClipboardList,
   Eye,
   X,
+  Boxes,
+  AlertTriangle,
+  CheckCircle2,
 } from 'lucide-react';
-import type { InventoryLot, LabelTemplate, Product } from '@/lib/types';
+import type { BomLine, BomRecipe, InventoryLot, LabelTemplate, Product } from '@/lib/types';
 import { STATUS_COLORS } from '@/lib/types';
+import { exportToPDF, type ReportData } from '@/lib/report-utils';
+import { toast } from 'sonner';
 
 const LABEL_FIELDS = [
   { key: 'product_name', label: 'Product Name' },
@@ -71,16 +76,22 @@ function LabelPreview({
   heightMm,
   sampleLot,
   sampleProduct,
+  printMode = false,
 }: {
   fields: string[];
   widthMm: number;
   heightMm: number;
   sampleLot?: InventoryLot;
   sampleProduct?: Product;
+  printMode?: boolean;
 }) {
-  const scale = Math.min(320 / (widthMm || 100), 200 / (heightMm || 50));
-  const pw = (widthMm || 100) * scale;
-  const ph = (heightMm || 50) * scale;
+  const sizeW = widthMm || 100;
+  const sizeH = heightMm || 50;
+  const scale = printMode
+    ? Math.max(2, Math.min(sizeW / 30, sizeH / 15))
+    : Math.min(320 / sizeW, 200 / sizeH);
+  const pw = printMode ? sizeW : sizeW * scale;
+  const ph = printMode ? sizeH : sizeH * scale;
 
   const getValue = (key: string): string => {
     if (!sampleLot) {
@@ -120,10 +131,19 @@ function LabelPreview({
 
   return (
     <div
-      className="border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center overflow-hidden"
-      style={{ width: pw, height: ph, minWidth: 160, minHeight: 80, position: 'relative' }}
+      className={`bg-white flex flex-col items-center justify-center overflow-hidden ${
+        printMode ? 'border border-slate-300' : 'border-2 border-dashed border-slate-300'
+      }`}
+      style={
+        printMode
+          ? { width: `${pw}mm`, height: `${ph}mm`, position: 'relative' }
+          : { width: pw, height: ph, minWidth: 160, minHeight: 80, position: 'relative' }
+      }
     >
-      <div className="w-full h-full p-1 flex flex-col justify-center gap-0.5 overflow-hidden" style={{ fontSize: Math.max(7, scale * 3.5) }}>
+      <div
+        className="w-full h-full p-1 flex flex-col justify-center gap-0.5 overflow-hidden"
+        style={{ fontSize: printMode ? Math.max(7, scale * 3.5) : Math.max(7, scale * 3.5) }}
+      >
         {fields.length === 0 ? (
           <p className="text-slate-300 text-center text-xs">Select fields to preview</p>
         ) : (
@@ -163,11 +183,194 @@ function LabelPreview({
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
 
 const TABS = [
+  { key: 'kitting', label: 'Kitting', icon: Boxes },
   { key: 'case_marking', label: 'Case Marking', icon: Package },
   { key: 'stacking', label: 'Stacking', icon: Layers },
   { key: 'labelling', label: 'Labelling', icon: Tag },
   { key: 'production_gi', label: 'Production GI', icon: ClipboardList },
 ];
+
+const KITTING_ORDERS = [
+  {
+    id: 1,
+    kit_number: 'KIT-RMY-2026-001',
+    product_id: 1,
+    quantity: 40,
+    branch: 'Emporium Pluit',
+    due_at: '2026-06-24 09:30',
+    status: 'ready',
+  },
+  {
+    id: 2,
+    kit_number: 'KIT-RMY-2026-002',
+    product_id: 3,
+    quantity: 80,
+    branch: 'Senayan City',
+    due_at: '2026-06-24 11:00',
+    status: 'picking',
+  },
+  {
+    id: 3,
+    kit_number: 'KIT-RMY-2026-003',
+    product_id: 4,
+    quantity: 36,
+    branch: 'Kuningan City',
+    due_at: '2026-06-24 16:00',
+    status: 'planned',
+  },
+];
+
+// ─── Kitting Tab ─────────────────────────────────────────────────────────────
+
+function KittingTab({
+  lots,
+  products,
+  recipes,
+  bomLines,
+}: {
+  lots: InventoryLot[];
+  products: Product[];
+  recipes: BomRecipe[];
+  bomLines: BomLine[];
+}) {
+  const [selectedOrderId, setSelectedOrderId] = useState(KITTING_ORDERS[0].id);
+  const getProduct = (id: number) => products.find((p) => p.id === id);
+  const getRecipe = (productId: number) => recipes.find((recipe) => recipe.product_id === productId);
+  const getRecipeLines = (recipeId: number) => bomLines.filter((line) => line.recipe_id === recipeId);
+  const getAvailableQty = (productId: number) => lots
+    .filter((lot) => lot.product_id === productId && lot.status === 'active')
+    .reduce((sum, lot) => sum + Number(lot.quantity || 0), 0);
+
+  const buildComponents = (order: typeof KITTING_ORDERS[number]) => {
+    const recipe = getRecipe(order.product_id);
+    if (!recipe) return [];
+    const factor = order.quantity / recipe.yield_quantity;
+    return getRecipeLines(recipe.id).map((line) => {
+      const required = line.quantity * factor * (1 + (line.wastage_factor || 0));
+      const available = getAvailableQty(line.product_id);
+      return { ...line, required, available, shortage: Math.max(0, required - available) };
+    });
+  };
+
+  const selectedOrder = KITTING_ORDERS.find((order) => order.id === selectedOrderId) ?? KITTING_ORDERS[0];
+  const selectedRecipe = getRecipe(selectedOrder.product_id);
+  const selectedComponents = buildComponents(selectedOrder);
+  const shortageCount = selectedComponents.filter((line) => line.shortage > 0).length;
+  const readyOrders = KITTING_ORDERS.filter((order) => buildComponents(order).every((line) => line.shortage === 0)).length;
+  const totalKits = KITTING_ORDERS.reduce((sum, order) => sum + order.quantity, 0);
+
+  const formatQty = (value: number) => Number.isInteger(value) ? String(value) : value.toFixed(2).replace(/\.00$/, '');
+
+  return (
+    <div className="space-y-5">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="border border-slate-200 rounded p-3">
+          <p className="text-xs text-slate-500">Kit Orders</p>
+          <p className="text-2xl font-bold text-slate-800">{KITTING_ORDERS.length}</p>
+        </div>
+        <div className="border border-slate-200 rounded p-3">
+          <p className="text-xs text-slate-500">Planned Kits</p>
+          <p className="text-2xl font-bold text-slate-800">{totalKits}</p>
+        </div>
+        <div className="border border-slate-200 rounded p-3">
+          <p className="text-xs text-slate-500">Ready to Pack</p>
+          <p className="text-2xl font-bold text-slate-800">{readyOrders}</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-[360px_1fr] gap-4">
+        <div className="border border-slate-200 rounded overflow-hidden">
+          <div className="px-3 py-2.5 bg-slate-50 border-b border-slate-200">
+            <p className="text-sm font-semibold text-slate-800">RamenYA Kit Queue</p>
+          </div>
+          <div className="divide-y divide-slate-100">
+            {KITTING_ORDERS.map((order) => {
+              const product = getProduct(order.product_id);
+              const components = buildComponents(order);
+              const isReady = components.length > 0 && components.every((line) => line.shortage === 0);
+              const isSelected = order.id === selectedOrder.id;
+              return (
+                <button
+                  key={order.id}
+                  onClick={() => setSelectedOrderId(order.id)}
+                  className={`w-full text-left px-3 py-3 transition-colors ${isSelected ? 'bg-blue-50' : 'bg-white hover:bg-slate-50'}`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="font-medium text-sm text-slate-800 truncate">{product?.name ?? `Product #${order.product_id}`}</p>
+                      <p className="text-xs font-mono text-slate-400 mt-0.5">{order.kit_number}</p>
+                    </div>
+                    <Badge className={`text-xs ${isReady ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`}>
+                      {isReady ? 'ready' : 'short'}
+                    </Badge>
+                  </div>
+                  <div className="mt-2 grid grid-cols-3 gap-2 text-xs">
+                    <span className="text-slate-500">{order.quantity} kits</span>
+                    <span className="text-slate-500 truncate">{order.branch}</span>
+                    <span className="text-right text-slate-400">{order.status}</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="border border-slate-200 rounded overflow-hidden">
+          <div className="px-4 py-3 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div>
+              <p className="text-sm font-semibold text-slate-800">{getProduct(selectedOrder.product_id)?.name}</p>
+              <p className="text-xs text-slate-500">{selectedOrder.kit_number} · {selectedOrder.quantity} kits · {selectedOrder.branch}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge className="text-xs bg-slate-100 text-slate-700">{selectedRecipe?.code ?? 'No BOM'}</Badge>
+              <Badge className={`text-xs ${shortageCount === 0 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`}>
+                {shortageCount === 0 ? 'components ready' : `${shortageCount} shortage${shortageCount === 1 ? '' : 's'}`}
+              </Badge>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-2.5 px-3 text-slate-500 font-medium">Component</th>
+                  <th className="text-right py-2.5 px-3 text-slate-500 font-medium">Required</th>
+                  <th className="text-right py-2.5 px-3 text-slate-500 font-medium">Available</th>
+                  <th className="text-left py-2.5 px-3 text-slate-500 font-medium">Pick Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {selectedComponents.map((line, idx) => {
+                  const component = getProduct(line.product_id);
+                  const ok = line.shortage === 0;
+                  return (
+                    <tr key={line.id} className={`border-b border-slate-100 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
+                      <td className="py-2.5 px-3">
+                        <p className="font-medium text-slate-800">{component?.name ?? `Product #${line.product_id}`}</p>
+                        <p className="text-xs text-slate-400">{component?.sku} · {line.notes}</p>
+                      </td>
+                      <td className="py-2.5 px-3 text-right font-medium">{formatQty(line.required)} <span className="text-xs text-slate-400">{line.unit}</span></td>
+                      <td className="py-2.5 px-3 text-right">{formatQty(line.available)} <span className="text-xs text-slate-400">{component?.uom}</span></td>
+                      <td className="py-2.5 px-3">
+                        <div className={`inline-flex items-center gap-1.5 text-xs font-medium ${ok ? 'text-emerald-700' : 'text-amber-700'}`}>
+                          {ok ? <CheckCircle2 className="w-3.5 h-3.5" /> : <AlertTriangle className="w-3.5 h-3.5" />}
+                          {ok ? 'pick ready' : `${formatQty(line.shortage)} short`}
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+                {selectedComponents.length === 0 && (
+                  <tr><td colSpan={4} className="text-center py-8 text-slate-400">No BOM components found for this kit</td></tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ─── Case Marking Tab ─────────────────────────────────────────────────────────
 
@@ -175,11 +378,73 @@ function CaseMarkingTab({ lots, products }: { lots: InventoryLot[]; products: Pr
   const activeLots = lots.filter((l) => l.status === 'active');
   const getProduct = (id: number) => products.find((p) => p.id === id);
 
+  const buildCaseMarkingReport = (selectedLots: InventoryLot[], title: string, subtitle: string): ReportData => ({
+    title,
+    subtitle,
+    generatedAt: new Date().toLocaleString(),
+    columns: [
+      { header: 'Product', key: 'product' },
+      { header: 'SKU', key: 'sku' },
+      { header: 'Lot #', key: 'lot_number' },
+      { header: 'Batch #', key: 'batch_number' },
+      { header: 'Quantity', key: 'quantity' },
+      { header: 'UOM', key: 'uom' },
+      { header: 'Expiry Date', key: 'expiry_date' },
+      { header: 'Status', key: 'status' },
+    ],
+    rows: selectedLots.map((lot) => {
+      const product = getProduct(lot.product_id);
+      return {
+        product: product?.name || '-',
+        sku: product?.sku || '-',
+        lot_number: lot.lot_number,
+        batch_number: lot.batch_number || '-',
+        quantity: lot.quantity,
+        uom: product?.uom || '-',
+        expiry_date: lot.expiry_date ? new Date(lot.expiry_date).toLocaleDateString() : '-',
+        status: lot.status,
+      };
+    }),
+    summary: [
+      {
+        'Total Lots': selectedLots.length,
+        'Total Quantity': selectedLots.reduce((sum, lot) => sum + lot.quantity, 0),
+      },
+    ],
+  });
+
+  const handlePrintAll = () => {
+    if (activeLots.length === 0) {
+      toast.error('No active lots available for case marking');
+      return;
+    }
+
+    exportToPDF(
+      buildCaseMarkingReport(
+        activeLots,
+        'Case Marking',
+        'All active inventory lots prepared for case marking'
+      )
+    );
+    toast.success('All case marking labels exported');
+  };
+
+  const handlePrintSingle = (lot: InventoryLot) => {
+    exportToPDF(
+      buildCaseMarkingReport(
+        [lot],
+        'Case Marking',
+        `Single lot case marking for ${lot.lot_number}`
+      )
+    );
+    toast.success(`Case marking exported for ${lot.lot_number}`);
+  };
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-slate-500">Mark cases for active inventory lots</p>
-        <Button size="sm" variant="outline">
+        <Button size="sm" variant="outline" onClick={handlePrintAll}>
           <Printer className="w-4 h-4 mr-1" /> Print All
         </Button>
       </div>
@@ -213,7 +478,7 @@ function CaseMarkingTab({ lots, products }: { lots: InventoryLot[]; products: Pr
                     <Badge className={`text-xs ${STATUS_COLORS[lot.status] ?? 'bg-gray-100 text-gray-800'}`}>{lot.status}</Badge>
                   </td>
                   <td className="py-2.5 px-3">
-                    <Button size="sm" variant="ghost" className="h-7 px-2">
+                    <Button size="sm" variant="ghost" className="h-7 px-2" onClick={() => handlePrintSingle(lot)}>
                       <Printer className="w-3.5 h-3.5" />
                     </Button>
                   </td>
@@ -296,7 +561,11 @@ function ProductionGITab({ lots, products }: { lots: InventoryLot[]; products: P
   const toggleSelect = (id: number) => {
     setSelected((prev) => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
       return next;
     });
   };
@@ -461,16 +730,16 @@ function LabellingTab({ lots, products }: { lots: InventoryLot[]; products: Prod
   if (isPrintPreview && selectedTemplate) {
     const fields = parseFields(selectedTemplate.fields_config);
     return (
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
+      <div className="manufacturing-print-area space-y-4">
+        <div className="no-print flex items-center gap-3">
           <Button variant="outline" size="sm" onClick={() => setIsPrintPreview(false)}>
             <X className="w-4 h-4 mr-1" /> Close Preview
           </Button>
           <span className="text-sm font-medium text-slate-700">Print: {selectedTemplate.name}</span>
         </div>
-        <Card>
-          <CardContent className="p-4 space-y-3">
-            <div className="flex gap-3 items-end">
+        <Card className="print:border-0 print:shadow-none print:bg-transparent">
+          <CardContent className="p-4 print:p-0 space-y-3">
+            <div className="no-print flex gap-3 items-end">
               <div className="flex-1">
                 <label className="text-xs text-slate-500 mb-1 block">Select Lot to Print</label>
                 <Select value={printLotId} onValueChange={setPrintLotId}>
@@ -490,7 +759,7 @@ function LabellingTab({ lots, products }: { lots: InventoryLot[]; products: Prod
                 </Select>
               </div>
               <Button onClick={() => window.print()}>
-                <Printer className="w-4 h-4 mr-1" /> Print
+                <Printer className="w-4 h-4 mr-1" /> Print Sticker
               </Button>
             </div>
             <div className="flex justify-center pt-4 print:pt-0">
@@ -500,10 +769,11 @@ function LabellingTab({ lots, products }: { lots: InventoryLot[]; products: Prod
                 heightMm={selectedTemplate.height_mm ?? 50}
                 sampleLot={printLot}
                 sampleProduct={printProduct}
+                printMode
               />
             </div>
             {printLot && (
-              <p className="text-center text-xs text-slate-400">
+              <p className="no-print text-center text-xs text-slate-400">
                 Showing: {printProduct?.name} · {printLot.lot_number}
               </p>
             )}
@@ -702,20 +972,26 @@ function LabellingTab({ lots, products }: { lots: InventoryLot[]; products: Prod
 // ─── Main Manufacturing Page ──────────────────────────────────────────────────
 
 export default function Manufacturing() {
-  const [activeTab, setActiveTab] = useState('labelling');
+  const [activeTab, setActiveTab] = useState('kitting');
   const [lots, setLots] = useState<InventoryLot[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [recipes, setRecipes] = useState<BomRecipe[]>([]);
+  const [bomLines, setBomLines] = useState<BomLine[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [lotRes, prodRes] = await Promise.all([
+        const [lotRes, prodRes, recipeRes, lineRes] = await Promise.all([
           client.entities.inventory_lots.query({ limit: 500, sort: 'expiry_date' }),
           client.entities.products.query({ limit: 200 }),
+          client.entities.bom_recipes.query({ limit: 200 }),
+          client.entities.bom_lines.query({ limit: 500 }),
         ]);
         setLots(lotRes.data?.items ?? []);
         setProducts(prodRes.data?.items ?? []);
+        setRecipes(recipeRes.data?.items ?? []);
+        setBomLines(lineRes.data?.items ?? []);
       } catch (err) {
         console.error('Failed to fetch manufacturing data:', err);
       } finally {
@@ -760,6 +1036,7 @@ export default function Manufacturing() {
       {/* Tab Content */}
       <Card>
         <CardContent className="p-4 sm:p-6">
+          {activeTab === 'kitting' && <KittingTab lots={lots} products={products} recipes={recipes} bomLines={bomLines} />}
           {activeTab === 'case_marking' && <CaseMarkingTab lots={lots} products={products} />}
           {activeTab === 'stacking' && <StackingTab lots={lots} products={products} />}
           {activeTab === 'labelling' && <LabellingTab lots={lots} products={products} />}

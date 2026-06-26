@@ -1,12 +1,13 @@
 import hashlib
 import logging
 from datetime import datetime
-from typing import Optional
+from typing import Callable, Optional
 
 from core.auth import AccessTokenError, decode_access_token
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from schemas.auth import UserResponse
+from services.rbac import normalize_role
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +52,14 @@ async def get_current_user(token: str = Depends(get_bearer_token)) -> UserRespon
         id=user_id,
         email=payload.get("email", ""),
         name=payload.get("name"),
-        role=payload.get("role", "user"),
+        role=normalize_role(payload.get("role")),
+        branch_id=payload.get("branch_id"),
+        warehouse_id=payload.get("warehouse_id"),
+        permissions=[
+            str(permission)
+            for permission in payload.get("permissions", [])
+            if isinstance(permission, str) and permission.strip()
+        ],
         last_login=last_login,
     )
 
@@ -61,3 +69,19 @@ async def get_admin_user(current_user: UserResponse = Depends(get_current_user))
     if current_user.role != "admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
     return current_user
+
+
+def require_permissions(*required_permissions: str) -> Callable[[UserResponse], UserResponse]:
+    """Build a dependency that enforces RBAC permissions."""
+
+    async def permission_dependency(current_user: UserResponse = Depends(get_current_user)) -> UserResponse:
+        user_permissions = set(current_user.permissions)
+        missing_permissions = [permission for permission in required_permissions if permission not in user_permissions]
+        if missing_permissions:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=f"Missing permissions: {', '.join(missing_permissions)}",
+            )
+        return current_user
+
+    return permission_dependency

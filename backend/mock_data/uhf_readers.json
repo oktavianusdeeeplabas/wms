@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Receiving Gate Reader",
+    "code": "UHF-RCV-01",
+    "device_identifier": "FX9600-RCV-01",
+    "ip_address": "192.168.10.41",
+    "antenna_port": 1,
+    "zone_id": 1,
+    "bin_id": 1,
+    "status": "online",
+    "last_seen_at": "2026-04-21 08:10:00"
+  },
+  {
+    "id": 2,
+    "name": "Cold Room Exit Reader",
+    "code": "UHF-COLD-EXIT",
+    "device_identifier": "FX9600-COLD-02",
+    "ip_address": "192.168.10.42",
+    "antenna_port": 2,
+    "zone_id": 2,
+    "bin_id": 3,
+    "status": "online",
+    "last_seen_at": "2026-04-21 08:12:00"
+  }
+]

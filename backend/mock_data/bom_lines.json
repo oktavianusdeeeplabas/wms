@@ -1,172 +1,26 @@
 [
-    {
-        "recipe_id": 1,
-        "product_id": 1,
-        "quantity": 2.5,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.05,
-        "notes": "Boneless chicken thigh"
-    },
-    {
-        "recipe_id": 1,
-        "product_id": 4,
-        "quantity": 3.0,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.02,
-        "notes": "Steamed jasmine rice"
-    },
-    {
-        "recipe_id": 1,
-        "product_id": 5,
-        "quantity": 0.5,
-        "unit": "liter",
-        "is_optional": false,
-        "substitution_allowed": true,
-        "wastage_factor": 0.01,
-        "notes": "Teriyaki sauce"
-    },
-    {
-        "recipe_id": 1,
-        "product_id": 3,
-        "quantity": 1.0,
-        "unit": "kg",
-        "is_optional": true,
-        "substitution_allowed": true,
-        "wastage_factor": 0.1,
-        "notes": "Mixed vegetables"
-    },
-    {
-        "recipe_id": 2,
-        "product_id": 2,
-        "quantity": 1.5,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.08,
-        "notes": "Fresh salmon fillet"
-    },
-    {
-        "recipe_id": 2,
-        "product_id": 4,
-        "quantity": 2.0,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.03,
-        "notes": "Sushi rice seasoned"
-    },
-    {
-        "recipe_id": 2,
-        "product_id": 3,
-        "quantity": 0.3,
-        "unit": "kg",
-        "is_optional": true,
-        "substitution_allowed": true,
-        "wastage_factor": 0.05,
-        "notes": "Avocado slices"
-    },
-    {
-        "recipe_id": 3,
-        "product_id": 3,
-        "quantity": 4.0,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.05,
-        "notes": "Crushed tomatoes"
-    },
-    {
-        "recipe_id": 3,
-        "product_id": 5,
-        "quantity": 0.1,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.02,
-        "notes": "Fresh basil leaves"
-    },
-    {
-        "recipe_id": 3,
-        "product_id": 8,
-        "quantity": 0.2,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.01,
-        "notes": "Garlic cloves minced"
-    },
-    {
-        "recipe_id": 4,
-        "product_id": 7,
-        "quantity": 5.0,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.03,
-        "notes": "Bread flour"
-    },
-    {
-        "recipe_id": 4,
-        "product_id": 8,
-        "quantity": 0.1,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.0,
-        "notes": "Sea salt"
-    },
-    {
-        "recipe_id": 4,
-        "product_id": 5,
-        "quantity": 0.5,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.0,
-        "notes": "Sourdough starter"
-    },
-    {
-        "recipe_id": 6,
-        "product_id": 6,
-        "quantity": 0.8,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.02,
-        "notes": "Dark chocolate 70%"
-    },
-    {
-        "recipe_id": 6,
-        "product_id": 5,
-        "quantity": 0.4,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.01,
-        "notes": "Unsalted butter"
-    },
-    {
-        "recipe_id": 6,
-        "product_id": 8,
-        "quantity": 0.3,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.02,
-        "notes": "Granulated sugar"
-    },
-    {
-        "recipe_id": 6,
-        "product_id": 7,
-        "quantity": 0.2,
-        "unit": "kg",
-        "is_optional": false,
-        "substitution_allowed": false,
-        "wastage_factor": 0.01,
-        "notes": "All-purpose flour"
-    }
+    { "id": 1, "recipe_id": 1, "product_id": 5, "quantity": 7.0, "unit": "L", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.02, "notes": "350 ml broth per portion" },
+    { "id": 2, "recipe_id": 1, "product_id": 6, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.01, "notes": "One noodle portion per bowl" },
+    { "id": 3, "recipe_id": 1, "product_id": 7, "quantity": 40, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.03, "notes": "Two chicken chashu slices per bowl" },
+    { "id": 4, "recipe_id": 1, "product_id": 11, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.02, "notes": "One ajitama half-pack per bowl" },
+    { "id": 5, "recipe_id": 1, "product_id": 8, "quantity": 1.2, "unit": "KG", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.05, "notes": "Sambal matah topping" },
+    { "id": 6, "recipe_id": 1, "product_id": 14, "quantity": 0.5, "unit": "KG", "is_optional": false, "substitution_allowed": true, "wastage_factor": 0.08, "notes": "Spring onion garnish" },
+    { "id": 7, "recipe_id": 1, "product_id": 16, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.01, "notes": "Takeaway bowl set when order channel requires packaging" },
+    { "id": 8, "recipe_id": 2, "product_id": 9, "quantity": 100, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.04, "notes": "Frozen gyoza issued to fryer station" },
+    { "id": 9, "recipe_id": 2, "product_id": 15, "quantity": 1.0, "unit": "L", "is_optional": true, "substitution_allowed": true, "wastage_factor": 0.02, "notes": "Optional chili oil condiment" },
+    { "id": 10, "recipe_id": 3, "product_id": 5, "quantity": 7.0, "unit": "L", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.02, "notes": "350 ml broth per portion" },
+    { "id": 11, "recipe_id": 3, "product_id": 6, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.01, "notes": "One noodle portion per bowl" },
+    { "id": 12, "recipe_id": 3, "product_id": 7, "quantity": 40, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.03, "notes": "Chicken chashu slices" },
+    { "id": 13, "recipe_id": 3, "product_id": 11, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.02, "notes": "Ajitama topping" },
+    { "id": 14, "recipe_id": 3, "product_id": 12, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": true, "wastage_factor": 0.01, "notes": "Nori sheet garnish" },
+    { "id": 15, "recipe_id": 3, "product_id": 13, "quantity": 1.5, "unit": "KG", "is_optional": false, "substitution_allowed": true, "wastage_factor": 0.05, "notes": "Sweet corn topping" },
+    { "id": 16, "recipe_id": 3, "product_id": 14, "quantity": 0.5, "unit": "KG", "is_optional": false, "substitution_allowed": true, "wastage_factor": 0.08, "notes": "Spring onion garnish" },
+    { "id": 17, "recipe_id": 3, "product_id": 15, "quantity": 0.8, "unit": "L", "is_optional": true, "substitution_allowed": true, "wastage_factor": 0.02, "notes": "Chili oil for spicy option" },
+    { "id": 18, "recipe_id": 4, "product_id": 5, "quantity": 7.0, "unit": "L", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.02, "notes": "Chicken broth base" },
+    { "id": 19, "recipe_id": 4, "product_id": 6, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.01, "notes": "Ramen noodle portion" },
+    { "id": 20, "recipe_id": 4, "product_id": 10, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.04, "notes": "One ebi tempura per bowl" },
+    { "id": 21, "recipe_id": 4, "product_id": 12, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": true, "wastage_factor": 0.01, "notes": "Nori garnish" },
+    { "id": 22, "recipe_id": 4, "product_id": 16, "quantity": 20, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.01, "notes": "Takeaway bowl set" },
+    { "id": 23, "recipe_id": 5, "product_id": 7, "quantity": 120, "unit": "PCS", "is_optional": false, "substitution_allowed": false, "wastage_factor": 0.05, "notes": "Demo component standing in for cooked halal chicken base" },
+    { "id": 24, "recipe_id": 5, "product_id": 15, "quantity": 2.5, "unit": "L", "is_optional": true, "substitution_allowed": true, "wastage_factor": 0.01, "notes": "Seasoning oil for broth finishing" }
 ]

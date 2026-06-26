@@ -1,0 +1,13 @@
+id,name,code,symbol,unit_type,decimal_places,base_unit_code,conversion_factor,status
+1,Piece,PCS,pcs,count,0,PCS,1,active
+2,Kilogram,KG,kg,weight,3,KG,1,active
+3,Gram,G,g,weight,0,KG,0.001,active
+4,Liter,L,L,volume,3,L,1,active
+5,Milliliter,ML,ml,volume,0,L,0.001,active
+6,Pack,PACK,pack,packaging,0,PCS,1,active
+7,Box,BOX,box,packaging,0,PCS,1,active
+8,Carton,CTN,ctn,packaging,0,PCS,1,active
+9,Bag,BAG,bag,packaging,0,PCS,1,active
+10,Tray,TRAY,tray,packaging,0,PCS,1,active
+11,Bottle,BTL,btl,packaging,0,PCS,1,active
+12,Can,CAN,can,packaging,0,PCS,1,active

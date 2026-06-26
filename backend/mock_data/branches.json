@@ -1,42 +1,57 @@
 [
     {
-        "name": "Downtown Central Kitchen",
-        "code": "BR-001",
-        "address": "123 Main Street, Downtown District",
-        "contact_name": "John Smith",
-        "phone": "+1-555-0101",
-        "email": "downtown@cloudkitchen.com",
+        "id": 1,
+        "name": "PT. Maju Mapan Central Kitchen",
+        "code": "MM-CK-001",
+        "address": "Jl. Pluit Selatan Raya No.1, Penjaringan, Jakarta Utara 14440",
+        "contact_name": "Andri Wijaya",
+        "phone": "+62-21-660-1001",
+        "email": "central.kitchen@majumapan.co.id",
         "status": "active",
-        "created_at": "2026-01-15 08:00:00"
+        "created_at": "2026-01-05 08:00:00"
     },
     {
-        "name": "Westside Hub",
-        "code": "BR-002",
-        "address": "456 West Avenue, Westside",
-        "contact_name": "Sarah Johnson",
-        "phone": "+1-555-0102",
-        "email": "westside@cloudkitchen.com",
+        "id": 2,
+        "name": "RamenYA! Mall Emporium Pluit",
+        "code": "RMY-EMP",
+        "address": "Mall Emporium Pluit, Jl. Pluit Selatan Raya No.1, Jakarta Utara 14440",
+        "contact_name": "Nadia Prameswari",
+        "phone": "+62-21-660-2001",
+        "email": "emporium.pluit@ramenya.id",
         "status": "active",
-        "created_at": "2026-02-01 08:00:00"
+        "created_at": "2026-01-10 09:00:00"
     },
     {
-        "name": "Eastside Kitchen",
-        "code": "BR-003",
-        "address": "789 East Boulevard, Eastside",
-        "contact_name": "Mike Chen",
-        "phone": "+1-555-0103",
-        "email": "eastside@cloudkitchen.com",
+        "id": 3,
+        "name": "RamenYA! Senayan City",
+        "code": "RMY-SENCY",
+        "address": "Senayan City, Jl. Asia Afrika Lot 19, Gelora, Jakarta Pusat 10270",
+        "contact_name": "Raka Mahendra",
+        "phone": "+62-21-7278-3001",
+        "email": "senayan.city@ramenya.id",
         "status": "active",
-        "created_at": "2026-03-01 08:00:00"
+        "created_at": "2026-01-12 09:00:00"
     },
     {
-        "name": "North Station",
-        "code": "BR-004",
-        "address": "321 North Road, Uptown",
-        "contact_name": "Lisa Park",
-        "phone": "+1-555-0104",
-        "email": "north@cloudkitchen.com",
-        "status": "inactive",
-        "created_at": "2026-03-15 08:00:00"
+        "id": 4,
+        "name": "RamenYA! Kuningan City",
+        "code": "RMY-KUNCIT",
+        "address": "Kuningan City, Jl. Prof. DR. Satrio Kav.18, Jakarta Selatan 12940",
+        "contact_name": "Dewi Anggraini",
+        "phone": "+62-21-3001-4001",
+        "email": "kuningan.city@ramenya.id",
+        "status": "active",
+        "created_at": "2026-01-15 09:00:00"
+    },
+    {
+        "id": 5,
+        "name": "RamenYA! Senayan Park",
+        "code": "RMY-SPARK",
+        "address": "Mall Senayan Park, Jl. Gerbang Pemuda No.3, Jakarta Pusat 10270",
+        "contact_name": "Hendra Kusuma",
+        "phone": "+62-21-2255-5001",
+        "email": "senayan.park@ramenya.id",
+        "status": "active",
+        "created_at": "2026-01-18 09:00:00"
     }
 ]

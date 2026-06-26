@@ -1,52 +1,9 @@
 [
-    {
-        "receiving_document_id": 1,
-        "product_id": 3,
-        "expected_quantity": 400,
-        "received_quantity": 350,
-        "lot_number": "LOT-2026-004",
-        "expiry_date": "2026-09-15",
-        "qc_status": "accepted",
-        "notes": "50kg short"
-    },
-    {
-        "receiving_document_id": 2,
-        "product_id": 2,
-        "expected_quantity": 50,
-        "received_quantity": 45,
-        "lot_number": "LOT-2026-003",
-        "expiry_date": "2026-04-17",
-        "qc_status": "accepted",
-        "notes": ""
-    },
-    {
-        "receiving_document_id": 3,
-        "product_id": 1,
-        "expected_quantity": 200,
-        "received_quantity": 0,
-        "lot_number": "",
-        "expiry_date": "",
-        "qc_status": "pending",
-        "notes": "Awaiting delivery"
-    },
-    {
-        "receiving_document_id": 4,
-        "product_id": 6,
-        "expected_quantity": 20,
-        "received_quantity": 0,
-        "lot_number": "",
-        "expiry_date": "",
-        "qc_status": "pending",
-        "notes": ""
-    },
-    {
-        "receiving_document_id": 5,
-        "product_id": 5,
-        "expected_quantity": 30,
-        "received_quantity": 15,
-        "lot_number": "LOT-2026-011",
-        "expiry_date": "2026-04-25",
-        "qc_status": "in_progress",
-        "notes": "Partial delivery"
-    }
+    { "id": 1, "receiving_document_id": 1, "product_id": 6, "expected_quantity": 1800, "received_quantity": 1780, "lot_number": "LOT-RMY-NDL-260610", "expiry_date": "2026-06-17", "qc_status": "accepted", "notes": "20 portions short, supplier credit memo requested" },
+    { "id": 2, "receiving_document_id": 2, "product_id": 7, "expected_quantity": 1200, "received_quantity": 1200, "lot_number": "LOT-RMY-CHS-260610", "expiry_date": "2026-06-13", "qc_status": "accepted", "notes": "Chicken chashu slices received chilled" },
+    { "id": 3, "receiving_document_id": 2, "product_id": 11, "expected_quantity": 1400, "received_quantity": 1380, "lot_number": "LOT-RMY-EGG-260610", "expiry_date": "2026-06-13", "qc_status": "accepted", "notes": "Ajitama accepted, 20 pcs shortage" },
+    { "id": 4, "receiving_document_id": 3, "product_id": 10, "expected_quantity": 900, "received_quantity": 900, "lot_number": "LOT-RMY-EBI-260611", "expiry_date": "2026-09-09", "qc_status": "accepted", "notes": "Frozen ebi tempura temperature check passed" },
+    { "id": 5, "receiving_document_id": 4, "product_id": 13, "expected_quantity": 120, "received_quantity": 60, "lot_number": "LOT-RMY-CORN-260623", "expiry_date": "2026-06-28", "qc_status": "in_progress", "notes": "Partial receipt, QC sampling in progress" },
+    { "id": 6, "receiving_document_id": 4, "product_id": 14, "expected_quantity": 45, "received_quantity": 0, "lot_number": "", "expiry_date": "", "qc_status": "pending", "notes": "Supplier truck delayed" },
+    { "id": 7, "receiving_document_id": 5, "product_id": 16, "expected_quantity": 6000, "received_quantity": 0, "lot_number": "", "expiry_date": "", "qc_status": "pending", "notes": "Scheduled delivery tomorrow" }
 ]

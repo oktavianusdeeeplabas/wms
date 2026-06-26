@@ -1,0 +1,7 @@
+id,name,code,product_id,category,yield_quantity,yield_unit,prep_time_minutes,cook_time_minutes,version,status,notes,created_at
+1,Teriyaki Chicken Bowl,BOM-001,1,main,10,portions,30,25,1,active,Grilled teriyaki chicken served with steamed rice and vegetables,2026-04-10 08:00:00
+2,Salmon Sushi Roll,BOM-002,2,main,20,pieces,45,0,1,active,"Fresh salmon roll with sushi rice, nori, and avocado",2026-04-10 09:00:00
+3,Tomato Basil Sauce,BOM-003,3,sauce,5,kg,15,45,2,active,Classic Italian tomato sauce with fresh basil and garlic,2026-04-11 07:00:00
+4,Sourdough Bread,BOM-004,7,dough,8,loaves,60,40,1,active,Artisan sourdough bread with 24-hour fermentation,2026-04-12 06:00:00
+5,Caesar Salad Dressing,BOM-005,5,sauce,2,kg,10,0,1,draft,Creamy Caesar dressing with anchovy and parmesan,2026-04-13 10:00:00
+6,Chocolate Lava Cake,BOM-006,6,dessert,12,portions,20,15,1,active,Rich chocolate fondant with molten center,2026-04-14 08:00:00

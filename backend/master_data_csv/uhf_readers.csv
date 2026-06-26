@@ -1,0 +1,3 @@
+id,name,code,device_identifier,ip_address,antenna_port,zone_id,bin_id,status,last_seen_at,created_at
+1,Receiving Gate Reader,UHF-RCV-01,FX9600-RCV-01,192.168.10.41,1,1,1,online,2026-04-21 08:10:00,
+2,Cold Room Exit Reader,UHF-COLD-EXIT,FX9600-COLD-02,192.168.10.42,2,2,3,online,2026-04-21 08:12:00,

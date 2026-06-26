@@ -1,0 +1,1557 @@
+2026-04-21 01:07:42,241 - main - INFO - === Logging system initialized ===
+2026-04-21 01:07:42,241 - main - INFO - Log file: logs/app_20260421_010742.log
+2026-04-21 01:07:42,241 - main - INFO - Log level: INFO
+2026-04-21 01:07:42,241 - main - INFO - Timestamp: 20260421_010742
+2026-04-21 01:07:44,459 - main - INFO - Included router: routers.aihub.router
+2026-04-21 01:07:44,666 - main - INFO - Included router: routers.auth.router
+2026-04-21 01:07:44,880 - main - INFO - Included router: routers.bins.router
+2026-04-21 01:07:45,007 - main - INFO - Included router: routers.bom_lines.router
+2026-04-21 01:07:45,092 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-21 01:07:45,292 - main - INFO - Included router: routers.branches.router
+2026-04-21 01:07:45,294 - main - INFO - Included router: routers.health.router
+2026-04-21 01:07:45,448 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-21 01:07:45,490 - main - INFO - Included router: routers.label_templates.router
+2026-04-21 01:07:45,613 - main - INFO - Included router: routers.products.router
+2026-04-21 01:07:45,674 - main - INFO - Included router: routers.rbac.router
+2026-04-21 01:07:45,819 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-21 01:07:46,231 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-21 01:07:46,330 - main - INFO - Included router: routers.settings.router
+2026-04-21 01:07:46,464 - main - INFO - Included router: routers.stock_movements.router
+2026-04-21 01:07:46,618 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-21 01:07:46,680 - main - INFO - Included router: routers.storage.router
+2026-04-21 01:07:46,869 - main - INFO - Included router: routers.suppliers.router
+2026-04-21 01:07:46,973 - main - INFO - Included router: routers.uhf_readers.router
+2026-04-21 01:07:47,029 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-04-21 01:07:47,138 - main - INFO - Included router: routers.uhf_tags.router
+2026-04-21 01:07:47,182 - main - INFO - Included router: routers.user.router
+2026-04-21 01:07:47,291 - main - INFO - Included router: routers.warehouses.router
+2026-04-21 01:07:47,359 - main - INFO - Included router: routers.zones.router
+2026-04-21 01:07:47,363 - main - INFO - === Application startup initiated ===
+2026-04-21 01:07:47,363 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-21 01:07:47,363 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-21 01:07:47,363 - core.database - INFO - Starting database initialization...
+2026-04-21 01:07:47,363 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-21 01:07:47,364 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-21 01:07:47,365 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-04-21 01:07:47,365 - core.database - INFO - Creating async database engine...
+2026-04-21 01:07:47,365 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-21 01:07:47,503 - core.database - INFO - Database engine created successfully
+2026-04-21 01:07:47,504 - core.database - INFO - Creating async session maker...
+2026-04-21 01:07:47,504 - core.database - INFO - Async session maker created successfully
+2026-04-21 01:07:47,504 - core.database - INFO - Database connection initialized successfully
+2026-04-21 01:07:47,504 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-21 01:07:47,504 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-21 01:07:47,504 - core.database - INFO - 🔧 Starting table creation...
+2026-04-21 01:07:47,626 - core.database - INFO - Tables initialized successfully
+2026-04-21 01:07:47,626 - core.database - DEBUG - [DB_OP] Create tables completed in 0.1220s
+2026-04-21 01:07:47,627 - services.database - INFO - 🔧 Table creation completed
+2026-04-21 01:07:47,627 - services.database - INFO - Database initialized successfully
+2026-04-21 01:07:47,627 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.2638s
+2026-04-21 01:07:47,667 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-04-21 01:07:47,668 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-04-21 01:07:47,669 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-04-21 01:07:47,670 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-04-21 01:07:47,671 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-04-21 01:07:48,218 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-04-21 01:07:48,226 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-04-21 01:07:48,239 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-04-21 01:07:48,240 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-04-21 01:07:48,250 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-04-21 01:07:48,251 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-04-21 01:07:48,261 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-04-21 01:07:48,263 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-04-21 01:07:48,265 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-04-21 01:07:48,269 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-04-21 01:07:48,349 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-04-21 01:07:48,350 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-04-21 01:07:48,350 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-04-21 01:07:48,351 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-04-21 01:07:48,352 - services.mock_data - INFO - Processing mock data file uhf_readers.json for table uhf_readers
+2026-04-21 01:07:48,353 - services.mock_data - INFO - Processing mock data file uhf_tag_reads.json for table uhf_tag_reads
+2026-04-21 01:07:48,368 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-04-21 01:07:48,370 - services.mock_data - INFO - Processing mock data file uhf_tags.json for table uhf_tags
+2026-04-21 01:07:48,382 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-04-21 01:07:48,383 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-04-21 01:07:48,475 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-04-21 01:07:48,475 - services.mock_data - INFO - Table uhf_readers already has 2 rows; skipping mock insert
+2026-04-21 01:07:48,481 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-04-21 01:07:48,490 - services.mock_data - INFO - Table uhf_tag_reads already has 2 rows; skipping mock insert
+2026-04-21 01:07:48,494 - services.mock_data - INFO - Table uhf_tags already has 2 rows; skipping mock insert
+2026-04-21 01:07:48,508 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-04-21 01:07:48,526 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-04-21 01:07:48,532 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-21 01:07:48,532 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-21 01:07:48,532 - core.database - INFO - Starting database initialization...
+2026-04-21 01:07:48,532 - core.database - INFO - Database already initialized
+2026-04-21 01:07:48,532 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-21 01:07:48,532 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-21 01:07:48,532 - core.database - INFO - Tables already initialized
+2026-04-21 01:07:48,533 - services.database - INFO - 🔧 Table creation completed
+2026-04-21 01:07:48,533 - services.database - INFO - Database initialized successfully
+2026-04-21 01:07:48,533 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0013s
+2026-04-21 01:07:48,533 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-04-21 01:07:48,533 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-04-21 01:07:48,533 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-04-21 01:07:48,590 - services.auth - DEBUG - Admin user local-admin already exists
+2026-04-21 01:07:48,606 - main - INFO - === Application startup completed successfully ===
+2026-04-21 01:07:51,885 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:51,886 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0015s
+2026-04-21 01:07:52,022 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-04-21 01:07:52,033 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-21 01:07:52,033 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-21 01:07:52,072 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-04-21 01:07:52,076 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1916s
+2026-04-21 01:07:52,577 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-21 01:07:52,674 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,674 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:07:52,675 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,678 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,678 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:07:52,679 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,683 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,683 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:07:52,683 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,688 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,688 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:07:52,689 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,694 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,694 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:07:52,695 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,698 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,699 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:07:52,702 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,737 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:07:52,739 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0457s
+2026-04-21 01:07:52,742 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-21 01:07:52,743 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0556s
+2026-04-21 01:07:52,747 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:07:52,749 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0711s
+2026-04-21 01:07:52,751 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:07:52,752 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0783s
+2026-04-21 01:07:52,754 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-21 01:07:52,757 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0741s
+2026-04-21 01:07:52,759 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:52,760 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:07:52,763 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:52,772 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:07:52,773 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0745s
+2026-04-21 01:07:52,778 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:07:52,779 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0197s
+2026-04-21 01:07:56,365 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,366 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0015s
+2026-04-21 01:07:56,426 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,426 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:07:56,428 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,429 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:07:56,430 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,430 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:07:56,430 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:07:56,431 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,431 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:07:56,436 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:07:56,441 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,441 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:07:56,443 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:07:56,471 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:07:56,472 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0413s
+2026-04-21 01:07:56,474 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:07:56,475 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0343s
+2026-04-21 01:07:56,477 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0512s
+2026-04-21 01:07:56,478 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:07:56,478 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0485s
+2026-04-21 01:07:56,482 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:07:56,483 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-04-21 01:07:56,484 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:07:56,486 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0576s
+2026-04-21 01:07:56,488 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1230s
+2026-04-21 01:07:56,496 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:07:56,497 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0149s
+2026-04-21 01:08:15,313 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:15,314 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0010s
+2026-04-21 01:08:15,315 - routers.suppliers - DEBUG - Querying supplierss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:08:15,331 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:15,331 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:08:15,331 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:08:15,333 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:15,333 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:15,333 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-21 01:08:15,339 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:15,339 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:08:15,340 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-21 01:08:15,342 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:15,342 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:15,342 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:08:15,357 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:08:15,359 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0264s
+2026-04-21 01:08:15,360 - routers.suppliers - DEBUG - Found 5 supplierss
+2026-04-21 01:08:15,364 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0506s
+2026-04-21 01:08:15,364 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:08:15,364 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0254s
+2026-04-21 01:08:15,364 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:08:15,365 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0337s
+2026-04-21 01:08:15,366 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:08:15,367 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0246s
+2026-04-21 01:08:18,214 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,214 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:08:18,215 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,215 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:08:18,215 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,215 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:08:18,215 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,216 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:18,216 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:08:18,216 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,216 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:08:18,216 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:08:18,217 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,217 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:08:18,217 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:08:18,219 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:08:18,220 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0035s
+2026-04-21 01:08:18,222 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:08:18,223 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0072s
+2026-04-21 01:08:18,223 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0084s
+2026-04-21 01:08:18,224 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:08:18,224 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0066s
+2026-04-21 01:08:18,224 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0100s
+2026-04-21 01:08:18,226 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:18,226 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:08:18,226 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:08:18,228 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0146s
+2026-04-21 01:08:18,230 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:08:18,230 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0048s
+2026-04-21 01:08:35,344 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-21 01:08:35,368 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,374 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0060s
+2026-04-21 01:08:35,387 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,387 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:08:35,388 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,389 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:35,389 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,389 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:35,389 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:08:35,390 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,391 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:35,391 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:08:35,392 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,392 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:35,392 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:08:35,456 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0688s
+2026-04-21 01:08:35,457 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:08:35,457 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0658s
+2026-04-21 01:08:35,460 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0916s
+2026-04-21 01:08:35,460 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0718s
+2026-04-21 01:08:35,461 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:08:35,461 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0705s
+2026-04-21 01:08:35,463 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:08:35,463 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0741s
+2026-04-21 01:08:35,464 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:08:35,464 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:08:35,465 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:08:35,551 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:08:35,552 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0871s
+2026-04-21 01:13:04,023 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,024 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-04-21 01:13:04,047 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,047 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:13:04,048 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,048 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:13:04,048 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:13:04,049 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,049 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:13:04,049 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,049 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:13:04,050 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:13:04,050 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,050 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:13:04,050 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:13:04,063 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:13:04,065 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0173s
+2026-04-21 01:13:04,070 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:04,070 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:13:04,071 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:13:04,071 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0227s
+2026-04-21 01:13:04,072 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0490s
+2026-04-21 01:13:04,072 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0253s
+2026-04-21 01:13:04,072 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:13:04,073 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0224s
+2026-04-21 01:13:04,073 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:13:04,073 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0233s
+2026-04-21 01:13:04,080 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:13:04,080 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0096s
+2026-04-21 01:13:27,492 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:13:27,492 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:13:27,507 - core.database - ERROR - Database session error: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-21 01:13:27,538 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0461s
+2026-04-21 01:13:27,539 - core.database - ERROR - Failed to create database session: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-21 01:13:27,569 - main - ERROR - Exception: IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(1) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 13, 27, 478000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2026-04-21 01:14:31,605 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-21 01:14:31,696 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,696 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-21 01:14:31,697 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,719 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,720 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:31,720 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,721 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,721 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:31,721 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,722 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,722 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:31,722 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,723 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,723 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:31,723 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,727 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,727 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:31,727 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,737 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:14:31,738 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0183s
+2026-04-21 01:14:31,739 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-21 01:14:31,739 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0183s
+2026-04-21 01:14:31,742 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:14:31,743 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0163s
+2026-04-21 01:14:31,744 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:14:31,745 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0216s
+2026-04-21 01:14:31,800 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:31,801 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1054s
+2026-04-21 01:14:31,802 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-21 01:14:31,802 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0800s
+2026-04-21 01:14:31,803 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:31,803 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:31,812 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:31,823 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:14:31,823 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0205s
+2026-04-21 01:14:36,763 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,763 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:36,765 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,765 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:36,766 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,766 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:36,767 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,767 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:36,767 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:14:36,776 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,777 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:36,777 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:14:36,778 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,778 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:36,778 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:36,797 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0346s
+2026-04-21 01:14:36,800 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:36,801 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0244s
+2026-04-21 01:14:36,810 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:14:36,811 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0442s
+2026-04-21 01:14:36,815 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:14:36,816 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0382s
+2026-04-21 01:14:36,818 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0527s
+2026-04-21 01:14:36,819 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0528s
+2026-04-21 01:14:36,820 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:36,820 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:36,821 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:14:36,830 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:14:36,831 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0110s
+2026-04-21 01:14:38,774 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:38,774 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:14:38,775 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=200, fields=None
+2026-04-21 01:14:38,776 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:38,776 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:38,776 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-21 01:14:38,777 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:38,777 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:38,777 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:38,828 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:14:38,828 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0540s
+2026-04-21 01:14:38,836 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:14:38,836 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0600s
+2026-04-21 01:14:38,846 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:38,850 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0731s
+2026-04-21 01:14:43,862 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:43,865 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0025s
+2026-04-21 01:14:43,866 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:14:43,876 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:43,878 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0024s
+2026-04-21 01:14:43,879 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-21 01:14:43,888 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:43,888 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-21 01:14:43,888 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:43,890 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:43,890 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:43,890 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:43,919 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:43,919 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0295s
+2026-04-21 01:14:43,920 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:14:43,983 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0959s
+2026-04-21 01:14:43,986 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:14:44,003 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1406s
+2026-04-21 01:14:44,014 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:14:44,015 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1387s
+2026-04-21 01:14:45,743 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:45,744 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-21 01:14:45,744 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:14:45,745 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:45,745 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:45,745 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:45,751 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:45,751 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:14:45,752 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:45,753 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:45,753 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:45,753 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=100, fields=None
+2026-04-21 01:14:45,757 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:45,757 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0125s
+2026-04-21 01:14:45,761 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:14:45,762 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0092s
+2026-04-21 01:14:45,763 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:14:45,766 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0155s
+2026-04-21 01:14:45,768 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:14:45,769 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0262s
+2026-04-21 01:14:49,185 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:49,185 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-21 01:14:49,186 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=300, fields=None
+2026-04-21 01:14:49,187 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:49,187 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:49,194 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:14:49,195 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:49,195 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:49,195 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:14:49,217 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:49,217 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0324s
+2026-04-21 01:14:49,217 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:14:49,218 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0231s
+2026-04-21 01:14:49,218 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:14:49,220 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0325s
+2026-04-21 01:14:53,339 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:53,339 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:53,340 - routers.bom_recipes - DEBUG - Querying bom_recipess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:53,343 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:53,343 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:53,345 - routers.bom_lines - DEBUG - Querying bom_liness: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:14:53,349 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:53,349 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:53,350 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:53,354 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:53,355 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0057s
+2026-04-21 01:14:53,361 - routers.bom_recipes - DEBUG - Found 6 bom_recipess
+2026-04-21 01:14:53,363 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0238s
+2026-04-21 01:14:53,365 - routers.bom_lines - DEBUG - Found 17 bom_liness
+2026-04-21 01:14:53,367 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0236s
+2026-04-21 01:14:58,126 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,127 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:14:58,127 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,130 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,130 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:58,131 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,132 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,132 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:14:58,132 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,133 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:58,133 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,135 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,135 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:58,135 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,136 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,136 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:14:58,136 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,142 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-21 01:14:58,142 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0121s
+2026-04-21 01:14:58,143 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:14:58,144 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0174s
+2026-04-21 01:14:58,145 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:14:58,145 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0135s
+2026-04-21 01:14:58,146 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:14:58,150 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0156s
+2026-04-21 01:14:58,153 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:14:58,153 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:14:58,154 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:14:58,155 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-21 01:14:58,156 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0231s
+2026-04-21 01:14:58,159 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:14:58,160 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0238s
+2026-04-21 01:14:58,187 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:14:58,188 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0348s
+2026-04-21 01:15:25,779 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-21 01:15:25,840 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,842 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0020s
+2026-04-21 01:15:25,844 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,852 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,852 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:15:25,853 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,854 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,854 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:15:25,854 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,856 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,856 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:15:25,856 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,858 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,858 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:15:25,859 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,861 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,861 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:15:25,861 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,874 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:15:25,875 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0224s
+2026-04-21 01:15:25,925 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:15:25,926 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0857s
+2026-04-21 01:15:25,931 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-21 01:15:25,933 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0777s
+2026-04-21 01:15:25,936 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:15:25,937 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:15:25,937 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:15:25,942 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:15:25,943 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0850s
+2026-04-21 01:15:25,956 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-21 01:15:25,957 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1035s
+2026-04-21 01:15:25,961 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:15:25,961 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0250s
+2026-04-21 01:15:25,962 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:15:25,964 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.1034s
+2026-04-21 01:19:14,813 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:14,816 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0032s
+2026-04-21 01:19:14,831 - core.database - ERROR - Database session error: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-21 01:19:14,837 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0239s
+2026-04-21 01:19:14,837 - core.database - ERROR - Failed to create database session: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-21 01:19:14,844 - main - ERROR - Exception: IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 205, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/uhf_tags.py", line 108, in create_uhf_tag
+    return await CrudService(db, Uhf_tags).create(data.model_dump())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/services/uhf_tracking.py", line 27, in create
+    await self.db.commit()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uhf_tags_pkey"
+DETAIL:  Key (id)=(2) already exists.
+[SQL: INSERT INTO uhf_tags (epc, tid, sticker_label, product_id, lot_id, assigned_quantity, current_zone_id, current_bin_id, status, encoded_at, assigned_at, last_seen_at, notes) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::INTEGER, $5::INTEGER, $6::FLOAT, $7::INTEGER, $8::INTEGER, $9::VARCHAR, $10::TIMESTAMP WITH TIME ZONE, $11::TIMESTAMP WITH TIME ZONE, $12::TIMESTAMP WITH TIME ZONE, $13::VARCHAR) RETURNING uhf_tags.id, uhf_tags.created_at]
+[parameters: ('E280001919919212312312', None, 'UHF-12312312', 5, 6, 25.0, 2, 3, 'assigned', datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), datetime.datetime(2026, 4, 20, 18, 19, 14, 772000, tzinfo=TzInfo(UTC)), None, 'Assigned from RFID Tracking')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2026-04-21 01:19:20,331 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,331 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:19:20,365 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0337s
+2026-04-21 01:19:20,378 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,378 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-21 01:19:20,391 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,392 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-21 01:19:20,394 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,394 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:20,408 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,408 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:19:20,409 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:19:20,410 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,410 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:20,410 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:20,411 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,411 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:19:20,411 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:19:20,422 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:19:20,422 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0122s
+2026-04-21 01:19:20,423 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:19:20,423 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0118s
+2026-04-21 01:19:20,427 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0492s
+2026-04-21 01:19:20,429 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0345s
+2026-04-21 01:19:20,430 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:19:20,431 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0231s
+2026-04-21 01:19:20,432 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0407s
+2026-04-21 01:19:20,436 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:20,436 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:20,437 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:20,440 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:19:20,440 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0043s
+2026-04-21 01:19:35,200 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,200 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:19:35,232 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0321s
+2026-04-21 01:19:35,252 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,253 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-21 01:19:35,254 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,254 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:35,254 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,255 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:35,255 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:19:35,255 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,255 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:35,257 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,257 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:35,258 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:19:35,259 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,260 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:35,260 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:35,262 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:19:35,263 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0084s
+2026-04-21 01:19:35,267 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:19:35,267 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0099s
+2026-04-21 01:19:35,271 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:35,271 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:35,271 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:35,272 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0196s
+2026-04-21 01:19:35,273 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0188s
+2026-04-21 01:19:35,273 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0178s
+2026-04-21 01:19:35,276 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:19:35,277 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0175s
+2026-04-21 01:19:35,281 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:19:35,282 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0113s
+2026-04-21 01:19:48,872 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,873 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0011s
+2026-04-21 01:19:48,880 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0078s
+2026-04-21 01:19:48,903 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,904 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:19:48,905 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,905 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:48,905 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,905 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:48,906 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,906 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:19:48,906 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:19:48,908 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,908 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:48,909 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:48,920 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,921 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:48,921 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:19:48,937 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:19:48,938 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0317s
+2026-04-21 01:19:48,938 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:19:48,938 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0301s
+2026-04-21 01:19:48,938 - routers.zones - DEBUG - Found 5 zoness
+2026-04-21 01:19:48,938 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0179s
+2026-04-21 01:19:48,939 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0354s
+2026-04-21 01:19:48,951 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0465s
+2026-04-21 01:19:48,955 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:19:48,955 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:19:48,955 - routers.bins - DEBUG - Querying binss: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:19:48,956 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0507s
+2026-04-21 01:19:48,960 - routers.bins - DEBUG - Found 8 binss
+2026-04-21 01:19:48,961 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0064s
+2026-04-21 01:20:25,459 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:20:25,460 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-21 01:20:25,460 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:20:25,460 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:20:25,460 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:20:25,461 - routers.bom_recipes - DEBUG - Querying bom_recipess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:20:25,461 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:20:25,461 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:20:25,461 - routers.bom_lines - DEBUG - Querying bom_liness: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:20:25,476 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:20:25,477 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0180s
+2026-04-21 01:20:25,480 - routers.bom_lines - DEBUG - Found 17 bom_liness
+2026-04-21 01:20:25,480 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0189s
+2026-04-21 01:20:25,480 - routers.bom_recipes - DEBUG - Found 6 bom_recipess
+2026-04-21 01:20:25,481 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0209s
+2026-04-21 01:21:57,562 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:21:57,563 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0009s
+2026-04-21 01:21:57,563 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:21:57,565 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:21:57,566 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-21 01:21:57,566 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:21:57,570 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:21:57,570 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:21:57,570 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-21 01:21:57,573 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:21:57,573 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:21:57,573 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:21:57,576 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:21:57,577 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0117s
+2026-04-21 01:21:57,577 - routers.branches - DEBUG - Found 4 branchess
+2026-04-21 01:21:57,578 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0157s
+2026-04-21 01:21:57,582 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-21 01:21:57,582 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0127s
+2026-04-21 01:21:57,583 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-21 01:21:57,583 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0103s
+2026-04-21 01:22:01,591 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:01,591 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:22:01,591 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:22:01,591 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:01,592 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-04-21 01:22:01,592 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=expiry_date, skip=0, limit=500, fields=None
+2026-04-21 01:22:01,594 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-21 01:22:01,595 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0033s
+2026-04-21 01:22:01,597 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:22:01,597 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0067s
+2026-04-21 01:22:01,610 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:01,610 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-21 01:22:01,623 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0134s
+2026-04-21 01:22:13,702 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:13,702 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:22:13,703 - routers.bom_recipes - DEBUG - Querying bom_recipess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:22:13,704 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:13,704 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-21 01:22:13,704 - routers.bom_lines - DEBUG - Querying bom_liness: query=None, sort=None, skip=0, limit=500, fields=None
+2026-04-21 01:22:13,707 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-21 01:22:13,707 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-21 01:22:13,708 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-21 01:22:13,710 - routers.products - DEBUG - Found 8 productss
+2026-04-21 01:22:13,710 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0031s
+2026-04-21 01:22:13,713 - routers.bom_lines - DEBUG - Found 17 bom_liness
+2026-04-21 01:22:13,714 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0097s
+2026-04-21 01:22:13,714 - routers.bom_recipes - DEBUG - Found 6 bom_recipess
+2026-04-21 01:22:13,714 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0120s

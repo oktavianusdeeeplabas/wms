@@ -1,0 +1,8 @@
+id,warehouse_id,name,code,temperature_type,status
+1,1,Ambient Storage,Z-AMB-01,ambient,active
+2,1,Chilled Section,Z-CHL-01,chilled,active
+3,2,Frozen Section A,Z-FRZ-01,frozen,active
+4,2,Frozen Section B,Z-FRZ-02,frozen,active
+5,3,Dry Goods Main,Z-DRY-01,ambient,active
+6,4,Overflow Ambient,Z-OVR-AMB-01,ambient,active
+7,4,Overflow Chilled,Z-OVR-CHL-01,chilled,active

@@ -1,0 +1,118 @@
+2026-06-24 00:29:22,619 - main - INFO - === Logging system initialized ===
+2026-06-24 00:29:22,619 - main - INFO - Log file: logs/app_20260624_002922.log
+2026-06-24 00:29:22,619 - main - INFO - Log level: INFO
+2026-06-24 00:29:22,619 - main - INFO - Timestamp: 20260624_002922
+2026-06-24 00:29:22,918 - main - INFO - Included router: routers.aihub.router
+2026-06-24 00:29:22,934 - main - INFO - Included router: routers.auth.router
+2026-06-24 00:29:22,947 - main - INFO - Included router: routers.bins.router
+2026-06-24 00:29:22,961 - main - INFO - Included router: routers.bom_lines.router
+2026-06-24 00:29:22,976 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-24 00:29:22,990 - main - INFO - Included router: routers.branches.router
+2026-06-24 00:29:22,991 - main - INFO - Included router: routers.config.router
+2026-06-24 00:29:22,991 - main - INFO - Included router: routers.health.router
+2026-06-24 00:29:23,007 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-24 00:29:23,016 - main - INFO - Included router: routers.label_templates.router
+2026-06-24 00:29:23,021 - main - INFO - Included router: routers.notifications.router
+2026-06-24 00:29:23,030 - main - INFO - Included router: routers.payment_types.router
+2026-06-24 00:29:23,053 - main - INFO - Included router: routers.products.router
+2026-06-24 00:29:23,093 - main - INFO - Included router: routers.rbac.router
+2026-06-24 00:29:23,108 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-24 00:29:23,122 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-24 00:29:23,129 - main - INFO - Included router: routers.settings.router
+2026-06-24 00:29:23,146 - main - INFO - Included router: routers.stock_movements.router
+2026-06-24 00:29:23,163 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-24 00:29:23,175 - main - INFO - Included router: routers.storage.router
+2026-06-24 00:29:23,198 - main - INFO - Included router: routers.suppliers.router
+2026-06-24 00:29:23,209 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-24 00:29:23,219 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-24 00:29:23,230 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-24 00:29:23,239 - main - INFO - Included router: routers.units.router
+2026-06-24 00:29:23,248 - main - INFO - Included router: routers.user.router
+2026-06-24 00:29:23,261 - main - INFO - Included router: routers.warehouses.router
+2026-06-24 00:29:23,274 - main - INFO - Included router: routers.zones.router
+2026-06-24 00:29:23,275 - main - INFO - === Application startup initiated ===
+2026-06-24 00:29:23,275 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-24 00:29:23,275 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-24 00:29:23,275 - core.database - INFO - Starting database initialization...
+2026-06-24 00:29:23,275 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-24 00:29:23,275 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-24 00:29:23,275 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-24 00:29:23,275 - core.database - INFO - Creating async database engine...
+2026-06-24 00:29:23,275 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-24 00:29:23,330 - core.database - INFO - Database engine created successfully
+2026-06-24 00:29:23,330 - core.database - INFO - Creating async session maker...
+2026-06-24 00:29:23,330 - core.database - INFO - Async session maker created successfully
+2026-06-24 00:29:23,330 - core.database - INFO - Database connection initialized successfully
+2026-06-24 00:29:23,330 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-24 00:29:23,330 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-24 00:29:23,330 - core.database - INFO - 🔧 Starting table creation...
+2026-06-24 00:29:23,355 - core.database - INFO - Tables initialized successfully
+2026-06-24 00:29:23,355 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0253s
+2026-06-24 00:29:23,355 - services.database - INFO - 🔧 Table creation completed
+2026-06-24 00:29:23,357 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-24 00:29:23,360 - services.database - INFO - Product detail schema is ready
+2026-06-24 00:29:23,364 - services.database - INFO - Supplier detail schema is ready
+2026-06-24 00:29:23,364 - services.database - INFO - Database initialized successfully
+2026-06-24 00:29:23,364 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0893s
+2026-06-24 00:29:23,373 - services.mock_data - INFO - Processing demo data file payment_types.json for table payment_types
+2026-06-24 00:29:23,423 - services.mock_data - INFO - Table payment_types already has 7 rows; skipping demo insert
+2026-06-24 00:29:23,423 - services.mock_data - INFO - Processing demo data file units.json for table units
+2026-06-24 00:29:23,432 - services.mock_data - INFO - Table units already has 12 rows; skipping demo insert
+2026-06-24 00:29:23,433 - services.mock_data - INFO - Processing demo data file branches.json for table branches
+2026-06-24 00:29:23,442 - services.mock_data - INFO - Table branches already has 4 rows; skipping demo insert
+2026-06-24 00:29:23,443 - services.mock_data - INFO - Processing demo data file warehouses.json for table warehouses
+2026-06-24 00:29:23,451 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping demo insert
+2026-06-24 00:29:23,451 - services.mock_data - INFO - Processing demo data file zones.json for table zones
+2026-06-24 00:29:23,460 - services.mock_data - INFO - Table zones already has 5 rows; skipping demo insert
+2026-06-24 00:29:23,460 - services.mock_data - INFO - Processing demo data file bins.json for table bins
+2026-06-24 00:29:23,468 - services.mock_data - INFO - Table bins already has 8 rows; skipping demo insert
+2026-06-24 00:29:23,468 - services.mock_data - INFO - Processing demo data file products.json for table products
+2026-06-24 00:29:23,473 - services.mock_data - INFO - Table products already has 8 rows; skipping demo insert
+2026-06-24 00:29:23,473 - services.mock_data - INFO - Processing demo data file suppliers.json for table suppliers
+2026-06-24 00:29:23,477 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping demo insert
+2026-06-24 00:29:23,478 - services.mock_data - INFO - Processing demo data file supplier_products.json for table supplier_products
+2026-06-24 00:29:23,481 - services.mock_data - INFO - Table supplier_products already has 7 rows; skipping demo insert
+2026-06-24 00:29:23,482 - services.mock_data - INFO - Processing demo data file bom_recipes.json for table bom_recipes
+2026-06-24 00:29:23,486 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping demo insert
+2026-06-24 00:29:23,486 - services.mock_data - INFO - Processing demo data file bom_lines.json for table bom_lines
+2026-06-24 00:29:23,490 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping demo insert
+2026-06-24 00:29:23,491 - services.mock_data - INFO - Processing demo data file receiving_documents.json for table receiving_documents
+2026-06-24 00:29:23,496 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping demo insert
+2026-06-24 00:29:23,496 - services.mock_data - INFO - Processing demo data file receiving_lines.json for table receiving_lines
+2026-06-24 00:29:23,500 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping demo insert
+2026-06-24 00:29:23,500 - services.mock_data - INFO - Processing demo data file inventory_lots.json for table inventory_lots
+2026-06-24 00:29:23,504 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping demo insert
+2026-06-24 00:29:23,505 - services.mock_data - INFO - Processing demo data file stock_movements.json for table stock_movements
+2026-06-24 00:29:23,509 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping demo insert
+2026-06-24 00:29:23,509 - services.mock_data - INFO - Processing demo data file stock_transfers.json for table stock_transfers
+2026-06-24 00:29:23,513 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping demo insert
+2026-06-24 00:29:23,513 - services.mock_data - INFO - Processing demo data file label_templates.csv for table label_templates
+2026-06-24 00:29:23,518 - services.mock_data - INFO - Table label_templates already has 1 rows; skipping demo insert
+2026-06-24 00:29:23,518 - services.mock_data - INFO - Processing demo data file uhf_readers.json for table uhf_readers
+2026-06-24 00:29:23,522 - services.mock_data - INFO - Table uhf_readers already has 2 rows; skipping demo insert
+2026-06-24 00:29:23,522 - services.mock_data - INFO - Processing demo data file uhf_tags.json for table uhf_tags
+2026-06-24 00:29:23,527 - services.mock_data - INFO - Table uhf_tags already has 5 rows; skipping demo insert
+2026-06-24 00:29:23,528 - services.mock_data - INFO - Processing demo data file uhf_tag_reads.json for table uhf_tag_reads
+2026-06-24 00:29:23,532 - services.mock_data - INFO - Table uhf_tag_reads already has 2 rows; skipping demo insert
+2026-06-24 00:29:23,532 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-24 00:29:23,532 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-24 00:29:23,532 - core.database - INFO - Starting database initialization...
+2026-06-24 00:29:23,532 - core.database - INFO - Database already initialized
+2026-06-24 00:29:23,532 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-24 00:29:23,532 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-24 00:29:23,532 - core.database - INFO - Tables already initialized
+2026-06-24 00:29:23,532 - services.database - INFO - 🔧 Table creation completed
+2026-06-24 00:29:23,533 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-24 00:29:23,535 - services.database - INFO - Product detail schema is ready
+2026-06-24 00:29:23,536 - services.database - INFO - Supplier detail schema is ready
+2026-06-24 00:29:23,536 - services.database - INFO - Database initialized successfully
+2026-06-24 00:29:23,536 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0038s
+2026-06-24 00:29:23,536 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-06-24 00:29:23,536 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-06-24 00:29:23,536 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-06-24 00:29:23,538 - services.auth - DEBUG - Admin user local-admin already exists
+2026-06-24 00:29:23,539 - main - INFO - === Application startup completed successfully ===
+2026-06-24 00:29:23,539 - services.database - DEBUG - [DB_OP] Starting database close
+2026-06-24 00:29:23,541 - core.database - INFO - Database connection closed and engine disposed
+2026-06-24 00:29:23,541 - services.database - INFO - Database connections closed
+2026-06-24 00:29:23,541 - services.database - DEBUG - [DB_OP] Database close completed in 0.0021s

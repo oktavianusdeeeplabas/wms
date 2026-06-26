@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 logger = logging.getLogger(__name__)
@@ -36,6 +37,22 @@ class Settings(BaseSettings):
     is_lambda: bool = False
     lambda_function_name: str = "fastapi-backend"
     aws_region: str = "us-east-1"
+
+    @field_validator("debug", mode="before")
+    @classmethod
+    def parse_debug_value(cls, value: Any) -> bool:
+        """Accept common non-boolean DEBUG values without crashing startup."""
+        if isinstance(value, bool):
+            return value
+        if value is None:
+            return False
+
+        normalized = str(value).strip().lower()
+        if normalized in {"1", "true", "yes", "on", "debug", "development", "dev"}:
+            return True
+        if normalized in {"0", "false", "no", "off", "release", "production", "prod"}:
+            return False
+        return False
 
     @property
     def backend_url(self) -> str:

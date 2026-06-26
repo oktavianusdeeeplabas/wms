@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "epc": "E2801191A5030066F1000001",
+    "tid": "TID-CK-0001",
+    "sticker_label": "UHF-STK-0001",
+    "product_id": 1,
+    "lot_id": 1,
+    "assigned_quantity": 24,
+    "current_zone_id": 1,
+    "current_bin_id": 1,
+    "status": "assigned",
+    "encoded_at": "2026-04-21 08:00:00",
+    "assigned_at": "2026-04-21 08:05:00",
+    "last_seen_at": "2026-04-21 08:10:00",
+    "notes": "Sticker attached during receiving."
+  },
+  {
+    "id": 2,
+    "epc": "E2801191A5030066F1000002",
+    "tid": "TID-CK-0002",
+    "sticker_label": "UHF-STK-0002",
+    "product_id": 2,
+    "lot_id": 2,
+    "assigned_quantity": 12,
+    "current_zone_id": 2,
+    "current_bin_id": 3,
+    "status": "assigned",
+    "encoded_at": "2026-04-21 08:03:00",
+    "assigned_at": "2026-04-21 08:08:00",
+    "last_seen_at": "2026-04-21 08:12:00",
+    "notes": "Cold-chain carton sticker."
+  }
+]

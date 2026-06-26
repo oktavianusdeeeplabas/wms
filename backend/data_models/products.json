@@ -11,7 +11,34 @@
         "sku": {
             "type": "string"
         },
+        "short_name": {
+            "type": "string"
+        },
+        "barcode": {
+            "type": "string"
+        },
+        "qr_code": {
+            "type": "string"
+        },
+        "alternate_barcode": {
+            "type": "string"
+        },
         "category": {
+            "type": "string"
+        },
+        "sub_category": {
+            "type": "string"
+        },
+        "brand": {
+            "type": "string"
+        },
+        "manufacturer": {
+            "type": "string"
+        },
+        "product_type": {
+            "type": "string"
+        },
+        "item_group": {
             "type": "string"
         },
         "uom": {
@@ -34,6 +61,12 @@
         },
         "is_perishable": {
             "type": "boolean"
+        },
+        "product_image": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
         },
         "status": {
             "type": "string"

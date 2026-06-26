@@ -1,0 +1,20 @@
+{
+    "title": "supplier_products",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "supplier_id": {
+            "type": "integer"
+        },
+        "product_id": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id",
+        "supplier_id",
+        "product_id"
+    ]
+}

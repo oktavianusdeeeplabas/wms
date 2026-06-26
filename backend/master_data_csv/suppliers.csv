@@ -1,0 +1,6 @@
+id,name,code,contact_person,phone,email,address,marketing_name,marketing_phone,marketing_email,branch_id,warehouse_id,payment_type_id,payment_terms,lead_time_days,tax_number,notes,status,created_at
+1,Fresh Farms Co.,SUP-001,John Smith,555-0101,john@freshfarms.com,100 Farm Road,Laura Green,555-1101,laura@freshfarms.com,1,1,7,Net 30,2,TAX-SUP-001,"Vegetables, fruit, and herbs supplier",active,
+2,Ocean Catch Seafood,SUP-002,Maria Garcia,555-0102,maria@oceancatch.com,200 Harbor St,Daniel Coast,555-1102,daniel@oceancatch.com,1,1,6,Net 14,1,TAX-SUP-002,Seafood and frozen fish supplier,active,
+3,Premium Meats Ltd,SUP-003,Robert Chen,555-0103,robert@premiummeats.com,300 Butcher Ave,Sinta Hartono,555-1103,sinta@premiummeats.com,2,2,7,Net 30,3,TAX-SUP-003,"Beef, chicken, and processed meat supplier",active,
+4,Spice World Trading,SUP-004,Aisha Patel,555-0104,aisha@spiceworld.com,400 Spice Market,Ravi Nair,555-1104,ravi@spiceworld.com,3,3,5,COD,5,TAX-SUP-004,"Dry spices, seasonings, and pantry items",active,
+5,Dairy Direct,SUP-005,Emma Wilson,555-0105,emma@dairydirect.com,500 Milk Lane,Noah Creamer,555-1105,noah@dairydirect.com,1,1,7,Net 21,2,TAX-SUP-005,"Milk, cheese, butter, and cream supplier",inactive,

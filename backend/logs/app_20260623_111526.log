@@ -1,0 +1,274 @@
+2026-06-23 11:15:26,797 - main - INFO - === Logging system initialized ===
+2026-06-23 11:15:26,798 - main - INFO - Log file: logs/app_20260623_111526.log
+2026-06-23 11:15:26,798 - main - INFO - Log level: INFO
+2026-06-23 11:15:26,798 - main - INFO - Timestamp: 20260623_111526
+2026-06-23 11:15:27,510 - main - INFO - Included router: routers.aihub.router
+2026-06-23 11:15:27,536 - main - INFO - Included router: routers.auth.router
+2026-06-23 11:15:27,562 - main - INFO - Included router: routers.bins.router
+2026-06-23 11:15:27,587 - main - INFO - Included router: routers.bom_lines.router
+2026-06-23 11:15:27,615 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-23 11:15:27,698 - main - INFO - Included router: routers.branches.router
+2026-06-23 11:15:27,699 - main - INFO - Included router: routers.config.router
+2026-06-23 11:15:27,700 - main - INFO - Included router: routers.health.router
+2026-06-23 11:15:27,743 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-23 11:15:27,773 - main - INFO - Included router: routers.label_templates.router
+2026-06-23 11:15:27,782 - main - INFO - Included router: routers.notifications.router
+2026-06-23 11:15:27,811 - main - INFO - Included router: routers.products.router
+2026-06-23 11:15:27,823 - main - INFO - Included router: routers.rbac.router
+2026-06-23 11:15:27,940 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-23 11:15:28,029 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-23 11:15:28,043 - main - INFO - Included router: routers.settings.router
+2026-06-23 11:15:28,096 - main - INFO - Included router: routers.stock_movements.router
+2026-06-23 11:15:28,131 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-23 11:15:28,143 - main - INFO - Included router: routers.storage.router
+2026-06-23 11:15:28,168 - main - INFO - Included router: routers.suppliers.router
+2026-06-23 11:15:28,181 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-23 11:15:28,190 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-23 11:15:28,201 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-23 11:15:28,210 - main - INFO - Included router: routers.units.router
+2026-06-23 11:15:28,217 - main - INFO - Included router: routers.user.router
+2026-06-23 11:15:28,231 - main - INFO - Included router: routers.warehouses.router
+2026-06-23 11:15:28,244 - main - INFO - Included router: routers.zones.router
+2026-06-23 11:15:28,245 - main - INFO - === Application startup initiated ===
+2026-06-23 11:15:28,245 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 11:15:28,245 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 11:15:28,245 - core.database - INFO - Starting database initialization...
+2026-06-23 11:15:28,245 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-23 11:15:28,245 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-23 11:15:28,246 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-23 11:15:28,246 - core.database - INFO - Creating async database engine...
+2026-06-23 11:15:28,246 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-23 11:15:28,305 - core.database - INFO - Database engine created successfully
+2026-06-23 11:15:28,305 - core.database - INFO - Creating async session maker...
+2026-06-23 11:15:28,305 - core.database - INFO - Async session maker created successfully
+2026-06-23 11:15:28,305 - core.database - INFO - Database connection initialized successfully
+2026-06-23 11:15:28,305 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 11:15:28,305 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 11:15:28,305 - core.database - INFO - 🔧 Starting table creation...
+2026-06-23 11:15:28,338 - core.database - INFO - Tables initialized successfully
+2026-06-23 11:15:28,339 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0339s
+2026-06-23 11:15:28,339 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 11:15:28,341 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-23 11:15:28,346 - services.database - INFO - Supplier detail schema is ready
+2026-06-23 11:15:28,346 - services.database - INFO - Database initialized successfully
+2026-06-23 11:15:28,346 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.1010s
+2026-06-23 11:15:28,356 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-06-23 11:15:28,356 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-06-23 11:15:28,356 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-06-23 11:15:28,357 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-06-23 11:15:28,357 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-06-23 11:15:28,406 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-06-23 11:15:28,406 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-06-23 11:15:28,406 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-06-23 11:15:28,407 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-06-23 11:15:28,408 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-06-23 11:15:28,418 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-06-23 11:15:28,418 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-06-23 11:15:28,419 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-06-23 11:15:28,419 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-06-23 11:15:28,419 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-06-23 11:15:28,419 - services.mock_data - INFO - Processing mock data file uhf_readers.json for table uhf_readers
+2026-06-23 11:15:28,419 - services.mock_data - INFO - Processing mock data file uhf_tag_reads.json for table uhf_tag_reads
+2026-06-23 11:15:28,420 - services.mock_data - INFO - Processing mock data file uhf_tags.json for table uhf_tags
+2026-06-23 11:15:28,420 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-06-23 11:15:28,420 - services.mock_data - INFO - Processing mock data file units.json for table units
+2026-06-23 11:15:28,431 - services.mock_data - INFO - Table uhf_readers already has 2 rows; skipping mock insert
+2026-06-23 11:15:28,431 - services.mock_data - INFO - Table uhf_tag_reads already has 2 rows; skipping mock insert
+2026-06-23 11:15:28,431 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-06-23 11:15:28,431 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-06-23 11:15:28,432 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-06-23 11:15:28,432 - services.mock_data - INFO - Table uhf_tags already has 5 rows; skipping mock insert
+2026-06-23 11:15:28,432 - services.mock_data - INFO - Table units already has 12 rows; skipping mock insert
+2026-06-23 11:15:28,437 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-06-23 11:15:28,437 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-06-23 11:15:28,437 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 11:15:28,437 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 11:15:28,437 - core.database - INFO - Starting database initialization...
+2026-06-23 11:15:28,437 - core.database - INFO - Database already initialized
+2026-06-23 11:15:28,437 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 11:15:28,437 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 11:15:28,438 - core.database - INFO - Tables already initialized
+2026-06-23 11:15:28,438 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 11:15:28,439 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-23 11:15:28,441 - services.database - INFO - Supplier detail schema is ready
+2026-06-23 11:15:28,441 - services.database - INFO - Database initialized successfully
+2026-06-23 11:15:28,441 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0033s
+2026-06-23 11:15:28,441 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-06-23 11:15:28,441 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-06-23 11:15:28,441 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-06-23 11:15:28,442 - services.auth - DEBUG - Admin user local-admin already exists
+2026-06-23 11:15:28,443 - main - INFO - === Application startup completed successfully ===
+2026-06-23 11:15:55,582 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:15:55,583 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-06-23 11:15:55,583 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-06-23 11:15:55,583 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-06-23 11:15:55,583 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-06-23 11:15:55,596 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:15:55,599 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:15:55,599 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 11:15:55,600 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:15:55,651 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0689s
+2026-06-23 11:15:55,651 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0522s
+2026-06-23 11:16:25,574 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:25,574 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 11:16:25,574 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:25,575 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:25,576 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 11:16:25,576 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:25,580 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0041s
+2026-06-23 11:16:25,580 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0060s
+2026-06-23 11:16:30,705 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:30,705 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 11:16:30,756 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 11:16:30,756 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0516s
+2026-06-23 11:16:30,766 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:30,768 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:30,768 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 11:16:30,768 - routers.suppliers - DEBUG - Creating new suppliers with data: name='Smoke Supplier' code='SUP-SMOKE' contact_person='Ops Contact' phone=None email=None address=None marketing_name='Marketing Contact' marketing_phone='0812345678' marketing_email='marketing@example.com' branch_id=1 warehouse_id=1 payment_terms='Net 30' lead_time_days=3 tax_number='TAX-SMOKE' notes='Smoke test supplier' status='active' created_at=None product_ids=[1, 2]
+2026-06-23 11:16:30,781 - services.suppliers - INFO - Created suppliers with id: 6
+2026-06-23 11:16:30,782 - routers.suppliers - ERROR - Error creating suppliers: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+2026-06-23 11:16:30,783 - core.database - ERROR - Database session error: 500: Internal server error: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 239, in create_suppliers
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: 'dict' object has no attribute 'id'
+2026-06-23 11:16:30,785 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0171s
+2026-06-23 11:16:30,786 - core.database - ERROR - Failed to create database session: 500: Internal server error: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 239, in create_suppliers
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: 'dict' object has no attribute 'id'
+2026-06-23 11:16:30,795 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:30,836 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:55,571 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:55,572 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0010s
+2026-06-23 11:16:55,573 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:55,575 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:16:55,576 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 11:16:55,576 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:16:55,581 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0102s
+2026-06-23 11:16:55,582 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0062s
+2026-06-23 11:17:26,736 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:17:26,737 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-06-23 11:17:26,738 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:17:26,740 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:17:26,741 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 11:17:26,741 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:17:26,746 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0097s
+2026-06-23 11:17:26,746 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0057s
+2026-06-23 11:17:33,953 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:17:33,953 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 11:17:34,026 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 11:17:34,026 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0736s
+2026-06-23 11:17:34,037 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 11:17:34,037 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 11:17:34,037 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 11:17:34,037 - routers.suppliers - DEBUG - Creating new suppliers with data: name='Smoke Supplier' code='SUP-SMOKE' contact_person='Ops Contact' phone=None email=None address=None marketing_name='Marketing Contact' marketing_phone='0812345678' marketing_email='marketing@example.com' branch_id=1 warehouse_id=1 payment_terms='Net 30' lead_time_days=3 tax_number='TAX-SMOKE' notes='Smoke test supplier' status='active' created_at=None product_ids=[1, 2]
+2026-06-23 11:17:34,043 - services.suppliers - INFO - Created suppliers with id: 7
+2026-06-23 11:17:34,046 - routers.suppliers - ERROR - Error creating suppliers: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+2026-06-23 11:17:34,047 - core.database - ERROR - Database session error: 500: Internal server error: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 239, in create_suppliers
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: 'dict' object has no attribute 'id'
+2026-06-23 11:17:34,047 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0099s
+2026-06-23 11:17:34,048 - core.database - ERROR - Failed to create database session: 500: Internal server error: 'dict' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 232, in create_suppliers
+    logger.info(f"Suppliers created successfully with id: {result.id}")
+                                                           ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/routers/suppliers.py", line 239, in create_suppliers
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: 'dict' object has no attribute 'id'
+2026-06-23 11:17:52,884 - services.database - DEBUG - [DB_OP] Starting database close
+2026-06-23 11:17:52,910 - core.database - INFO - Database connection closed and engine disposed
+2026-06-23 11:17:52,911 - services.database - INFO - Database connections closed
+2026-06-23 11:17:52,911 - services.database - DEBUG - [DB_OP] Database close completed in 0.0266s

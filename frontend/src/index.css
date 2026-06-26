@@ -115,3 +115,29 @@
 .animate-scan-line {
   animation: scan-line 2s ease-in-out infinite;
 }
+
+@media print {
+  body {
+    background: white;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .manufacturing-print-area,
+  .manufacturing-print-area * {
+    visibility: visible;
+  }
+
+  .manufacturing-print-area {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .manufacturing-print-area .no-print {
+    display: none !important;
+  }
+}

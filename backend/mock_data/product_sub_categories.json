@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Broth",
+        "code": "PSCAT-BROTH",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "Chicken Ramen",
+        "code": "PSCAT-CHICKEN-RAMEN",
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "Dry Topping",
+        "code": "PSCAT-DRY-TOPPING",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "name": "Frozen Side",
+        "code": "PSCAT-FROZEN-SIDE",
+        "status": "active"
+    },
+    {
+        "id": 5,
+        "name": "Frozen Topping",
+        "code": "PSCAT-FROZEN-TOPPING",
+        "status": "active"
+    },
+    {
+        "id": 6,
+        "name": "Gyoza",
+        "code": "PSCAT-GYOZA",
+        "status": "active"
+    },
+    {
+        "id": 7,
+        "name": "Noodle",
+        "code": "PSCAT-NOODLE",
+        "status": "active"
+    },
+    {
+        "id": 8,
+        "name": "Sauce",
+        "code": "PSCAT-SAUCE",
+        "status": "active"
+    },
+    {
+        "id": 9,
+        "name": "Seafood Ramen",
+        "code": "PSCAT-SEAFOOD-RAMEN",
+        "status": "active"
+    },
+    {
+        "id": 10,
+        "name": "Takeaway",
+        "code": "PSCAT-TAKEAWAY",
+        "status": "active"
+    },
+    {
+        "id": 11,
+        "name": "Topping",
+        "code": "PSCAT-TOPPING",
+        "status": "active"
+    },
+    {
+        "id": 12,
+        "name": "Vegetable",
+        "code": "PSCAT-VEGETABLE",
+        "status": "active"
+    }
+]

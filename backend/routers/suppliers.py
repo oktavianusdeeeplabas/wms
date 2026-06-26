@@ -4,7 +4,7 @@ from typing import List, Optional
 
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.database import get_db
@@ -25,8 +25,19 @@ class SuppliersData(BaseModel):
     phone: str = None
     email: str = None
     address: str = None
+    marketing_name: str = None
+    marketing_phone: str = None
+    marketing_email: str = None
+    branch_id: int = None
+    warehouse_id: int = None
+    payment_type_id: int = None
+    payment_terms: str = None
+    lead_time_days: int = None
+    tax_number: str = None
+    notes: str = None
     status: str = None
     created_at: str = None
+    product_ids: List[int] = Field(default_factory=list)
 
 
 class SuppliersUpdateData(BaseModel):
@@ -37,8 +48,19 @@ class SuppliersUpdateData(BaseModel):
     phone: Optional[str] = None
     email: Optional[str] = None
     address: Optional[str] = None
+    marketing_name: Optional[str] = None
+    marketing_phone: Optional[str] = None
+    marketing_email: Optional[str] = None
+    branch_id: Optional[int] = None
+    warehouse_id: Optional[int] = None
+    payment_type_id: Optional[int] = None
+    payment_terms: Optional[str] = None
+    lead_time_days: Optional[int] = None
+    tax_number: Optional[str] = None
+    notes: Optional[str] = None
     status: Optional[str] = None
     created_at: Optional[str] = None
+    product_ids: Optional[List[int]] = None
 
 
 class SuppliersResponse(BaseModel):
@@ -50,8 +72,19 @@ class SuppliersResponse(BaseModel):
     phone: Optional[str] = None
     email: Optional[str] = None
     address: Optional[str] = None
+    marketing_name: Optional[str] = None
+    marketing_phone: Optional[str] = None
+    marketing_email: Optional[str] = None
+    branch_id: Optional[int] = None
+    warehouse_id: Optional[int] = None
+    payment_type_id: Optional[int] = None
+    payment_terms: Optional[str] = None
+    lead_time_days: Optional[int] = None
+    tax_number: Optional[str] = None
+    notes: Optional[str] = None
     status: Optional[str] = None
     created_at: Optional[str] = None
+    product_ids: List[int] = Field(default_factory=list)
 
     class Config:
         from_attributes = True
@@ -199,7 +232,7 @@ async def create_suppliers(
         if not result:
             raise HTTPException(status_code=400, detail="Failed to create suppliers")
         
-        logger.info(f"Suppliers created successfully with id: {result.id}")
+        logger.info(f"Suppliers created successfully with id: {result['id']}")
         return result
     except ValueError as e:
         logger.error(f"Validation error creating suppliers: {str(e)}")
@@ -247,8 +280,7 @@ async def update_supplierss_batch(
     
     try:
         for item in request.items:
-            # Only include non-None values for partial updates
-            update_dict = {k: v for k, v in item.updates.model_dump().items() if v is not None}
+            update_dict = item.updates.model_dump(exclude_unset=True)
             result = await service.update(item.id, update_dict)
             if result:
                 results.append(result)
@@ -272,8 +304,7 @@ async def update_suppliers(
 
     service = SuppliersService(db)
     try:
-        # Only include non-None values for partial updates
-        update_dict = {k: v for k, v in data.model_dump().items() if v is not None}
+        update_dict = data.model_dump(exclude_unset=True)
         result = await service.update(id, update_dict)
         if not result:
             logger.warning(f"Suppliers with id {id} not found for update")

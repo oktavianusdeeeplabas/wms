@@ -299,7 +299,7 @@ export default function AIAnalytics() {
           { role: 'system', content: 'You are an expert demand forecasting analyst for cloud kitchen warehouse operations. Provide structured, data-driven analysis.' },
           { role: 'user', content: prompt },
         ],
-        model: 'gemini-2.5-pro',
+        model: 'gpt-4o-mini',
         stream: true,
         onChunk: (chunk: { content?: string }) => {
           if (abortRef.current) return;
@@ -352,7 +352,7 @@ export default function AIAnalytics() {
           { role: 'system', content: 'You are an expert fraud detection and anomaly analysis specialist for warehouse operations. Be thorough but avoid false positives.' },
           { role: 'user', content: prompt },
         ],
-        model: 'gemini-2.5-pro',
+        model: 'gpt-4o-mini',
         stream: true,
         onChunk: (chunk: { content?: string }) => {
           if (abortRef.current) return;

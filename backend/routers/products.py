@@ -21,7 +21,16 @@ class ProductsData(BaseModel):
     """Entity data schema (for create/update)"""
     name: str
     sku: str
+    short_name: str = None
+    barcode: str = None
+    qr_code: str = None
+    alternate_barcode: str = None
     category: str = None
+    sub_category: str = None
+    brand: str = None
+    manufacturer: str = None
+    product_type: str = None
+    item_group: str = None
     uom: str = None
     temperature_class: str = None
     shelf_life_days: int = None
@@ -29,6 +38,8 @@ class ProductsData(BaseModel):
     max_stock: int = None
     reorder_point: int = None
     is_perishable: bool = None
+    product_image: str = None
+    description: str = None
     status: str = None
 
 
@@ -36,7 +47,16 @@ class ProductsUpdateData(BaseModel):
     """Update entity data (partial updates allowed)"""
     name: Optional[str] = None
     sku: Optional[str] = None
+    short_name: Optional[str] = None
+    barcode: Optional[str] = None
+    qr_code: Optional[str] = None
+    alternate_barcode: Optional[str] = None
     category: Optional[str] = None
+    sub_category: Optional[str] = None
+    brand: Optional[str] = None
+    manufacturer: Optional[str] = None
+    product_type: Optional[str] = None
+    item_group: Optional[str] = None
     uom: Optional[str] = None
     temperature_class: Optional[str] = None
     shelf_life_days: Optional[int] = None
@@ -44,6 +64,8 @@ class ProductsUpdateData(BaseModel):
     max_stock: Optional[int] = None
     reorder_point: Optional[int] = None
     is_perishable: Optional[bool] = None
+    product_image: Optional[str] = None
+    description: Optional[str] = None
     status: Optional[str] = None
 
 
@@ -52,7 +74,16 @@ class ProductsResponse(BaseModel):
     id: int
     name: str
     sku: str
+    short_name: Optional[str] = None
+    barcode: Optional[str] = None
+    qr_code: Optional[str] = None
+    alternate_barcode: Optional[str] = None
     category: Optional[str] = None
+    sub_category: Optional[str] = None
+    brand: Optional[str] = None
+    manufacturer: Optional[str] = None
+    product_type: Optional[str] = None
+    item_group: Optional[str] = None
     uom: Optional[str] = None
     temperature_class: Optional[str] = None
     shelf_life_days: Optional[int] = None
@@ -60,6 +91,8 @@ class ProductsResponse(BaseModel):
     max_stock: Optional[int] = None
     reorder_point: Optional[int] = None
     is_perishable: Optional[bool] = None
+    product_image: Optional[str] = None
+    description: Optional[str] = None
     status: Optional[str] = None
 
     class Config:
@@ -256,8 +289,7 @@ async def update_productss_batch(
     
     try:
         for item in request.items:
-            # Only include non-None values for partial updates
-            update_dict = {k: v for k, v in item.updates.model_dump().items() if v is not None}
+            update_dict = item.updates.model_dump(exclude_unset=True)
             result = await service.update(item.id, update_dict)
             if result:
                 results.append(result)
@@ -281,8 +313,7 @@ async def update_products(
 
     service = ProductsService(db)
     try:
-        # Only include non-None values for partial updates
-        update_dict = {k: v for k, v in data.model_dump().items() if v is not None}
+        update_dict = data.model_dump(exclude_unset=True)
         result = await service.update(id, update_dict)
         if not result:
             logger.warning(f"Products with id {id} not found for update")

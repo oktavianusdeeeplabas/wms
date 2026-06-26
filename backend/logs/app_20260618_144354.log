@@ -1,0 +1,47 @@
+2026-06-18 14:43:54,746 - main - INFO - === Logging system initialized ===
+2026-06-18 14:43:54,746 - main - INFO - Log file: logs/app_20260618_144354.log
+2026-06-18 14:43:54,746 - main - INFO - Log level: INFO
+2026-06-18 14:43:54,746 - main - INFO - Timestamp: 20260618_144354
+2026-06-18 14:43:55,608 - main - INFO - Included router: routers.aihub.router
+2026-06-18 14:43:55,621 - main - INFO - Included router: routers.auth.router
+2026-06-18 14:43:55,635 - main - INFO - Included router: routers.bins.router
+2026-06-18 14:43:55,650 - main - INFO - Included router: routers.bom_lines.router
+2026-06-18 14:43:55,669 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-18 14:43:55,684 - main - INFO - Included router: routers.branches.router
+2026-06-18 14:43:55,685 - main - INFO - Included router: routers.config.router
+2026-06-18 14:43:55,686 - main - INFO - Included router: routers.health.router
+2026-06-18 14:43:55,702 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-18 14:43:55,712 - main - INFO - Included router: routers.label_templates.router
+2026-06-18 14:43:55,729 - main - INFO - Included router: routers.products.router
+2026-06-18 14:43:55,736 - main - INFO - Included router: routers.rbac.router
+2026-06-18 14:43:55,752 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-18 14:43:55,801 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-18 14:43:55,808 - main - INFO - Included router: routers.settings.router
+2026-06-18 14:43:55,825 - main - INFO - Included router: routers.stock_movements.router
+2026-06-18 14:43:55,844 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-18 14:43:55,856 - main - INFO - Included router: routers.storage.router
+2026-06-18 14:43:55,872 - main - INFO - Included router: routers.suppliers.router
+2026-06-18 14:43:55,885 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-18 14:43:55,897 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-18 14:43:55,912 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-18 14:43:55,922 - main - INFO - Included router: routers.user.router
+2026-06-18 14:43:55,939 - main - INFO - Included router: routers.warehouses.router
+2026-06-18 14:43:55,953 - main - INFO - Included router: routers.zones.router
+2026-06-18 14:43:55,954 - main - INFO - === Application startup initiated ===
+2026-06-18 14:43:55,954 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-18 14:43:55,954 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-18 14:43:55,955 - core.database - INFO - Starting database initialization...
+2026-06-18 14:43:55,955 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-18 14:43:55,955 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-18 14:43:55,956 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-18 14:43:55,957 - core.database - INFO - Creating async database engine...
+2026-06-18 14:43:55,958 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-18 14:43:55,986 - core.database - INFO - Database engine created successfully
+2026-06-18 14:43:55,987 - core.database - INFO - Creating async session maker...
+2026-06-18 14:43:55,987 - core.database - INFO - Async session maker created successfully
+2026-06-18 14:43:55,987 - core.database - INFO - Database connection initialized successfully
+2026-06-18 14:43:55,987 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-18 14:43:55,988 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-18 14:43:55,988 - core.database - INFO - 🔧 Starting table creation...
+2026-06-18 14:43:55,991 - core.database - ERROR - Failed to create tables: [Errno 1] Operation not permitted
+2026-06-18 14:43:55,992 - services.database - ERROR - Failed to initialize database: [Errno 1] Operation not permitted

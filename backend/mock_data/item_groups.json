@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Chilled Prep",
+        "code": "IGRP-CHILLED-PREP",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "Cold Chain",
+        "code": "IGRP-COLD-CHAIN",
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "Dry Storage",
+        "code": "IGRP-DRY-STORAGE",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "name": "Frozen",
+        "code": "IGRP-FROZEN",
+        "status": "active"
+    },
+    {
+        "id": 5,
+        "name": "Menu Item",
+        "code": "IGRP-MENU-ITEM",
+        "status": "active"
+    },
+    {
+        "id": 6,
+        "name": "Packaging",
+        "code": "IGRP-PACKAGING",
+        "status": "active"
+    }
+]

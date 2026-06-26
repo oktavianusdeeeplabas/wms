@@ -1,0 +1,8 @@
+id,name,code,description,status
+1,Cash,CASH,Cash payment,active
+2,Bank Transfer,BANK_TRANSFER,Payment by bank transfer,active
+3,Credit Card,CREDIT_CARD,Credit card payment,active
+4,E-Wallet,EWALLET,Digital wallet payment,active
+5,Cash on Delivery,COD,Cash on delivery,active
+6,Net 14,NET_14,Payment due in 14 days,active
+7,Net 30,NET_30,Payment due in 30 days,active

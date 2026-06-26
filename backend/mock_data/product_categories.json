@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Kitchen Prep",
+        "code": "PCAT-KITCHEN-PREP",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "Packaging",
+        "code": "PCAT-PACKAGING",
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "Ramen",
+        "code": "PCAT-RAMEN",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "name": "Raw Material",
+        "code": "PCAT-RAW-MATERIAL",
+        "status": "active"
+    },
+    {
+        "id": 5,
+        "name": "Side Dish",
+        "code": "PCAT-SIDE-DISH",
+        "status": "active"
+    }
+]

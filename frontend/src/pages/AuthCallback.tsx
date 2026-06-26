@@ -1,10 +1,21 @@
 import { useEffect } from 'react';
-import { client } from '../lib/api';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function AuthCallback() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
-    client.auth.login();
-  }, []);
+    const token = searchParams.get('token');
+
+    if (!token) {
+      navigate('/auth/error?msg=Missing authentication token', { replace: true });
+      return;
+    }
+
+    window.localStorage.setItem('token', token);
+    navigate('/dashboard', { replace: true });
+  }, [navigate, searchParams]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">

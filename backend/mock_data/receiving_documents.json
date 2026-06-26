@@ -1,52 +1,7 @@
 [
-    {
-        "document_number": "RCV-2026-001",
-        "supplier_id": 1,
-        "warehouse_id": 1,
-        "status": "completed",
-        "expected_date": "2026-04-01",
-        "received_date": "2026-04-01",
-        "notes": "Regular weekly delivery",
-        "created_at": "2026-03-28 10:00:00"
-    },
-    {
-        "document_number": "RCV-2026-002",
-        "supplier_id": 2,
-        "warehouse_id": 2,
-        "status": "completed",
-        "expected_date": "2026-04-03",
-        "received_date": "2026-04-03",
-        "notes": "Seafood delivery",
-        "created_at": "2026-04-01 09:00:00"
-    },
-    {
-        "document_number": "RCV-2026-003",
-        "supplier_id": 3,
-        "warehouse_id": 1,
-        "status": "pending",
-        "expected_date": "2026-04-16",
-        "received_date": "",
-        "notes": "Meat order",
-        "created_at": "2026-04-10 14:00:00"
-    },
-    {
-        "document_number": "RCV-2026-004",
-        "supplier_id": 4,
-        "warehouse_id": 3,
-        "status": "pending",
-        "expected_date": "2026-04-17",
-        "received_date": "",
-        "notes": "Spices restock",
-        "created_at": "2026-04-12 11:00:00"
-    },
-    {
-        "document_number": "RCV-2026-005",
-        "supplier_id": 5,
-        "warehouse_id": 2,
-        "status": "in_progress",
-        "expected_date": "2026-04-15",
-        "received_date": "",
-        "notes": "Dairy delivery",
-        "created_at": "2026-04-13 08:00:00"
-    }
+    { "id": 1, "document_number": "RCV-RMY-2026-001", "supplier_id": 1, "warehouse_id": 1, "status": "completed", "expected_date": "2026-06-10", "received_date": "2026-06-10", "notes": "Daily ramen noodle delivery for central kitchen production", "created_at": "2026-06-09 10:00:00" },
+    { "id": 2, "document_number": "RCV-RMY-2026-002", "supplier_id": 2, "warehouse_id": 1, "status": "completed", "expected_date": "2026-06-10", "received_date": "2026-06-10", "notes": "Chicken broth and chashu production inputs", "created_at": "2026-06-09 10:15:00" },
+    { "id": 3, "document_number": "RCV-RMY-2026-003", "supplier_id": 3, "warehouse_id": 2, "status": "completed", "expected_date": "2026-06-11", "received_date": "2026-06-11", "notes": "Frozen ebi tempura inbound", "created_at": "2026-06-10 09:30:00" },
+    { "id": 4, "document_number": "RCV-RMY-2026-004", "supplier_id": 4, "warehouse_id": 1, "status": "in_progress", "expected_date": "2026-06-23", "received_date": "", "notes": "Fresh vegetable and sambal production items", "created_at": "2026-06-22 13:00:00" },
+    { "id": 5, "document_number": "RCV-RMY-2026-005", "supplier_id": 5, "warehouse_id": 3, "status": "pending", "expected_date": "2026-06-24", "received_date": "", "notes": "Takeaway packaging monthly replenishment", "created_at": "2026-06-22 15:00:00" }
 ]

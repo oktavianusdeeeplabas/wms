@@ -1,0 +1,13 @@
+id,zone_id,name,code,capacity,status
+1,1,Bin A-01,BIN-A01,100,active
+2,1,Bin A-02,BIN-A02,100,active
+3,2,Bin B-01,BIN-B01,80,active
+4,2,Bin B-02,BIN-B02,80,active
+5,3,Bin C-01,BIN-C01,200,active
+6,4,Bin D-01,BIN-D01,200,active
+7,5,Bin E-01,BIN-E01,300,active
+8,5,Bin E-02,BIN-E02,300,active
+9,6,Bin F-01,BIN-F01,180,active
+10,6,Bin F-02,BIN-F02,180,active
+11,7,Bin G-01,BIN-G01,120,active
+12,7,Bin G-02,BIN-G02,120,active

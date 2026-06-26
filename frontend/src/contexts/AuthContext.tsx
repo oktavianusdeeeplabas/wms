@@ -5,24 +5,19 @@ import React, {
   useEffect,
   ReactNode,
 } from 'react';
-import { authApi } from '../lib/auth';
-
-interface User {
-  id: string;
-  email: string;
-  name?: string;
-  role: string;
-  last_login?: string;
-}
+import { client } from '@/lib/api';
+import type { AuthUser } from '@/lib/rbac';
 
 interface AuthContextType {
-  user: User | null;
+  user: AuthUser | null;
   loading: boolean;
   error: string | null;
   login: () => Promise<void>;
   logout: () => Promise<void>;
   refetch: () => Promise<void>;
   isAdmin: boolean;
+  hasPermission: (permission: string) => boolean;
+  hasAnyPermission: (...permissions: string[]) => boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -40,7 +35,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -48,8 +43,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      const userData = await authApi.getCurrentUser();
-      setUser(userData);
+      const response = await client.auth.me();
+      setUser(response?.data || null);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
       setUser(null);
@@ -61,7 +56,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const login = async () => {
     try {
       setError(null);
-      await authApi.login();
+      window.location.href = '/login';
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed');
     }
@@ -70,7 +65,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = async () => {
     try {
       setError(null);
-      await authApi.logout();
+      window.localStorage.removeItem('token');
+      setUser(null);
+      window.location.href = '/login';
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Logout failed');
     }
@@ -88,6 +85,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     logout,
     refetch: checkAuthStatus,
     isAdmin: user?.role === 'admin',
+    hasPermission: (permission: string) => Boolean(user?.permissions?.includes(permission)),
+    hasAnyPermission: (...permissions: string[]) =>
+      permissions.some((permission) => Boolean(user?.permissions?.includes(permission))),
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

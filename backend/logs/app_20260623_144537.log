@@ -1,0 +1,2740 @@
+2026-06-23 14:45:37,020 - main - INFO - === Logging system initialized ===
+2026-06-23 14:45:37,020 - main - INFO - Log file: logs/app_20260623_144537.log
+2026-06-23 14:45:37,020 - main - INFO - Log level: INFO
+2026-06-23 14:45:37,020 - main - INFO - Timestamp: 20260623_144537
+2026-06-23 14:45:37,329 - main - INFO - Included router: routers.aihub.router
+2026-06-23 14:45:37,348 - main - INFO - Included router: routers.auth.router
+2026-06-23 14:45:37,407 - main - INFO - Included router: routers.bins.router
+2026-06-23 14:45:37,429 - main - INFO - Included router: routers.bom_lines.router
+2026-06-23 14:45:37,445 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-23 14:45:37,460 - main - INFO - Included router: routers.branches.router
+2026-06-23 14:45:37,461 - main - INFO - Included router: routers.config.router
+2026-06-23 14:45:37,462 - main - INFO - Included router: routers.health.router
+2026-06-23 14:45:37,478 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-23 14:45:37,486 - main - INFO - Included router: routers.label_templates.router
+2026-06-23 14:45:37,491 - main - INFO - Included router: routers.notifications.router
+2026-06-23 14:45:37,498 - main - INFO - Included router: routers.payment_types.router
+2026-06-23 14:45:37,513 - main - INFO - Included router: routers.products.router
+2026-06-23 14:45:37,519 - main - INFO - Included router: routers.rbac.router
+2026-06-23 14:45:37,570 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-23 14:45:37,586 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-23 14:45:37,594 - main - INFO - Included router: routers.settings.router
+2026-06-23 14:45:37,610 - main - INFO - Included router: routers.stock_movements.router
+2026-06-23 14:45:37,631 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-23 14:45:37,647 - main - INFO - Included router: routers.storage.router
+2026-06-23 14:45:37,669 - main - INFO - Included router: routers.suppliers.router
+2026-06-23 14:45:37,681 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-23 14:45:37,692 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-23 14:45:37,702 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-23 14:45:37,711 - main - INFO - Included router: routers.units.router
+2026-06-23 14:45:37,718 - main - INFO - Included router: routers.user.router
+2026-06-23 14:45:37,732 - main - INFO - Included router: routers.warehouses.router
+2026-06-23 14:45:37,745 - main - INFO - Included router: routers.zones.router
+2026-06-23 14:45:37,745 - main - INFO - === Application startup initiated ===
+2026-06-23 14:45:37,745 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 14:45:37,745 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 14:45:37,745 - core.database - INFO - Starting database initialization...
+2026-06-23 14:45:37,745 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-23 14:45:37,745 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-23 14:45:37,746 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-23 14:45:37,746 - core.database - INFO - Creating async database engine...
+2026-06-23 14:45:37,746 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-23 14:45:37,799 - core.database - INFO - Database engine created successfully
+2026-06-23 14:45:37,799 - core.database - INFO - Creating async session maker...
+2026-06-23 14:45:37,799 - core.database - INFO - Async session maker created successfully
+2026-06-23 14:45:37,799 - core.database - INFO - Database connection initialized successfully
+2026-06-23 14:45:37,799 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 14:45:37,799 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 14:45:37,799 - core.database - INFO - 🔧 Starting table creation...
+2026-06-23 14:45:37,820 - core.database - INFO - Tables initialized successfully
+2026-06-23 14:45:37,820 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0215s
+2026-06-23 14:45:37,821 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 14:45:37,824 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-23 14:45:37,827 - services.database - INFO - Supplier detail schema is ready
+2026-06-23 14:45:37,827 - services.database - INFO - Database initialized successfully
+2026-06-23 14:45:37,827 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0818s
+2026-06-23 14:45:37,836 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-06-23 14:45:37,836 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-06-23 14:45:37,837 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-06-23 14:45:37,837 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-06-23 14:45:37,837 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Processing mock data file payment_types.json for table payment_types
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-06-23 14:45:37,896 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-06-23 14:45:37,897 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-06-23 14:45:37,897 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-06-23 14:45:37,897 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-06-23 14:45:37,905 - services.mock_data - INFO - Table payment_types already has 7 rows; skipping mock insert
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Processing mock data file supplier_products.json for table supplier_products
+2026-06-23 14:45:37,909 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-06-23 14:45:37,910 - services.mock_data - INFO - Processing mock data file uhf_readers.json for table uhf_readers
+2026-06-23 14:45:37,910 - services.mock_data - INFO - Processing mock data file uhf_tag_reads.json for table uhf_tag_reads
+2026-06-23 14:45:37,917 - services.mock_data - INFO - Table supplier_products already has 7 rows; skipping mock insert
+2026-06-23 14:45:37,917 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-06-23 14:45:37,917 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-06-23 14:45:37,918 - services.mock_data - INFO - Processing mock data file uhf_tags.json for table uhf_tags
+2026-06-23 14:45:37,918 - services.mock_data - INFO - Processing mock data file units.json for table units
+2026-06-23 14:45:37,918 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-06-23 14:45:37,918 - services.mock_data - INFO - Table uhf_readers already has 2 rows; skipping mock insert
+2026-06-23 14:45:37,918 - services.mock_data - INFO - Table uhf_tag_reads already has 2 rows; skipping mock insert
+2026-06-23 14:45:37,919 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-06-23 14:45:37,926 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-06-23 14:45:37,926 - services.mock_data - INFO - Table uhf_tags already has 5 rows; skipping mock insert
+2026-06-23 14:45:37,926 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-06-23 14:45:37,926 - services.mock_data - INFO - Table units already has 12 rows; skipping mock insert
+2026-06-23 14:45:37,927 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 14:45:37,927 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 14:45:37,927 - core.database - INFO - Starting database initialization...
+2026-06-23 14:45:37,927 - core.database - INFO - Database already initialized
+2026-06-23 14:45:37,927 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 14:45:37,927 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 14:45:37,927 - core.database - INFO - Tables already initialized
+2026-06-23 14:45:37,927 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 14:45:37,928 - services.database - INFO - User branch/warehouse scope columns are ready
+2026-06-23 14:45:37,930 - services.database - INFO - Supplier detail schema is ready
+2026-06-23 14:45:37,930 - services.database - INFO - Database initialized successfully
+2026-06-23 14:45:37,930 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0034s
+2026-06-23 14:45:37,930 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-06-23 14:45:37,930 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-06-23 14:45:37,930 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-06-23 14:45:37,932 - services.auth - DEBUG - Admin user local-admin already exists
+2026-06-23 14:45:37,933 - main - INFO - === Application startup completed successfully ===
+2026-06-23 14:46:06,689 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:06,689 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 14:46:06,690 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-06-23 14:46:06,690 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-06-23 14:46:06,690 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-06-23 14:46:06,695 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:46:06,695 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:46:06,695 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:46:06,700 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0112s
+2026-06-23 14:46:06,701 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:06,701 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:06,701 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:46:06,701 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:46:06,701 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:46:06,702 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0011s
+2026-06-23 14:46:06,702 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:46:06,703 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:46:39,579 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:39,580 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 14:46:39,646 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 14:46:39,647 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0676s
+2026-06-23 14:46:39,659 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:39,661 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:39,661 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 14:46:39,668 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0067s
+2026-06-23 14:46:39,754 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:39,756 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:39,756 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:39,756 - routers.suppliers - DEBUG - Updating suppliers 1 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=7 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:39,762 - services.suppliers - INFO - Updated suppliers 1
+2026-06-23 14:46:39,763 - routers.suppliers - INFO - Suppliers 1 updated successfully
+2026-06-23 14:46:39,767 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0110s
+2026-06-23 14:46:39,788 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:39,789 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:39,790 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:39,790 - routers.suppliers - DEBUG - Updating suppliers 1 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=None payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:39,794 - services.suppliers - INFO - Updated suppliers 1
+2026-06-23 14:46:39,795 - routers.suppliers - INFO - Suppliers 1 updated successfully
+2026-06-23 14:46:39,798 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0085s
+2026-06-23 14:46:56,566 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,567 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0019s
+2026-06-23 14:46:56,638 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 14:46:56,640 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0740s
+2026-06-23 14:46:56,658 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,660 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,660 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,660 - routers.suppliers - DEBUG - Updating suppliers 1 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=7 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:56,665 - services.suppliers - INFO - Updated suppliers 1
+2026-06-23 14:46:56,666 - routers.suppliers - INFO - Suppliers 1 updated successfully
+2026-06-23 14:46:56,670 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0106s
+2026-06-23 14:46:56,678 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,679 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,679 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,679 - routers.suppliers - DEBUG - Updating suppliers 2 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=6 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:56,682 - services.suppliers - INFO - Updated suppliers 2
+2026-06-23 14:46:56,683 - routers.suppliers - INFO - Suppliers 2 updated successfully
+2026-06-23 14:46:56,685 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0062s
+2026-06-23 14:46:56,693 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,693 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,693 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,693 - routers.suppliers - DEBUG - Updating suppliers 3 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=7 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:56,696 - services.suppliers - INFO - Updated suppliers 3
+2026-06-23 14:46:56,696 - routers.suppliers - INFO - Suppliers 3 updated successfully
+2026-06-23 14:46:56,697 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0042s
+2026-06-23 14:46:56,704 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,705 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,705 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,705 - routers.suppliers - DEBUG - Updating suppliers 4 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=5 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:56,707 - services.suppliers - INFO - Updated suppliers 4
+2026-06-23 14:46:56,708 - routers.suppliers - INFO - Suppliers 4 updated successfully
+2026-06-23 14:46:56,709 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0048s
+2026-06-23 14:46:56,717 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,717 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,718 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,718 - routers.suppliers - DEBUG - Updating suppliers 5 with data: name=None code=None contact_person=None phone=None email=None address=None marketing_name=None marketing_phone=None marketing_email=None branch_id=None warehouse_id=None payment_type_id=7 payment_terms=None lead_time_days=None tax_number=None notes=None status=None created_at=None product_ids=None
+2026-06-23 14:46:56,720 - services.suppliers - INFO - Updated suppliers 5
+2026-06-23 14:46:56,720 - routers.suppliers - INFO - Suppliers 5 updated successfully
+2026-06-23 14:46:56,722 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0048s
+2026-06-23 14:46:56,729 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 14:46:56,730 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:46:56,730 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:46:56,731 - routers.suppliers - DEBUG - Querying supplierss: query=None, sort=None, skip=0, limit=5, fields=None
+2026-06-23 14:46:56,735 - routers.suppliers - DEBUG - Found 5 supplierss
+2026-06-23 14:46:56,735 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0047s
+2026-06-23 14:47:07,685 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:47:07,685 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:47:07,686 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:47:07,686 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:47:07,687 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:47:07,692 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0070s
+2026-06-23 14:47:07,693 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:47:07,693 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:47:07,694 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:47:07,694 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:47:07,694 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:47:07,695 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0022s
+2026-06-23 14:47:07,696 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:47:07,697 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:48:08,681 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:48:08,681 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:48:08,681 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:48:08,681 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:48:08,681 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:48:08,682 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0010s
+2026-06-23 14:48:08,682 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:48:08,682 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:48:08,683 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:48:08,683 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:48:08,683 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:48:08,683 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0007s
+2026-06-23 14:48:08,683 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:48:08,684 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:49:09,684 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:49:09,685 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0012s
+2026-06-23 14:49:09,686 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:49:09,686 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:49:09,686 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:49:09,688 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0035s
+2026-06-23 14:49:09,688 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:49:09,688 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:49:09,688 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:49:09,689 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:49:09,689 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:49:09,689 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0012s
+2026-06-23 14:49:09,690 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:49:09,691 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:50:10,680 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:50:10,683 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0027s
+2026-06-23 14:50:10,683 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:50:10,683 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:50:10,683 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:50:10,684 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0037s
+2026-06-23 14:50:10,684 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:50:10,684 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 14:50:10,684 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:50:10,684 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:50:10,684 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:50:10,685 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0007s
+2026-06-23 14:50:10,685 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:50:10,686 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:50:52,721 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:50:52,723 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:11,687 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:51:11,688 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-06-23 14:51:11,689 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:11,689 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:51:11,689 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:51:11,693 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0060s
+2026-06-23 14:51:11,694 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:51:11,698 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:51:11,698 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 14:51:11,699 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:11,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:51:11,699 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:51:11,700 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0022s
+2026-06-23 14:51:11,701 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:51:18,717 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:18,718 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:25,711 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:51:25,712 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:52:12,702 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:52:12,704 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0025s
+2026-06-23 14:52:12,706 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:52:12,706 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:52:12,707 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:52:12,710 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0080s
+2026-06-23 14:52:12,711 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:52:12,711 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:52:12,711 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:52:12,712 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:52:12,712 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:52:12,714 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0026s
+2026-06-23 14:52:12,714 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:52:12,715 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:53:13,692 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:53:13,692 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:53:13,693 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:53:13,693 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:53:13,693 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:53:13,695 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0034s
+2026-06-23 14:53:13,699 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:53:13,703 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:53:13,703 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:53:13,703 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:53:13,704 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:53:13,704 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:53:13,705 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0029s
+2026-06-23 14:53:13,706 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:54:14,691 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:54:14,692 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0011s
+2026-06-23 14:54:14,693 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:54:14,694 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:54:14,694 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:54:14,695 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0047s
+2026-06-23 14:54:14,698 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:54:14,698 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:54:14,698 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:54:14,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:54:14,699 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:54:14,701 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0036s
+2026-06-23 14:54:14,702 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:54:14,703 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:55:14,697 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:55:14,699 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0013s
+2026-06-23 14:55:14,699 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:55:14,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:55:14,699 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:55:14,700 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0029s
+2026-06-23 14:55:14,701 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:55:14,701 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 14:55:14,701 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:55:14,702 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:55:14,702 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:55:14,705 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0037s
+2026-06-23 14:55:14,705 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:55:14,707 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:56:14,695 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:56:14,697 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0019s
+2026-06-23 14:56:14,699 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:56:14,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:56:14,700 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:56:14,703 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0083s
+2026-06-23 14:56:14,705 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:56:14,706 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:56:14,706 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:56:14,706 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:56:14,706 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:56:14,707 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0014s
+2026-06-23 14:56:14,708 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:56:14,710 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:57:14,694 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:57:14,697 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0027s
+2026-06-23 14:57:14,699 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:57:14,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:57:14,700 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:57:14,710 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0148s
+2026-06-23 14:57:14,713 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:57:14,715 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0024s
+2026-06-23 14:57:14,715 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:57:14,715 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:57:14,716 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:57:14,717 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0039s
+2026-06-23 14:57:14,719 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:57:14,721 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:58:14,701 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:58:14,702 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0016s
+2026-06-23 14:58:14,703 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:58:14,703 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:58:14,703 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:58:14,708 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0076s
+2026-06-23 14:58:14,711 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:58:14,716 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0054s
+2026-06-23 14:58:14,720 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:58:14,720 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:58:14,720 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:58:14,722 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0112s
+2026-06-23 14:58:14,722 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:58:14,723 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:59:14,693 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:59:14,694 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0012s
+2026-06-23 14:59:14,695 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:59:14,695 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:59:14,695 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:59:14,703 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0101s
+2026-06-23 14:59:14,704 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 14:59:14,704 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 14:59:14,705 - core.auth - INFO - Authentication token has expired
+2026-06-23 14:59:14,705 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 14:59:14,705 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:59:14,707 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0027s
+2026-06-23 14:59:14,707 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 14:59:14,708 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 15:00:14,695 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 15:00:14,697 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0019s
+2026-06-23 15:00:14,699 - core.auth - INFO - Authentication token has expired
+2026-06-23 15:00:14,699 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 15:00:14,699 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 15:00:14,701 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0056s
+2026-06-23 15:00:14,703 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 15:00:14,703 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 15:00:14,704 - core.auth - INFO - Authentication token has expired
+2026-06-23 15:00:14,704 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 15:00:14,704 - core.database - ERROR - Database session error: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 15:00:14,707 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0046s
+2026-06-23 15:00:14,709 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 15:00:14,711 - core.database - ERROR - Failed to create database session: 401: Token has expired
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 174, in decode
+    _validate_claims(
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 497, in _validate_claims
+    _validate_exp(claims, leeway=leeway)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 331, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired.")
+jose.exceptions.ExpiredSignatureError: Signature has expired.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 200, in decode_access_token
+    raise AccessTokenError("Token has expired") from exc
+core.auth.AccessTokenError: Token has expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Token has expired
+2026-06-23 15:01:10,196 - services.database - DEBUG - [DB_OP] Starting database close
+2026-06-23 15:01:10,213 - core.database - INFO - Database connection closed and engine disposed
+2026-06-23 15:01:10,213 - services.database - INFO - Database connections closed
+2026-06-23 15:01:10,214 - services.database - DEBUG - [DB_OP] Database close completed in 0.0175s

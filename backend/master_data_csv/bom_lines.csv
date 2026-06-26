@@ -1,0 +1,18 @@
+id,recipe_id,product_id,quantity,unit,is_optional,substitution_allowed,wastage_factor,notes
+1,1,1,2.5,kg,false,false,0.05,Boneless chicken thigh
+2,1,4,3.0,kg,false,false,0.02,Steamed jasmine rice
+3,1,5,0.5,liter,false,true,0.01,Teriyaki sauce
+4,1,3,1.0,kg,true,true,0.1,Mixed vegetables
+5,2,2,1.5,kg,false,false,0.08,Fresh salmon fillet
+6,2,4,2.0,kg,false,false,0.03,Sushi rice seasoned
+7,2,3,0.3,kg,true,true,0.05,Avocado slices
+8,3,3,4.0,kg,false,false,0.05,Crushed tomatoes
+9,3,5,0.1,kg,false,false,0.02,Fresh basil leaves
+10,3,8,0.2,kg,false,false,0.01,Garlic cloves minced
+11,4,7,5.0,kg,false,false,0.03,Bread flour
+12,4,8,0.1,kg,false,false,0.0,Sea salt
+13,4,5,0.5,kg,false,false,0.0,Sourdough starter
+14,6,6,0.8,kg,false,false,0.02,Dark chocolate 70%
+15,6,5,0.4,kg,false,false,0.01,Unsalted butter
+16,6,8,0.3,kg,false,false,0.02,Granulated sugar
+17,6,7,0.2,kg,false,false,0.01,All-purpose flour

@@ -15,7 +15,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Plus, Search, Pencil, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
-import type { Product, Supplier, Warehouse, Zone, Bin } from '@/lib/types';
+import type { Product, Supplier, Warehouse, Zone, Bin, Unit } from '@/lib/types';
 import { STATUS_COLORS } from '@/lib/types';
 
 export default function MasterData() {
@@ -24,6 +24,7 @@ export default function MasterData() {
   const [warehouses, setWarehouses] = useState<Warehouse[]>([]);
   const [zones, setZones] = useState<Zone[]>([]);
   const [bins, setBins] = useState<Bin[]>([]);
+  const [units, setUnits] = useState<Unit[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('products');
@@ -44,18 +45,20 @@ export default function MasterData() {
 
   const fetchAll = async () => {
     try {
-      const [prodRes, supRes, whRes, zoneRes, binRes] = await Promise.all([
+      const [prodRes, supRes, whRes, zoneRes, binRes, unitRes] = await Promise.all([
         client.entities.products.query({ limit: 200 }),
         client.entities.suppliers.query({ limit: 200 }),
         client.entities.warehouses.query({ limit: 100 }),
         client.entities.zones.query({ limit: 100 }),
         client.entities.bins.query({ limit: 200 }),
+        client.entities.units.query({ limit: 200 }),
       ]);
       setProducts(prodRes.data?.items || []);
       setSuppliers(supRes.data?.items || []);
       setWarehouses(whRes.data?.items || []);
       setZones(zoneRes.data?.items || []);
       setBins(binRes.data?.items || []);
+      setUnits(unitRes.data?.items || []);
     } catch (err) {
       console.error('Failed to fetch master data:', err);
     } finally {
@@ -146,12 +149,13 @@ export default function MasterData() {
     <div className="space-y-6">
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <TabsList>
+          <TabsList className="h-auto flex-wrap">
             <TabsTrigger value="products">Products ({products.length})</TabsTrigger>
             <TabsTrigger value="suppliers">Suppliers ({suppliers.length})</TabsTrigger>
             <TabsTrigger value="warehouses">Warehouses ({warehouses.length})</TabsTrigger>
             <TabsTrigger value="zones">Zones ({zones.length})</TabsTrigger>
             <TabsTrigger value="bins">Bins ({bins.length})</TabsTrigger>
+            <TabsTrigger value="units">Units ({units.length})</TabsTrigger>
           </TabsList>
           {activeTab === 'products' && (
             <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => openProductForm()}>
@@ -265,20 +269,28 @@ export default function MasterData() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b bg-slate-50">
-                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Name</th>
-                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Code</th>
-                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Address</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Warehouse ID</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Warehouse Name</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Location</th>
+                      <th className="text-right py-2.5 px-4 text-slate-500 font-medium">Capacity</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Manager</th>
                       <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Status</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Created Date</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filterBySearch(warehouses, ['name', 'code', 'address']).map((w, idx) => (
+                    {filterBySearch(warehouses, ['name', 'code', 'address', 'manager', 'detail']).map((w, idx) => (
                       <tr key={w.id} className={`border-b border-slate-100 hover:bg-slate-50 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
-                        <td className="py-2.5 px-4 font-medium text-slate-800">{w.name}</td>
                         <td className="py-2.5 px-4 font-mono text-xs text-slate-600">{w.code}</td>
+                        <td className="py-2.5 px-4 font-medium text-slate-800">{w.name}</td>
                         <td className="py-2.5 px-4 text-slate-500">{w.address}</td>
+                        <td className="py-2.5 px-4 text-right text-slate-600">{w.capacity ?? '-'}</td>
+                        <td className="py-2.5 px-4 text-slate-500">{w.manager || '-'}</td>
                         <td className="py-2.5 px-4">
                           <Badge className={`text-xs ${STATUS_COLORS[w.status] || ''}`}>{w.status}</Badge>
+                        </td>
+                        <td className="py-2.5 px-4 text-slate-500 text-xs">
+                          {w.created_at ? new Date(w.created_at).toLocaleDateString() : '-'}
                         </td>
                       </tr>
                     ))}
@@ -360,6 +372,46 @@ export default function MasterData() {
                         </tr>
                       );
                     })}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Units Tab */}
+        <TabsContent value="units">
+          <Card>
+            <CardContent className="p-0">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-slate-50">
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Name</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Code</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Symbol</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Type</th>
+                      <th className="text-right py-2.5 px-4 text-slate-500 font-medium">Decimals</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Base Unit</th>
+                      <th className="text-right py-2.5 px-4 text-slate-500 font-medium">Factor</th>
+                      <th className="text-left py-2.5 px-4 text-slate-500 font-medium">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filterBySearch(units, ['name', 'code', 'symbol', 'unit_type']).map((u, idx) => (
+                      <tr key={u.id} className={`border-b border-slate-100 hover:bg-slate-50 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
+                        <td className="py-2.5 px-4 font-medium text-slate-800">{u.name}</td>
+                        <td className="py-2.5 px-4 font-mono text-xs text-slate-600">{u.code}</td>
+                        <td className="py-2.5 px-4 text-slate-500">{u.symbol}</td>
+                        <td className="py-2.5 px-4 text-slate-600">{u.unit_type}</td>
+                        <td className="py-2.5 px-4 text-right">{u.decimal_places}</td>
+                        <td className="py-2.5 px-4 text-slate-500">{u.base_unit_code}</td>
+                        <td className="py-2.5 px-4 text-right">{u.conversion_factor}</td>
+                        <td className="py-2.5 px-4">
+                          <Badge className={`text-xs ${STATUS_COLORS[u.status || ''] || ''}`}>{u.status}</Badge>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

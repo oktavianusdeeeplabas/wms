@@ -15,7 +15,9 @@ import {
   ShieldAlert,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 import {
   ChartContainer,
   ChartTooltip,
@@ -44,6 +46,7 @@ import type {
   Branch,
   Warehouse,
   StockTransfer,
+  Zone,
 } from '@/lib/types';
 
 // Chart color palette
@@ -65,19 +68,23 @@ const TRANSFER_STATUS_COLORS: Record<string, string> = {
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const { user, isAdmin } = useAuth();
   const [products, setProducts] = useState<Product[]>([]);
   const [lots, setLots] = useState<InventoryLot[]>([]);
   const [receivingDocs, setReceivingDocs] = useState<ReceivingDocument[]>([]);
   const [movements, setMovements] = useState<StockMovement[]>([]);
   const [branches, setBranches] = useState<Branch[]>([]);
   const [warehouses, setWarehouses] = useState<Warehouse[]>([]);
+  const [zones, setZones] = useState<Zone[]>([]);
   const [transfers, setTransfers] = useState<StockTransfer[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedBranchId, setSelectedBranchId] = useState('all');
+  const [selectedWarehouseId, setSelectedWarehouseId] = useState('all');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [prodRes, lotRes, recRes, movRes, branchRes, whRes, transferRes] =
+        const [prodRes, lotRes, recRes, movRes, branchRes, whRes, zoneRes, transferRes] =
           await Promise.all([
             client.entities.products.query({ limit: 200 }),
             client.entities.inventory_lots.query({ limit: 200 }),
@@ -85,6 +92,7 @@ export default function Dashboard() {
             client.entities.stock_movements.query({ limit: 200, sort: '-created_at' }),
             client.entities.branches.query({ limit: 200 }),
             client.entities.warehouses.query({ limit: 200 }),
+            client.entities.zones.query({ limit: 400 }),
             client.entities.stock_transfers.query({ limit: 200 }),
           ]);
         setProducts(prodRes.data?.items || []);
@@ -93,6 +101,7 @@ export default function Dashboard() {
         setMovements(movRes.data?.items || []);
         setBranches(branchRes.data?.items || []);
         setWarehouses(whRes.data?.items || []);
+        setZones(zoneRes.data?.items || []);
         setTransfers(transferRes.data?.items || []);
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err);
@@ -103,72 +112,162 @@ export default function Dashboard() {
     fetchData();
   }, []);
 
-  // === KPI calculations ===
-  const totalProducts = products.length;
+  const effectiveBranchId = isAdmin
+    ? selectedBranchId === 'all' ? null : Number(selectedBranchId)
+    : user?.branch_id || null;
+  const effectiveWarehouseId = isAdmin
+    ? selectedWarehouseId === 'all' ? null : Number(selectedWarehouseId)
+    : user?.warehouse_id || null;
 
-  const lowStockProducts = products.filter((p) => {
-    const totalQty = lots
+  const scopedWarehouses = useMemo(() => {
+    return warehouses.filter((warehouse) => {
+      if (effectiveWarehouseId && warehouse.id !== effectiveWarehouseId) return false;
+      if (effectiveBranchId && warehouse.branch_id !== effectiveBranchId) return false;
+      return true;
+    });
+  }, [warehouses, effectiveBranchId, effectiveWarehouseId]);
+
+  const scopedBranches = useMemo(() => {
+    const scopedBranchIds = new Set(scopedWarehouses.map((warehouse) => warehouse.branch_id));
+    return branches.filter((branch) => {
+      if (effectiveBranchId && branch.id !== effectiveBranchId) return false;
+      if (effectiveWarehouseId) return scopedBranchIds.has(branch.id);
+      return true;
+    });
+  }, [branches, scopedWarehouses, effectiveBranchId, effectiveWarehouseId]);
+
+  const scopedWarehouseIds = useMemo(
+    () => new Set(scopedWarehouses.map((warehouse) => warehouse.id)),
+    [scopedWarehouses]
+  );
+  const zoneWarehouseMap = useMemo(
+    () =>
+      zones.reduce<Record<number, number>>((acc, zone) => {
+        acc[zone.id] = zone.warehouse_id;
+        return acc;
+      }, {}),
+    [zones]
+  );
+  const scopedZoneIds = useMemo(
+    () =>
+      new Set(
+        zones
+          .filter((zone) => scopedWarehouseIds.has(zone.warehouse_id))
+          .map((zone) => zone.id)
+      ),
+    [zones, scopedWarehouseIds]
+  );
+  const scopeActive = Boolean(effectiveBranchId || effectiveWarehouseId);
+
+  const filteredLots = useMemo(() => {
+    if (!scopeActive) return lots;
+    return lots.filter((lot) => lot.zone_id && scopedZoneIds.has(lot.zone_id));
+  }, [lots, scopedZoneIds, scopeActive]);
+
+  const filteredReceivingDocs = useMemo(() => {
+    if (!scopeActive) return receivingDocs;
+    return receivingDocs.filter((doc) => doc.warehouse_id && scopedWarehouseIds.has(doc.warehouse_id));
+  }, [receivingDocs, scopedWarehouseIds, scopeActive]);
+
+  const filteredTransfers = useMemo(() => {
+    if (!scopeActive) return transfers;
+    return transfers.filter((transfer) => {
+      if (effectiveWarehouseId) {
+        return transfer.from_warehouse_id === effectiveWarehouseId || transfer.to_warehouse_id === effectiveWarehouseId;
+      }
+      if (effectiveBranchId) {
+        return transfer.from_branch_id === effectiveBranchId || transfer.to_branch_id === effectiveBranchId;
+      }
+      return true;
+    });
+  }, [transfers, effectiveBranchId, effectiveWarehouseId, scopeActive]);
+
+  const filteredMovements = useMemo(() => {
+    if (!scopeActive) return movements;
+    return movements.filter((movement) => {
+      const fromWarehouseId = movement.from_zone_id ? zoneWarehouseMap[movement.from_zone_id] : null;
+      const toWarehouseId = movement.to_zone_id ? zoneWarehouseMap[movement.to_zone_id] : null;
+      return (
+        Boolean(fromWarehouseId && scopedWarehouseIds.has(fromWarehouseId)) ||
+        Boolean(toWarehouseId && scopedWarehouseIds.has(toWarehouseId))
+      );
+    });
+  }, [movements, zoneWarehouseMap, scopedWarehouseIds, scopeActive]);
+
+  const filteredProducts = useMemo(() => {
+    if (!scopeActive) return products;
+    const productIds = new Set([
+      ...filteredLots.map((lot) => lot.product_id),
+      ...filteredTransfers.map((transfer) => transfer.product_id).filter(Boolean),
+      ...filteredMovements.map((movement) => movement.product_id).filter(Boolean),
+    ]);
+    return products.filter((product) => productIds.has(product.id));
+  }, [products, filteredLots, filteredTransfers, filteredMovements, scopeActive]);
+
+  const adminWarehouseOptions = useMemo(() => {
+    return warehouses.filter(
+      (warehouse) => selectedBranchId === 'all' || String(warehouse.branch_id) === selectedBranchId
+    );
+  }, [warehouses, selectedBranchId]);
+
+  // === KPI calculations ===
+  const totalProducts = filteredProducts.length;
+
+  const lowStockProducts = filteredProducts.filter((p) => {
+    const totalQty = filteredLots
       .filter((l) => l.product_id === p.id && l.status === 'active')
       .reduce((sum, l) => sum + l.quantity, 0);
-    return totalQty <= p.reorder_point;
+    return totalQty <= (p.reorder_point || 0);
   });
 
   const today = new Date();
-  const nearExpiryLots = lots.filter((l) => {
+  const nearExpiryLots = filteredLots.filter((l) => {
     if (l.status !== 'active' || !l.expiry_date) return false;
     const expiry = new Date(l.expiry_date);
     const diffDays = (expiry.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
     return diffDays >= 0 && diffDays <= 5;
   });
 
-  const pendingReceiving = receivingDocs.filter(
+  const pendingReceiving = filteredReceivingDocs.filter(
     (d) => d.status === 'pending' || d.status === 'in_progress'
   );
 
   // === Chart 1: Inventory Levels by Branch ===
   const inventoryByBranch = useMemo(() => {
     const warehouseBranchMap: Record<number, number> = {};
-    warehouses.forEach((w) => {
+    scopedWarehouses.forEach((w) => {
       if (w.branch_id) warehouseBranchMap[w.id] = w.branch_id;
     });
 
-    // Map zones to warehouses (zone -> warehouse)
-    // Since lots have zone_id, we need to figure out which warehouse/branch they belong to
-    // For simplicity, aggregate by branch through warehouse assignments
     const branchStock: Record<number, Record<string, number>> = {};
 
-    lots
+    filteredLots
       .filter((l) => l.status === 'active')
       .forEach((l) => {
-        const product = products.find((p) => p.id === l.product_id);
+        const product = filteredProducts.find((p) => p.id === l.product_id);
         if (!product) return;
 
-        // Try to find the branch via warehouse association
-        // Since lots don't directly have warehouse_id, we'll distribute across branches
-        // that have warehouses. For a more accurate view, we use the lot's zone
-        // For now, distribute evenly or use first matching branch
-        const branchIds = Object.values(warehouseBranchMap);
-        const uniqueBranches = [...new Set(branchIds)];
+        const warehouseId = l.zone_id ? zoneWarehouseMap[l.zone_id] : null;
+        const branchId = warehouseId ? warehouseBranchMap[warehouseId] : null;
+        if (!branchId) return;
 
-        if (uniqueBranches.length > 0) {
-          // Assign to first branch for demo; in production, zone->warehouse->branch mapping
-          const branchId = uniqueBranches[0];
-          if (!branchStock[branchId]) branchStock[branchId] = {};
-          branchStock[branchId][product.category] =
-            (branchStock[branchId][product.category] || 0) + l.quantity;
-        }
+        const category = product.category || 'Uncategorized';
+        if (!branchStock[branchId]) branchStock[branchId] = {};
+        branchStock[branchId][category] =
+          (branchStock[branchId][category] || 0) + l.quantity;
       });
 
     // If no branch mappings, create an "Unassigned" entry
     if (Object.keys(branchStock).length === 0) {
       const categoryTotals: Record<string, number> = {};
-      lots
+      filteredLots
         .filter((l) => l.status === 'active')
         .forEach((l) => {
-          const product = products.find((p) => p.id === l.product_id);
+          const product = filteredProducts.find((p) => p.id === l.product_id);
           if (product) {
-            categoryTotals[product.category] =
-              (categoryTotals[product.category] || 0) + l.quantity;
+            const category = product.category || 'Uncategorized';
+            categoryTotals[category] =
+              (categoryTotals[category] || 0) + l.quantity;
           }
         });
 
@@ -178,10 +277,10 @@ export default function Dashboard() {
         return categories.map((cat) => ({
           category: cat,
           ...Object.fromEntries(
-            branches.length > 0
-              ? branches.map((b, i) => [
+            scopedBranches.length > 0
+              ? scopedBranches.map((b, i) => [
                   b.name,
-                  Math.round(categoryTotals[cat] / Math.max(branches.length, 1) * (1 + (i * 0.2 - 0.2))),
+                  Math.round(categoryTotals[cat] / Math.max(scopedBranches.length, 1) * (1 + (i * 0.2 - 0.2))),
                 ])
               : [['All Stock', categoryTotals[cat]]]
           ),
@@ -198,17 +297,17 @@ export default function Dashboard() {
 
     return Array.from(allCategories).map((category) => {
       const row: Record<string, string | number> = { category };
-      branches.forEach((branch) => {
+      scopedBranches.forEach((branch) => {
         row[branch.name] = branchStock[branch.id]?.[category] || 0;
       });
       return row;
     });
-  }, [lots, products, branches, warehouses]);
+  }, [filteredLots, filteredProducts, scopedBranches, scopedWarehouses, zoneWarehouseMap]);
 
   const branchChartConfig = useMemo<ChartConfig>(() => {
     const config: ChartConfig = {};
     const branchNames =
-      branches.length > 0 ? branches.map((b) => b.name) : ['All Stock'];
+      scopedBranches.length > 0 ? scopedBranches.map((b) => b.name) : ['All Stock'];
     branchNames.forEach((name, i) => {
       config[name] = {
         label: name,
@@ -216,7 +315,7 @@ export default function Dashboard() {
       };
     });
     return config;
-  }, [branches]);
+  }, [scopedBranches]);
 
   // === Chart 2: Stock Movement Trends Over Time ===
   const movementTrends = useMemo(() => {
@@ -232,7 +331,7 @@ export default function Dashboard() {
       dayMap[key] = { date: key, inbound: 0, outbound: 0, adjustment: 0 };
     }
 
-    movements.forEach((m) => {
+    filteredMovements.forEach((m) => {
       if (!m.created_at) return;
       const day = new Date(m.created_at).toISOString().split('T')[0];
       if (dayMap[day]) {
@@ -250,7 +349,7 @@ export default function Dashboard() {
       ...dayMap[d],
       label: new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
     }));
-  }, [movements]);
+  }, [filteredMovements]);
 
   const movementChartConfig: ChartConfig = {
     inbound: { label: 'Inbound', color: 'hsl(142, 71%, 45%)' },
@@ -261,7 +360,7 @@ export default function Dashboard() {
   // === Chart 3: Transfer Status Breakdown ===
   const transferStatusData = useMemo(() => {
     const statusCount: Record<string, number> = {};
-    transfers.forEach((t) => {
+    filteredTransfers.forEach((t) => {
       const status = t.status || 'unknown';
       statusCount[status] = (statusCount[status] || 0) + 1;
     });
@@ -272,7 +371,7 @@ export default function Dashboard() {
       label: status.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
       fill: TRANSFER_STATUS_COLORS[status] || 'hsl(220, 14%, 70%)',
     }));
-  }, [transfers]);
+  }, [filteredTransfers]);
 
   const transferChartConfig: ChartConfig = {
     pending: { label: 'Pending', color: TRANSFER_STATUS_COLORS.pending },
@@ -283,16 +382,17 @@ export default function Dashboard() {
 
   // === Stock by Category (existing) ===
   const categoryStock: Record<string, number> = {};
-  lots
+  filteredLots
     .filter((l) => l.status === 'active')
     .forEach((l) => {
-      const product = products.find((p) => p.id === l.product_id);
+      const product = filteredProducts.find((p) => p.id === l.product_id);
       if (product) {
-        categoryStock[product.category] = (categoryStock[product.category] || 0) + l.quantity;
+        const category = product.category || 'Uncategorized';
+        categoryStock[category] = (categoryStock[category] || 0) + l.quantity;
       }
     });
 
-  const recentMovements = movements.slice(0, 5);
+  const recentMovements = filteredMovements.slice(0, 5);
 
   const kpiCards = [
     {
@@ -334,10 +434,59 @@ export default function Dashboard() {
   }
 
   const branchKeys =
-    branches.length > 0 ? branches.map((b) => b.name) : ['All Stock'];
+    scopedBranches.length > 0 ? scopedBranches.map((b) => b.name) : ['All Stock'];
 
   return (
     <div className="space-y-6">
+      <div className="flex flex-col gap-3 rounded-lg border border-slate-200 bg-white p-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <h3 className="text-sm font-semibold text-slate-800">Dashboard Scope</h3>
+          <p className="text-xs text-slate-500">
+            {isAdmin
+              ? 'Admins can view all branches or focus the dashboard on one branch and warehouse.'
+              : `Showing data for ${scopedBranches[0]?.name || 'assigned branch'}${
+                  effectiveWarehouseId ? ` / ${scopedWarehouses[0]?.name || 'assigned warehouse'}` : ''
+                }.`}
+          </p>
+        </div>
+        {isAdmin && (
+          <div className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2 lg:w-auto">
+            <Select
+              value={selectedBranchId}
+              onValueChange={(value) => {
+                setSelectedBranchId(value);
+                setSelectedWarehouseId('all');
+              }}
+            >
+              <SelectTrigger className="w-full sm:w-56">
+                <SelectValue placeholder="Select branch" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All branches</SelectItem>
+                {branches.map((branch) => (
+                  <SelectItem key={branch.id} value={String(branch.id)}>
+                    {branch.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedWarehouseId} onValueChange={setSelectedWarehouseId}>
+              <SelectTrigger className="w-full sm:w-56">
+                <SelectValue placeholder="Select warehouse" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All warehouses</SelectItem>
+                {adminWarehouseOptions.map((warehouse) => (
+                  <SelectItem key={warehouse.id} value={String(warehouse.id)}>
+                    {warehouse.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+      </div>
+
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpiCards.map((kpi) => {
@@ -540,7 +689,7 @@ export default function Dashboard() {
             {nearExpiryLots.length > 0 ? (
               <div className="space-y-2">
                 {nearExpiryLots.map((lot) => {
-                  const product = products.find((p) => p.id === lot.product_id);
+                  const product = filteredProducts.find((p) => p.id === lot.product_id);
                   const daysLeft = Math.ceil(
                     (new Date(lot.expiry_date).getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
                   );
@@ -591,7 +740,7 @@ export default function Dashboard() {
                 </thead>
                 <tbody>
                   {recentMovements.map((mov) => {
-                    const product = products.find((p) => p.id === mov.product_id);
+                    const product = filteredProducts.find((p) => p.id === mov.product_id);
                     const isInbound = mov.movement_type === 'inbound';
                     const isOutbound = mov.movement_type === 'outbound';
                     return (
@@ -686,8 +835,8 @@ export default function Dashboard() {
               <div>
                 <p className="text-sm font-medium text-slate-800">Fraud Monitor</p>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  {movements.filter(m => m.movement_type === 'adjustment').length > 0
-                    ? `${movements.filter(m => m.movement_type === 'adjustment').length} adjustments to review`
+                  {filteredMovements.filter(m => m.movement_type === 'adjustment').length > 0
+                    ? `${filteredMovements.filter(m => m.movement_type === 'adjustment').length} adjustments to review`
                     : 'No anomalies detected'}
                 </p>
               </div>

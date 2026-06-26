@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "tag_id": 1,
+    "epc": "E2801191A5030066F1000001",
+    "reader_id": 1,
+    "zone_id": 1,
+    "bin_id": 1,
+    "rssi": -49,
+    "read_count": 7,
+    "direction": "inbound",
+    "event_type": "receiving",
+    "seen_at": "2026-04-21 08:10:00"
+  },
+  {
+    "id": 2,
+    "tag_id": 2,
+    "epc": "E2801191A5030066F1000002",
+    "reader_id": 2,
+    "zone_id": 2,
+    "bin_id": 3,
+    "rssi": -57,
+    "read_count": 5,
+    "direction": "outbound",
+    "event_type": "movement",
+    "seen_at": "2026-04-21 08:12:00"
+  }
+]

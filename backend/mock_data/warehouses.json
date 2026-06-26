@@ -1,23 +1,86 @@
 [
     {
-        "name": "Main Warehouse",
-        "code": "WH-001",
-        "address": "123 Industrial Ave, Kitchen District",
+        "id": 1,
+        "name": "Central Kitchen Chilled Warehouse",
+        "code": "WH-CK-CHL",
+        "address": "PT. Maju Mapan Central Kitchen - Chilled Prep Room",
+        "detail": "Primary chilled storage for broth, sauces, fresh toppings, and outlet-ready ramen kits. Operates under FIFO with daily dispatch waves.",
+        "capacity": 12000,
+        "manager": "Budi Santoso",
+        "branch_id": 1,
         "status": "active",
-        "created_at": "2026-04-01 08:00:00"
+        "created_at": "2026-01-05 08:30:00"
     },
     {
-        "name": "Cold Storage Facility",
-        "code": "WH-002",
-        "address": "456 Frozen Blvd, Cold Zone",
+        "id": 2,
+        "name": "Central Kitchen Frozen Warehouse",
+        "code": "WH-CK-FRZ",
+        "address": "PT. Maju Mapan Central Kitchen - Freezer Room",
+        "detail": "Frozen storage for gyoza, ebi tempura, and seafood toppings with temperature-controlled picking for outlet replenishment.",
+        "capacity": 9000,
+        "manager": "Rina Maharani",
+        "branch_id": 1,
         "status": "active",
-        "created_at": "2026-04-01 08:00:00"
+        "created_at": "2026-01-05 08:30:00"
     },
     {
-        "name": "Dry Goods Depot",
-        "code": "WH-003",
-        "address": "789 Pantry Lane",
+        "id": 3,
+        "name": "Central Kitchen Dry Warehouse",
+        "code": "WH-CK-DRY",
+        "address": "PT. Maju Mapan Central Kitchen - Dry Goods Store",
+        "detail": "Ambient warehouse for packaging, dry garnishes, labels, and long shelf-life consumables used by the central kitchen.",
+        "capacity": 18000,
+        "manager": "Agus Pratama",
+        "branch_id": 1,
         "status": "active",
-        "created_at": "2026-04-02 09:00:00"
+        "created_at": "2026-01-05 08:30:00"
+    },
+    {
+        "id": 4,
+        "name": "Emporium Pluit Outlet Store",
+        "code": "WH-EMP-ST",
+        "address": "RamenYA! Mall Emporium Pluit - Back of House",
+        "detail": "Outlet back-of-house store for chilled ramen kits and frozen sides supporting lunch and dinner service replenishment.",
+        "capacity": 1600,
+        "manager": "Nadia Putri",
+        "branch_id": 2,
+        "status": "active",
+        "created_at": "2026-01-10 09:30:00"
+    },
+    {
+        "id": 5,
+        "name": "Senayan City Outlet Store",
+        "code": "WH-SCY-ST",
+        "address": "RamenYA! Senayan City - Back of House",
+        "detail": "High-volume outlet storage focused on Chicken Legendary Ramen kits, chiller rotation, and lunch peak readiness.",
+        "capacity": 2200,
+        "manager": "Dimas Wicaksono",
+        "branch_id": 3,
+        "status": "active",
+        "created_at": "2026-01-12 09:30:00"
+    },
+    {
+        "id": 6,
+        "name": "Kuningan City Outlet Store",
+        "code": "WH-KNC-ST",
+        "address": "RamenYA! Kuningan City - Back of House",
+        "detail": "Outlet storage for chilled ramen base kits and frozen seafood toppings, with dinner-service replenishment checks.",
+        "capacity": 1500,
+        "manager": "Sari Lestari",
+        "branch_id": 4,
+        "status": "active",
+        "created_at": "2026-01-15 09:30:00"
+    },
+    {
+        "id": 7,
+        "name": "Senayan Park Outlet Store",
+        "code": "WH-SPK-ST",
+        "address": "RamenYA! Senayan Park - Back of House",
+        "detail": "Outlet store for weekend promo volume, packaging stock, and chilled kit staging before service rush.",
+        "capacity": 1700,
+        "manager": "Kevin Hartono",
+        "branch_id": 5,
+        "status": "active",
+        "created_at": "2026-01-18 09:30:00"
     }
 ]

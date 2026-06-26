@@ -1,0 +1,5 @@
+id,name,code,address,branch_id,status,created_at
+1,Main Warehouse,WH-001,"123 Industrial Ave, Kitchen District",1,active,2026-04-01 08:00:00
+2,Cold Storage Facility,WH-002,"456 Frozen Blvd, Cold Zone",2,active,2026-04-01 08:00:00
+3,Dry Goods Depot,WH-003,789 Pantry Lane,3,active,2026-04-02 09:00:00
+4,Westside Overflow Hub,WH-004,"246 Service Loop, Westside Logistics Park",2,active,2026-04-06 07:30:00

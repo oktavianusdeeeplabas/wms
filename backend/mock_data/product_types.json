@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Consumable",
+        "code": "PTYP-CONSUMABLE",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "Finished Goods",
+        "code": "PTYP-FINISHED-GOODS",
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "Raw Material",
+        "code": "PTYP-RAW-MATERIAL",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "name": "Semi-Finished",
+        "code": "PTYP-SEMI-FINISHED",
+        "status": "active"
+    }
+]

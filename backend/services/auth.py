@@ -5,9 +5,11 @@ from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, Optional, Tuple
 
 from core.auth import create_access_token
+from core.auth import hash_password, verify_password
 from core.config import settings
 from core.database import db_manager
-from models.auth import OIDCState, User
+from models.auth import LocalCredential, OIDCState, User
+from services.rbac import normalize_role, resolve_permissions
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -31,10 +33,11 @@ class AuthService:
             # Update user info if needed
             user.email = email
             user.name = name
+            user.role = normalize_role(user.role)
             user.last_login = datetime.now(timezone.utc)
         else:
             # Create new user
-            user = User(id=platform_sub, email=email, name=name, last_login=datetime.now(timezone.utc))
+            user = User(id=platform_sub, email=email, name=name, role="viewer", last_login=datetime.now(timezone.utc))
             self.db.add(user)
 
         start_time_commit = time.time()
@@ -56,10 +59,14 @@ class AuthService:
             expires_minutes = 60
         expires_at = datetime.now(timezone.utc) + timedelta(minutes=expires_minutes)
 
+        resolved_permissions = await resolve_permissions(self.db, user.role, user.id)
         claims: Dict[str, Any] = {
             "sub": user.id,
             "email": user.email,
-            "role": user.role,
+            "role": normalize_role(user.role),
+            "branch_id": user.branch_id,
+            "warehouse_id": user.warehouse_id,
+            "permissions": resolved_permissions,
         }
 
         if user.name:
@@ -69,6 +76,79 @@ class AuthService:
         token = create_access_token(claims, expires_minutes=expires_minutes)
 
         return token, expires_at, claims
+
+    async def authenticate_local_user(self, username: str, password: str) -> Optional[User]:
+        """Authenticate a locally managed user using email or username/password."""
+        identifier = username.strip()
+        result = await self.db.execute(select(LocalCredential).where(LocalCredential.username == identifier))
+        credential = result.scalar_one_or_none()
+
+        if not credential:
+            user_result = await self.db.execute(select(User).where(User.email == identifier))
+            user = user_result.scalars().first()
+            if not user:
+                return None
+
+            credential_result = await self.db.execute(
+                select(LocalCredential).where(LocalCredential.user_id == user.id)
+            )
+            credential = credential_result.scalar_one_or_none()
+
+        if not credential or not verify_password(password, credential.password_hash):
+            return None
+
+        user_result = await self.db.execute(select(User).where(User.id == credential.user_id))
+        user = user_result.scalar_one_or_none()
+        if not user:
+            return None
+
+        user.role = normalize_role(user.role)
+        user.last_login = datetime.now(timezone.utc)
+        await self.db.commit()
+        await self.db.refresh(user)
+        return user
+
+    async def create_local_user(
+        self,
+        username: str,
+        password: str,
+        email: str,
+        name: Optional[str] = None,
+        role: str = "viewer",
+        branch_id: Optional[int] = None,
+        warehouse_id: Optional[int] = None,
+        user_id: Optional[str] = None,
+    ) -> User:
+        """Create a local auth user and credential pair."""
+        normalized_role = normalize_role(role)
+        resolved_user_id = user_id or f"local:{username}"
+
+        existing_user = await self.db.execute(select(User).where(User.id == resolved_user_id))
+        if existing_user.scalar_one_or_none():
+            raise ValueError("User ID already exists")
+
+        existing_credential = await self.db.execute(select(LocalCredential).where(LocalCredential.username == username))
+        if existing_credential.scalar_one_or_none():
+            raise ValueError("Username already exists")
+
+        user = User(
+            id=resolved_user_id,
+            email=email,
+            name=name,
+            role=normalized_role,
+            branch_id=branch_id,
+            warehouse_id=warehouse_id,
+        )
+        credential = LocalCredential(
+            user_id=resolved_user_id,
+            username=username,
+            password_hash=hash_password(password),
+        )
+        self.db.add(user)
+        self.db.add(credential)
+        await self.db.commit()
+        await self.db.refresh(user)
+        return user
 
     async def store_oidc_state(self, state: str, nonce: str, code_verifier: str):
         """Store OIDC state in database."""
@@ -115,12 +195,10 @@ async def initialize_admin_user():
     # Ensure database is initialized first
     await initialize_database()
 
-    admin_user_id = getattr(settings, "admin_user_id", "")
-    admin_user_email = getattr(settings, "admin_user_email", "")
-
-    if not admin_user_id or not admin_user_email:
-        logger.warning("Admin user ID or email not configured, skipping admin initialization")
-        return
+    admin_user_id = getattr(settings, "admin_user_id", "") or "local-admin"
+    admin_user_email = getattr(settings, "admin_user_email", "") or getattr(settings, "local_admin_email", "admin@local.dev")
+    local_admin_username = getattr(settings, "local_admin_username", "admin")
+    local_admin_password = getattr(settings, "local_admin_password", "admin123")
 
     async with db_manager.async_session_maker() as db:
         # Check if admin user already exists
@@ -142,3 +220,16 @@ async def initialize_admin_user():
             db.add(admin_user)
             await db.commit()
             logger.debug(f"Created admin user: {admin_user_id} with email: {admin_user_email}")
+
+        credential_result = await db.execute(select(LocalCredential).where(LocalCredential.username == local_admin_username))
+        credential = credential_result.scalar_one_or_none()
+        if not credential:
+            db.add(
+                LocalCredential(
+                    user_id=admin_user_id,
+                    username=local_admin_username,
+                    password_hash=hash_password(local_admin_password),
+                )
+            )
+            await db.commit()
+            logger.debug("Created local admin credential for username: %s", local_admin_username)

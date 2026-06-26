@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Piece",
+    "code": "PCS",
+    "symbol": "pcs",
+    "unit_type": "count",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Kilogram",
+    "code": "KG",
+    "symbol": "kg",
+    "unit_type": "weight",
+    "decimal_places": 3,
+    "base_unit_code": "KG",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Gram",
+    "code": "G",
+    "symbol": "g",
+    "unit_type": "weight",
+    "decimal_places": 0,
+    "base_unit_code": "KG",
+    "conversion_factor": 0.001,
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "Liter",
+    "code": "L",
+    "symbol": "L",
+    "unit_type": "volume",
+    "decimal_places": 3,
+    "base_unit_code": "L",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "name": "Milliliter",
+    "code": "ML",
+    "symbol": "ml",
+    "unit_type": "volume",
+    "decimal_places": 0,
+    "base_unit_code": "L",
+    "conversion_factor": 0.001,
+    "status": "active"
+  },
+  {
+    "id": 6,
+    "name": "Pack",
+    "code": "PACK",
+    "symbol": "pack",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 7,
+    "name": "Box",
+    "code": "BOX",
+    "symbol": "box",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 8,
+    "name": "Carton",
+    "code": "CTN",
+    "symbol": "ctn",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 9,
+    "name": "Bag",
+    "code": "BAG",
+    "symbol": "bag",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 10,
+    "name": "Tray",
+    "code": "TRAY",
+    "symbol": "tray",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 11,
+    "name": "Bottle",
+    "code": "BTL",
+    "symbol": "btl",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  },
+  {
+    "id": 12,
+    "name": "Can",
+    "code": "CAN",
+    "symbol": "can",
+    "unit_type": "packaging",
+    "decimal_places": 0,
+    "base_unit_code": "PCS",
+    "conversion_factor": 1,
+    "status": "active"
+  }
+]

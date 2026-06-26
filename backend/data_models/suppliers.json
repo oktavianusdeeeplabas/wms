@@ -23,6 +23,36 @@
         "address": {
             "type": "string"
         },
+        "marketing_name": {
+            "type": "string"
+        },
+        "marketing_phone": {
+            "type": "string"
+        },
+        "marketing_email": {
+            "type": "string"
+        },
+        "branch_id": {
+            "type": "integer"
+        },
+        "warehouse_id": {
+            "type": "integer"
+        },
+        "payment_type_id": {
+            "type": "integer"
+        },
+        "payment_terms": {
+            "type": "string"
+        },
+        "lead_time_days": {
+            "type": "integer"
+        },
+        "tax_number": {
+            "type": "string"
+        },
+        "notes": {
+            "type": "string"
+        },
         "status": {
             "type": "string"
         },

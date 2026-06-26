@@ -1,0 +1,38 @@
+{
+    "title": "units",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "code": {
+            "type": "string"
+        },
+        "symbol": {
+            "type": "string"
+        },
+        "unit_type": {
+            "type": "string"
+        },
+        "decimal_places": {
+            "type": "integer"
+        },
+        "base_unit_code": {
+            "type": "string"
+        },
+        "conversion_factor": {
+            "type": "number"
+        },
+        "status": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "code"
+    ]
+}

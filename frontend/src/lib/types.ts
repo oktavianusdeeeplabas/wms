@@ -4,7 +4,16 @@ export interface Product {
   id: number;
   name: string;
   sku: string;
+  short_name: string | null;
+  barcode: string | null;
+  qr_code: string | null;
+  alternate_barcode: string | null;
   category: string | null;
+  sub_category: string | null;
+  brand: string | null;
+  manufacturer: string | null;
+  product_type: string | null;
+  item_group: string | null;
   uom: string | null;
   temperature_class: string | null;
   shelf_life_days: number | null;
@@ -12,6 +21,20 @@ export interface Product {
   max_stock: number | null;
   reorder_point: number | null;
   is_perishable: boolean | null;
+  product_image: string | null;
+  description: string | null;
+  status: string | null;
+}
+
+export interface Unit {
+  id: number;
+  name: string;
+  code: string;
+  symbol: string | null;
+  unit_type: string | null;
+  decimal_places: number | null;
+  base_unit_code: string | null;
+  conversion_factor: number | null;
   status: string | null;
 }
 
@@ -43,6 +66,9 @@ export interface Warehouse {
   name: string;
   code: string;
   address: string;
+  detail: string | null;
+  capacity: number | null;
+  manager: string | null;
   branch_id: number;
   status: string;
   created_at: string;
@@ -97,6 +123,52 @@ export interface InventoryLot {
   status: string;
   supplier_id: number;
   cost_per_unit: number;
+}
+
+export interface UhfReader {
+  id: number;
+  name: string;
+  code: string;
+  device_identifier: string | null;
+  ip_address: string | null;
+  antenna_port: number | null;
+  zone_id: number | null;
+  bin_id: number | null;
+  status: string | null;
+  last_seen_at: string | null;
+  created_at: string | null;
+}
+
+export interface UhfTag {
+  id: number;
+  epc: string;
+  tid: string | null;
+  sticker_label: string | null;
+  product_id: number | null;
+  lot_id: number | null;
+  assigned_quantity: number | null;
+  current_zone_id: number | null;
+  current_bin_id: number | null;
+  status: string | null;
+  encoded_at: string | null;
+  assigned_at: string | null;
+  last_seen_at: string | null;
+  notes: string | null;
+  created_at: string | null;
+}
+
+export interface UhfTagRead {
+  id: number;
+  tag_id: number | null;
+  epc: string;
+  reader_id: number | null;
+  zone_id: number | null;
+  bin_id: number | null;
+  rssi: number | null;
+  read_count: number | null;
+  direction: string | null;
+  event_type: string | null;
+  seen_at: string | null;
 }
 
 export interface StockMovement {
@@ -178,6 +250,17 @@ export interface LabelTemplate {
   status: string | null;
 }
 
+export interface ProductionOrder {
+  id: number;
+  order_number: string;
+  product_id: number;
+  quantity: number;
+  status: string;
+  scheduled_date: string;
+  notes: string;
+  created_at: string;
+}
+
 export interface EntityResponse<T> {
   data: {
     items: T[];
@@ -201,6 +284,10 @@ export const STATUS_COLORS: Record<string, string> = {
   in_transit: 'bg-violet-100 text-violet-800',
   received: 'bg-emerald-100 text-emerald-800',
   cancelled: 'bg-red-100 text-red-800',
+  assigned: 'bg-blue-100 text-blue-800',
+  available: 'bg-slate-100 text-slate-700',
+  online: 'bg-emerald-100 text-emerald-800',
+  offline: 'bg-red-100 text-red-800',
   accepted: 'bg-emerald-100 text-emerald-800',
   rejected: 'bg-red-100 text-red-800',
   ambient: 'bg-orange-100 text-orange-800',

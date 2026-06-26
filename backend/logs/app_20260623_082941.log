@@ -1,0 +1,784 @@
+2026-06-23 08:29:41,255 - main - INFO - === Logging system initialized ===
+2026-06-23 08:29:41,256 - main - INFO - Log file: logs/app_20260623_082941.log
+2026-06-23 08:29:41,256 - main - INFO - Log level: INFO
+2026-06-23 08:29:41,256 - main - INFO - Timestamp: 20260623_082941
+2026-06-23 08:29:41,613 - main - INFO - Included router: routers.aihub.router
+2026-06-23 08:29:41,625 - main - INFO - Included router: routers.auth.router
+2026-06-23 08:29:41,637 - main - INFO - Included router: routers.bins.router
+2026-06-23 08:29:41,651 - main - INFO - Included router: routers.bom_lines.router
+2026-06-23 08:29:41,688 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-23 08:29:41,702 - main - INFO - Included router: routers.branches.router
+2026-06-23 08:29:41,703 - main - INFO - Included router: routers.config.router
+2026-06-23 08:29:41,703 - main - INFO - Included router: routers.health.router
+2026-06-23 08:29:41,717 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-23 08:29:41,724 - main - INFO - Included router: routers.label_templates.router
+2026-06-23 08:29:41,729 - main - INFO - Included router: routers.notifications.router
+2026-06-23 08:29:41,744 - main - INFO - Included router: routers.products.router
+2026-06-23 08:29:41,759 - main - INFO - Included router: routers.rbac.router
+2026-06-23 08:29:41,812 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-23 08:29:41,826 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-23 08:29:41,832 - main - INFO - Included router: routers.settings.router
+2026-06-23 08:29:41,847 - main - INFO - Included router: routers.stock_movements.router
+2026-06-23 08:29:41,862 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-23 08:29:41,873 - main - INFO - Included router: routers.storage.router
+2026-06-23 08:29:41,887 - main - INFO - Included router: routers.suppliers.router
+2026-06-23 08:29:41,897 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-23 08:29:41,907 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-23 08:29:41,917 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-23 08:29:41,923 - main - INFO - Included router: routers.user.router
+2026-06-23 08:29:41,936 - main - INFO - Included router: routers.warehouses.router
+2026-06-23 08:29:41,948 - main - INFO - Included router: routers.zones.router
+2026-06-23 08:29:41,949 - main - INFO - === Application startup initiated ===
+2026-06-23 08:29:41,949 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 08:29:41,949 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 08:29:41,949 - core.database - INFO - Starting database initialization...
+2026-06-23 08:29:41,949 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-23 08:29:41,949 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-23 08:29:41,950 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-23 08:29:41,950 - core.database - INFO - Creating async database engine...
+2026-06-23 08:29:41,950 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-23 08:29:41,964 - core.database - INFO - Database engine created successfully
+2026-06-23 08:29:41,964 - core.database - INFO - Creating async session maker...
+2026-06-23 08:29:41,964 - core.database - INFO - Async session maker created successfully
+2026-06-23 08:29:41,964 - core.database - INFO - Database connection initialized successfully
+2026-06-23 08:29:41,964 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 08:29:41,964 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 08:29:41,964 - core.database - INFO - 🔧 Starting table creation...
+2026-06-23 08:29:42,014 - core.database - INFO - Tables initialized successfully
+2026-06-23 08:29:42,015 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0502s
+2026-06-23 08:29:42,016 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 08:29:42,016 - services.database - INFO - Database initialized successfully
+2026-06-23 08:29:42,016 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0667s
+2026-06-23 08:29:42,025 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-06-23 08:29:42,025 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-06-23 08:29:42,026 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-06-23 08:29:42,026 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-06-23 08:29:42,026 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-06-23 08:29:42,116 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-06-23 08:29:42,116 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-06-23 08:29:42,116 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-06-23 08:29:42,117 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-06-23 08:29:42,117 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-06-23 08:29:42,117 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-06-23 08:29:42,117 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-06-23 08:29:42,117 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-06-23 08:29:42,118 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-06-23 08:29:42,118 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-06-23 08:29:42,128 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-06-23 08:29:42,128 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-06-23 08:29:42,128 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-06-23 08:29:42,128 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-06-23 08:29:42,129 - services.mock_data - INFO - Processing mock data file uhf_readers.json for table uhf_readers
+2026-06-23 08:29:42,129 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-06-23 08:29:42,129 - services.mock_data - INFO - Processing mock data file uhf_tag_reads.json for table uhf_tag_reads
+2026-06-23 08:29:42,129 - services.mock_data - INFO - Processing mock data file uhf_tags.json for table uhf_tags
+2026-06-23 08:29:42,130 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-06-23 08:29:42,130 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-06-23 08:29:42,138 - services.mock_data - INFO - Table uhf_readers already has 2 rows; skipping mock insert
+2026-06-23 08:29:42,138 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-06-23 08:29:42,139 - services.mock_data - INFO - Table uhf_tag_reads already has 2 rows; skipping mock insert
+2026-06-23 08:29:42,139 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-06-23 08:29:42,139 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-06-23 08:29:42,139 - services.mock_data - INFO - Table uhf_tags already has 5 rows; skipping mock insert
+2026-06-23 08:29:42,143 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-06-23 08:29:42,143 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-23 08:29:42,143 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-23 08:29:42,143 - core.database - INFO - Starting database initialization...
+2026-06-23 08:29:42,143 - core.database - INFO - Database already initialized
+2026-06-23 08:29:42,143 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-23 08:29:42,143 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-23 08:29:42,143 - core.database - INFO - Tables already initialized
+2026-06-23 08:29:42,143 - services.database - INFO - 🔧 Table creation completed
+2026-06-23 08:29:42,143 - services.database - INFO - Database initialized successfully
+2026-06-23 08:29:42,143 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0002s
+2026-06-23 08:29:42,143 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-06-23 08:29:42,144 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-06-23 08:29:42,144 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-06-23 08:29:42,146 - services.auth - DEBUG - Admin user local-admin already exists
+2026-06-23 08:29:42,147 - main - INFO - === Application startup completed successfully ===
+2026-06-23 08:29:58,809 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:29:58,810 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:29:58,810 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-06-23 08:29:58,810 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-06-23 08:29:58,810 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-06-23 08:29:58,817 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:29:58,819 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:29:58,819 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:29:58,819 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:29:58,823 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0044s
+2026-06-23 08:29:58,824 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0142s
+2026-06-23 08:30:13,479 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:13,479 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:30:13,502 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 08:30:13,502 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0234s
+2026-06-23 08:30:28,803 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:28,804 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-06-23 08:30:28,805 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:30:28,809 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:28,809 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:30:28,810 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:30:28,812 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0035s
+2026-06-23 08:30:28,814 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0110s
+2026-06-23 08:30:31,286 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:30:31,287 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:31,287 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:30:31,287 - routers.products - DEBUG - Updating products 8 with data: name=None sku=None category=None uom=None temperature_class=None shelf_life_days=None min_stock=None max_stock=None reorder_point=None is_perishable=None status='active'
+2026-06-23 08:30:31,292 - services.products - INFO - Updated products 8
+2026-06-23 08:30:31,292 - routers.products - INFO - Products 8 updated successfully
+2026-06-23 08:30:31,298 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0114s
+2026-06-23 08:30:58,729 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:58,729 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:30:58,729 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:30:58,731 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:58,731 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:30:58,731 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:30:58,734 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0056s
+2026-06-23 08:30:58,735 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0038s
+2026-06-23 08:30:59,217 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:30:59,217 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:30:59,217 - core.auth - WARNING - Token validation failed: JWTError
+2026-06-23 08:30:59,218 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 08:30:59,218 - core.database - ERROR - Database session error: 401: Invalid authentication token
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 264, in _verify_signature
+    raise JWSSignatureError()
+jose.exceptions.JWSSignatureError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 77, in verify
+    _verify_signature(signing_input, header, signature, key, algorithms)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 266, in _verify_signature
+    raise JWSError("Signature verification failed.")
+jose.exceptions.JWSError: Signature verification failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Signature verification failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 204, in decode_access_token
+    raise AccessTokenError("Invalid authentication token") from exc
+core.auth.AccessTokenError: Invalid authentication token
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Invalid authentication token
+2026-06-23 08:30:59,223 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0060s
+2026-06-23 08:30:59,223 - core.database - ERROR - Failed to create database session: 401: Invalid authentication token
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 264, in _verify_signature
+    raise JWSSignatureError()
+jose.exceptions.JWSSignatureError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 77, in verify
+    _verify_signature(signing_input, header, signature, key, algorithms)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 266, in _verify_signature
+    raise JWSError("Signature verification failed.")
+jose.exceptions.JWSError: Signature verification failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Signature verification failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 204, in decode_access_token
+    raise AccessTokenError("Invalid authentication token") from exc
+core.auth.AccessTokenError: Invalid authentication token
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Invalid authentication token
+2026-06-23 08:31:15,026 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:15,026 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:31:15,045 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-06-23 08:31:15,045 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0196s
+2026-06-23 08:31:26,079 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:26,079 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:31:26,080 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:26,083 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0034s
+2026-06-23 08:31:28,723 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:28,723 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:31:28,723 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:28,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:28,725 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:31:28,725 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:28,727 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0030s
+2026-06-23 08:31:28,727 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0047s
+2026-06-23 08:31:37,954 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:37,954 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:31:37,954 - core.auth - WARNING - Token validation failed: JWTError
+2026-06-23 08:31:37,954 - dependencies.auth - WARNING - Token validation failed: AccessTokenError
+2026-06-23 08:31:37,954 - core.database - ERROR - Database session error: 401: Invalid authentication token
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 264, in _verify_signature
+    raise JWSSignatureError()
+jose.exceptions.JWSSignatureError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 77, in verify
+    _verify_signature(signing_input, header, signature, key, algorithms)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 266, in _verify_signature
+    raise JWSError("Signature verification failed.")
+jose.exceptions.JWSError: Signature verification failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Signature verification failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 204, in decode_access_token
+    raise AccessTokenError("Invalid authentication token") from exc
+core.auth.AccessTokenError: Invalid authentication token
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Invalid authentication token
+2026-06-23 08:31:37,955 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0012s
+2026-06-23 08:31:37,955 - core.database - ERROR - Failed to create database session: 401: Invalid authentication token
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 264, in _verify_signature
+    raise JWSSignatureError()
+jose.exceptions.JWSSignatureError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 77, in verify
+    _verify_signature(signing_input, header, signature, key, algorithms)
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jws.py", line 266, in _verify_signature
+    raise JWSError("Signature verification failed.")
+jose.exceptions.JWSError: Signature verification failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 192, in decode_access_token
+    payload = jwt.decode(token, jwt_settings["jwt_secret_key"], algorithms=[jwt_settings["jwt_algorithm"]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Signature verification failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 31, in get_current_user
+    payload = decode_access_token(token)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/core/auth.py", line 204, in decode_access_token
+    raise AccessTokenError("Invalid authentication token") from exc
+core.auth.AccessTokenError: Invalid authentication token
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oktavianus/wms/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/.venv311/lib/python3.11/site-packages/fastapi/dependencies/utils.py", line 678, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oktavianus/wms/backend/dependencies/auth.py", line 35, in get_current_user
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=exc.message)
+fastapi.exceptions.HTTPException: 401: Invalid authentication token
+2026-06-23 08:31:50,347 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:50,347 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:31:50,347 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:50,349 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0021s
+2026-06-23 08:31:58,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:58,725 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:31:58,725 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:58,726 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:31:58,727 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:31:58,727 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:31:58,730 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0032s
+2026-06-23 08:31:58,730 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0057s
+2026-06-23 08:32:28,725 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:32:28,726 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:32:28,726 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:32:28,731 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:32:28,731 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:32:28,732 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:32:28,737 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0058s
+2026-06-23 08:32:28,737 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0116s
+2026-06-23 08:32:58,725 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:32:58,725 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:32:58,727 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:32:58,731 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:32:58,732 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-06-23 08:32:58,733 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:32:58,738 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0068s
+2026-06-23 08:32:58,739 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0145s
+2026-06-23 08:33:28,733 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:33:28,733 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:33:28,734 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:33:28,736 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:33:28,737 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:33:28,737 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:33:28,747 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0107s
+2026-06-23 08:33:28,748 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0150s
+2026-06-23 08:33:58,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:33:58,725 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:33:58,725 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:33:58,727 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:33:58,727 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:33:58,728 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:33:58,731 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0035s
+2026-06-23 08:33:58,731 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0065s
+2026-06-23 08:34:28,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:28,724 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:34:28,724 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:28,726 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:28,726 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:34:28,727 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:28,729 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0058s
+2026-06-23 08:34:28,730 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0036s
+2026-06-23 08:34:48,844 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,846 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,847 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:34:48,847 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,848 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,851 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,851 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:34:48,851 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,853 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,855 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,855 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:34:48,855 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,856 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,856 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,856 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:34:48,857 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,857 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,858 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,858 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:34:48,858 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,858 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,859 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,859 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:34:48,859 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,865 - routers.products - DEBUG - Found 8 productss
+2026-06-23 08:34:48,865 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-06-23 08:34:48,866 - routers.branches - DEBUG - Found 4 branchess
+2026-06-23 08:34:48,867 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-06-23 08:34:48,868 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-06-23 08:34:48,869 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0224s
+2026-06-23 08:34:48,869 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0147s
+2026-06-23 08:34:48,870 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0119s
+2026-06-23 08:34:48,870 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0196s
+2026-06-23 08:34:48,871 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:48,871 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0146s
+2026-06-23 08:34:48,872 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:48,872 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:34:48,872 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:34:48,874 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-06-23 08:34:48,875 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0159s
+2026-06-23 08:34:48,881 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-06-23 08:34:48,881 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0095s
+2026-06-23 08:34:58,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:58,724 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:34:58,725 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:58,729 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:34:58,729 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-06-23 08:34:58,730 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:34:58,737 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0135s
+2026-06-23 08:34:58,738 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0092s
+2026-06-23 08:35:03,851 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:03,851 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:35:03,851 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:03,853 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:03,854 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:35:03,854 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:03,857 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0032s
+2026-06-23 08:35:03,857 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0060s
+2026-06-23 08:35:28,725 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:28,726 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-06-23 08:35:28,726 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:28,729 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:28,729 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:35:28,730 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:28,733 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0081s
+2026-06-23 08:35:28,737 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0081s
+2026-06-23 08:35:58,724 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:58,724 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-06-23 08:35:58,725 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:58,729 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:35:58,729 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-06-23 08:35:58,730 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:35:58,734 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0056s
+2026-06-23 08:35:58,738 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0144s
+2026-06-23 08:36:28,723 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:36:28,723 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:36:28,724 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:36:28,728 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:36:28,728 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:36:28,729 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:36:28,732 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0044s
+2026-06-23 08:36:28,732 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0091s
+2026-06-23 08:36:58,720 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:36:58,720 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:36:58,721 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:36:58,722 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:36:58,722 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:36:58,722 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:36:58,724 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0035s
+2026-06-23 08:36:58,724 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0024s
+2026-06-23 08:37:28,727 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:37:28,727 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-06-23 08:37:28,728 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:37:28,730 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:37:28,730 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:37:28,731 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:37:28,734 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0040s
+2026-06-23 08:37:28,735 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0088s
+2026-06-23 08:37:38,129 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:37:38,129 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:37:38,129 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:37:38,130 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:37:38,130 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:37:38,130 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:37:38,133 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0034s
+2026-06-23 08:37:38,134 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0054s
+2026-06-23 08:38:08,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:38:08,133 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:38:08,134 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:38:08,135 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:38:08,135 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:38:08,135 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:38:08,137 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0024s
+2026-06-23 08:38:08,138 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0045s
+2026-06-23 08:38:38,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:38:38,133 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:38:38,133 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:38:38,134 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:38:38,134 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:38:38,134 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:38:38,138 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0039s
+2026-06-23 08:38:38,138 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0055s
+2026-06-23 08:39:08,131 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:08,132 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0009s
+2026-06-23 08:39:08,133 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:08,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:08,133 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:08,133 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:08,139 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0054s
+2026-06-23 08:39:08,140 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0082s
+2026-06-23 08:39:23,347 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,348 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,348 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:39:23,348 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,348 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,349 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,349 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,349 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,349 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,349 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,349 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:39:23,349 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,350 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,350 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,350 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,350 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,350 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,350 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,350 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,351 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,351 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,351 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,351 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,351 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,353 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-06-23 08:39:23,353 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0047s
+2026-06-23 08:39:23,354 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,354 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,354 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,354 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:23,355 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-06-23 08:39:23,355 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-06-23 08:39:23,356 - routers.branches - DEBUG - Found 4 branchess
+2026-06-23 08:39:23,356 - routers.products - DEBUG - Found 8 productss
+2026-06-23 08:39:23,356 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-06-23 08:39:23,357 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0057s
+2026-06-23 08:39:23,357 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0077s
+2026-06-23 08:39:23,358 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0072s
+2026-06-23 08:39:23,358 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0102s
+2026-06-23 08:39:23,358 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0080s
+2026-06-23 08:39:23,358 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:23,359 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:23,359 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:23,359 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=400, fields=None
+2026-06-23 08:39:23,361 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-06-23 08:39:23,361 - routers.zones - DEBUG - Found 5 zoness
+2026-06-23 08:39:23,361 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0073s
+2026-06-23 08:39:23,362 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0027s
+2026-06-23 08:39:38,136 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:38,136 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:39:38,137 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:38,140 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:38,140 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-06-23 08:39:38,141 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:38,144 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0040s
+2026-06-23 08:39:38,145 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0085s
+2026-06-23 08:39:51,588 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,589 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,589 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-06-23 08:39:51,589 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,592 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,592 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,592 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:39:51,593 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,593 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,594 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,594 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:51,594 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,594 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,594 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,594 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:51,594 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,595 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,595 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,595 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:39:51,595 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,595 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,596 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,596 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:51,596 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,598 - routers.branches - DEBUG - Found 4 branchess
+2026-06-23 08:39:51,599 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-06-23 08:39:51,599 - routers.products - DEBUG - Found 8 productss
+2026-06-23 08:39:51,599 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-06-23 08:39:51,599 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-06-23 08:39:51,600 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0049s
+2026-06-23 08:39:51,601 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0050s
+2026-06-23 08:39:51,601 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,601 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0127s
+2026-06-23 08:39:51,602 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0079s
+2026-06-23 08:39:51,602 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,602 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:51,602 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=400, fields=None
+2026-06-23 08:39:51,603 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:39:51,603 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0106s
+2026-06-23 08:39:51,603 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:39:51,603 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:39:51,603 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:39:51,604 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-06-23 08:39:51,605 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0103s
+2026-06-23 08:39:51,607 - routers.zones - DEBUG - Found 5 zoness
+2026-06-23 08:39:51,607 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0052s
+2026-06-23 08:39:51,610 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-06-23 08:39:51,610 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0069s
+2026-06-23 08:40:04,826 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,826 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,826 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:04,826 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,827 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,827 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,828 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:04,828 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,828 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,828 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,828 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:04,830 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,830 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,831 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,831 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:04,831 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,831 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,831 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,831 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:04,831 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,832 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,832 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,832 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:04,832 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,835 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-06-23 08:40:04,835 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-06-23 08:40:04,836 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-06-23 08:40:04,837 - routers.products - DEBUG - Found 8 productss
+2026-06-23 08:40:04,837 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0063s
+2026-06-23 08:40:04,838 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0095s
+2026-06-23 08:40:04,838 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,839 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0118s
+2026-06-23 08:40:04,840 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,840 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:04,840 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=400, fields=None
+2026-06-23 08:40:04,841 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-06-23 08:40:04,841 - routers.branches - DEBUG - Found 4 branchess
+2026-06-23 08:40:04,841 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:04,842 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0156s
+2026-06-23 08:40:04,842 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:04,842 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:04,843 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:04,843 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0112s
+2026-06-23 08:40:04,843 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0121s
+2026-06-23 08:40:04,845 - routers.zones - DEBUG - Found 5 zoness
+2026-06-23 08:40:04,845 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-06-23 08:40:04,847 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0067s
+2026-06-23 08:40:04,848 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0052s
+2026-06-23 08:40:08,131 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:08,132 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-06-23 08:40:08,132 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:08,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:08,133 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:08,133 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:08,135 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0021s
+2026-06-23 08:40:08,135 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0040s
+2026-06-23 08:40:16,808 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,809 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,809 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:16,809 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,809 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,810 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,810 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:16,810 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,810 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,810 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,810 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,810 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,811 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,811 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,811 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,811 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,812 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,812 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,812 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,812 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,812 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,812 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,812 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,813 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,814 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-06-23 08:40:16,814 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-06-23 08:40:16,815 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0054s
+2026-06-23 08:40:16,816 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0047s
+2026-06-23 08:40:16,816 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,817 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,817 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,817 - routers.zones - DEBUG - Querying zoness: query=None, sort=None, skip=0, limit=400, fields=None
+2026-06-23 08:40:16,817 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:16,817 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:16,817 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0000s
+2026-06-23 08:40:16,817 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-06-23 08:40:16,818 - routers.branches - DEBUG - Found 4 branchess
+2026-06-23 08:40:16,818 - routers.products - DEBUG - Found 8 productss
+2026-06-23 08:40:16,818 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-06-23 08:40:16,818 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-06-23 08:40:16,819 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0071s
+2026-06-23 08:40:16,819 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0103s
+2026-06-23 08:40:16,820 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0072s
+2026-06-23 08:40:16,820 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0095s
+2026-06-23 08:40:16,821 - routers.zones - DEBUG - Found 5 zoness
+2026-06-23 08:40:16,822 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-06-23 08:40:16,822 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0053s
+2026-06-23 08:40:16,822 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0050s
+2026-06-23 08:40:38,133 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:38,134 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-06-23 08:40:38,135 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:38,137 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-06-23 08:40:38,137 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-06-23 08:40:38,138 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-06-23 08:40:38,140 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0074s
+2026-06-23 08:40:38,143 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0060s
+2026-06-23 08:40:38,684 - services.database - DEBUG - [DB_OP] Starting database close
+2026-06-23 08:40:38,709 - core.database - INFO - Database connection closed and engine disposed
+2026-06-23 08:40:38,709 - services.database - INFO - Database connections closed
+2026-06-23 08:40:38,709 - services.database - DEBUG - [DB_OP] Database close completed in 0.0250s

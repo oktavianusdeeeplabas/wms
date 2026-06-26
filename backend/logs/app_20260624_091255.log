@@ -1,0 +1,56 @@
+2026-06-24 09:12:55,762 - main - INFO - === Logging system initialized ===
+2026-06-24 09:12:55,762 - main - INFO - Log file: logs/app_20260624_091255.log
+2026-06-24 09:12:55,763 - main - INFO - Log level: INFO
+2026-06-24 09:12:55,763 - main - INFO - Timestamp: 20260624_091255
+2026-06-24 09:12:56,077 - main - INFO - Included router: routers.aihub.router
+2026-06-24 09:12:56,089 - main - INFO - Included router: routers.auth.router
+2026-06-24 09:12:56,102 - main - INFO - Included router: routers.bins.router
+2026-06-24 09:12:56,116 - main - INFO - Included router: routers.bom_lines.router
+2026-06-24 09:12:56,131 - main - INFO - Included router: routers.bom_recipes.router
+2026-06-24 09:12:56,145 - main - INFO - Included router: routers.branches.router
+2026-06-24 09:12:56,145 - main - INFO - Included router: routers.config.router
+2026-06-24 09:12:56,146 - main - INFO - Included router: routers.health.router
+2026-06-24 09:12:56,160 - main - INFO - Included router: routers.inventory_lots.router
+2026-06-24 09:12:56,168 - main - INFO - Included router: routers.label_templates.router
+2026-06-24 09:12:56,173 - main - INFO - Included router: routers.notifications.router
+2026-06-24 09:12:56,180 - main - INFO - Included router: routers.payment_types.router
+2026-06-24 09:12:56,228 - main - INFO - Included router from list: routers.product_lookups.router[0]
+2026-06-24 09:12:56,230 - main - INFO - Included router from list: routers.product_lookups.router[1]
+2026-06-24 09:12:56,232 - main - INFO - Included router from list: routers.product_lookups.router[2]
+2026-06-24 09:12:56,234 - main - INFO - Included router from list: routers.product_lookups.router[3]
+2026-06-24 09:12:56,237 - main - INFO - Included router from list: routers.product_lookups.router[4]
+2026-06-24 09:12:56,239 - main - INFO - Included router from list: routers.product_lookups.router[5]
+2026-06-24 09:12:56,258 - main - INFO - Included router: routers.products.router
+2026-06-24 09:12:56,264 - main - INFO - Included router: routers.rbac.router
+2026-06-24 09:12:56,277 - main - INFO - Included router: routers.receiving_documents.router
+2026-06-24 09:12:56,291 - main - INFO - Included router: routers.receiving_lines.router
+2026-06-24 09:12:56,298 - main - INFO - Included router: routers.settings.router
+2026-06-24 09:12:56,313 - main - INFO - Included router: routers.stock_movements.router
+2026-06-24 09:12:56,328 - main - INFO - Included router: routers.stock_transfers.router
+2026-06-24 09:12:56,339 - main - INFO - Included router: routers.storage.router
+2026-06-24 09:12:56,358 - main - INFO - Included router: routers.suppliers.router
+2026-06-24 09:12:56,369 - main - INFO - Included router: routers.uhf_readers.router
+2026-06-24 09:12:56,378 - main - INFO - Included router: routers.uhf_tag_reads.router
+2026-06-24 09:12:56,431 - main - INFO - Included router: routers.uhf_tags.router
+2026-06-24 09:12:56,440 - main - INFO - Included router: routers.units.router
+2026-06-24 09:12:56,448 - main - INFO - Included router: routers.user.router
+2026-06-24 09:12:56,465 - main - INFO - Included router: routers.warehouses.router
+2026-06-24 09:12:56,478 - main - INFO - Included router: routers.zones.router
+2026-06-24 09:12:56,479 - main - INFO - === Application startup initiated ===
+2026-06-24 09:12:56,479 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-06-24 09:12:56,480 - services.database - INFO - 🔧 Starting database initialization...
+2026-06-24 09:12:56,480 - core.database - INFO - Starting database initialization...
+2026-06-24 09:12:56,480 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-06-24 09:12:56,480 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-06-24 09:12:56,481 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-06-24 09:12:56,481 - core.database - INFO - Creating async database engine...
+2026-06-24 09:12:56,481 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-06-24 09:12:56,482 - core.database - INFO - Database engine created successfully
+2026-06-24 09:12:56,482 - core.database - INFO - Creating async session maker...
+2026-06-24 09:12:56,482 - core.database - INFO - Async session maker created successfully
+2026-06-24 09:12:56,483 - core.database - INFO - Database connection initialized successfully
+2026-06-24 09:12:56,483 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-06-24 09:12:56,483 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-06-24 09:12:56,483 - core.database - INFO - 🔧 Starting table creation...
+2026-06-24 09:12:56,489 - core.database - ERROR - Failed to create tables: [Errno 1] Operation not permitted
+2026-06-24 09:12:56,489 - services.database - ERROR - Failed to initialize database: [Errno 1] Operation not permitted

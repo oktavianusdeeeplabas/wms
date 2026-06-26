@@ -1,0 +1,196 @@
+2026-04-18 11:25:32,794 - main - INFO - === Logging system initialized ===
+2026-04-18 11:25:32,794 - main - INFO - Log file: logs/app_20260418_112532.log
+2026-04-18 11:25:32,794 - main - INFO - Log level: INFO
+2026-04-18 11:25:32,794 - main - INFO - Timestamp: 20260418_112532
+2026-04-18 11:25:33,189 - main - INFO - Included router: routers.aihub.router
+2026-04-18 11:25:33,201 - main - INFO - Included router: routers.auth.router
+2026-04-18 11:25:33,257 - main - INFO - Included router: routers.bins.router
+2026-04-18 11:25:33,277 - main - INFO - Included router: routers.bom_lines.router
+2026-04-18 11:25:33,299 - main - INFO - Included router: routers.bom_recipes.router
+2026-04-18 11:25:33,317 - main - INFO - Included router: routers.branches.router
+2026-04-18 11:25:33,318 - main - INFO - Included router: routers.health.router
+2026-04-18 11:25:33,340 - main - INFO - Included router: routers.inventory_lots.router
+2026-04-18 11:25:33,351 - main - INFO - Included router: routers.label_templates.router
+2026-04-18 11:25:33,368 - main - INFO - Included router: routers.products.router
+2026-04-18 11:25:33,371 - main - INFO - Included router: routers.rbac.router
+2026-04-18 11:25:33,387 - main - INFO - Included router: routers.receiving_documents.router
+2026-04-18 11:25:33,445 - main - INFO - Included router: routers.receiving_lines.router
+2026-04-18 11:25:33,452 - main - INFO - Included router: routers.settings.router
+2026-04-18 11:25:33,470 - main - INFO - Included router: routers.stock_movements.router
+2026-04-18 11:25:33,490 - main - INFO - Included router: routers.stock_transfers.router
+2026-04-18 11:25:33,503 - main - INFO - Included router: routers.storage.router
+2026-04-18 11:25:33,519 - main - INFO - Included router: routers.suppliers.router
+2026-04-18 11:25:33,526 - main - INFO - Included router: routers.user.router
+2026-04-18 11:25:33,542 - main - INFO - Included router: routers.warehouses.router
+2026-04-18 11:25:33,559 - main - INFO - Included router: routers.zones.router
+2026-04-18 11:25:33,560 - main - INFO - === Application startup initiated ===
+2026-04-18 11:25:33,560 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-18 11:25:33,560 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-18 11:25:33,561 - core.database - INFO - Starting database initialization...
+2026-04-18 11:25:33,561 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-18 11:25:33,561 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-18 11:25:33,561 - core.database - WARNING - Adjusted database URL driver for async compatibility
+2026-04-18 11:25:33,561 - core.database - INFO - Creating async database engine...
+2026-04-18 11:25:33,561 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-18 11:25:33,604 - core.database - INFO - Database engine created successfully
+2026-04-18 11:25:33,604 - core.database - INFO - Creating async session maker...
+2026-04-18 11:25:33,604 - core.database - INFO - Async session maker created successfully
+2026-04-18 11:25:33,604 - core.database - INFO - Database connection initialized successfully
+2026-04-18 11:25:33,605 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-18 11:25:33,605 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-18 11:25:33,605 - core.database - INFO - 🔧 Starting table creation...
+2026-04-18 11:25:33,646 - core.database - INFO - Tables initialized successfully
+2026-04-18 11:25:33,646 - core.database - DEBUG - [DB_OP] Create tables completed in 0.0410s
+2026-04-18 11:25:33,646 - services.database - INFO - 🔧 Table creation completed
+2026-04-18 11:25:33,646 - services.database - INFO - Database initialized successfully
+2026-04-18 11:25:33,646 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0856s
+2026-04-18 11:25:33,646 - services.mock_data - INFO - Processing mock data file bins.json for table bins
+2026-04-18 11:25:33,646 - services.mock_data - INFO - Processing mock data file bom_lines.json for table bom_lines
+2026-04-18 11:25:33,647 - services.mock_data - INFO - Processing mock data file bom_recipes.json for table bom_recipes
+2026-04-18 11:25:33,647 - services.mock_data - INFO - Processing mock data file branches.json for table branches
+2026-04-18 11:25:33,648 - services.mock_data - INFO - Processing mock data file inventory_lots.json for table inventory_lots
+2026-04-18 11:25:33,699 - services.mock_data - INFO - Table bins already has 8 rows; skipping mock insert
+2026-04-18 11:25:33,700 - services.mock_data - INFO - Processing mock data file products.json for table products
+2026-04-18 11:25:33,700 - services.mock_data - INFO - Table inventory_lots already has 10 rows; skipping mock insert
+2026-04-18 11:25:33,701 - services.mock_data - INFO - Processing mock data file receiving_documents.json for table receiving_documents
+2026-04-18 11:25:33,701 - services.mock_data - INFO - Table branches already has 4 rows; skipping mock insert
+2026-04-18 11:25:33,702 - services.mock_data - INFO - Table bom_lines already has 17 rows; skipping mock insert
+2026-04-18 11:25:33,702 - services.mock_data - INFO - Processing mock data file receiving_lines.json for table receiving_lines
+2026-04-18 11:25:33,702 - services.mock_data - INFO - Processing mock data file stock_movements.json for table stock_movements
+2026-04-18 11:25:33,702 - services.mock_data - INFO - Table bom_recipes already has 6 rows; skipping mock insert
+2026-04-18 11:25:33,703 - services.mock_data - INFO - Processing mock data file stock_transfers.json for table stock_transfers
+2026-04-18 11:25:33,709 - services.mock_data - INFO - Table products already has 8 rows; skipping mock insert
+2026-04-18 11:25:33,710 - services.mock_data - INFO - Processing mock data file suppliers.json for table suppliers
+2026-04-18 11:25:33,710 - services.mock_data - INFO - Table receiving_lines already has 5 rows; skipping mock insert
+2026-04-18 11:25:33,710 - services.mock_data - INFO - Table receiving_documents already has 5 rows; skipping mock insert
+2026-04-18 11:25:33,711 - services.mock_data - INFO - Processing mock data file warehouses.json for table warehouses
+2026-04-18 11:25:33,711 - services.mock_data - INFO - Processing mock data file zones.json for table zones
+2026-04-18 11:25:33,712 - services.mock_data - INFO - Table stock_movements already has 7 rows; skipping mock insert
+2026-04-18 11:25:33,712 - services.mock_data - INFO - Table stock_transfers already has 3 rows; skipping mock insert
+2026-04-18 11:25:33,717 - services.mock_data - INFO - Table suppliers already has 5 rows; skipping mock insert
+2026-04-18 11:25:33,718 - services.mock_data - INFO - Table warehouses already has 3 rows; skipping mock insert
+2026-04-18 11:25:33,718 - services.mock_data - INFO - Table zones already has 5 rows; skipping mock insert
+2026-04-18 11:25:33,718 - services.database - DEBUG - [DB_OP] Starting database initialization
+2026-04-18 11:25:33,718 - services.database - INFO - 🔧 Starting database initialization...
+2026-04-18 11:25:33,718 - core.database - INFO - Starting database initialization...
+2026-04-18 11:25:33,718 - core.database - INFO - Database already initialized
+2026-04-18 11:25:33,718 - services.database - INFO - 🔧 Database connection initialized, now creating tables if tables not exist...
+2026-04-18 11:25:33,718 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-18 11:25:33,718 - core.database - INFO - Tables already initialized
+2026-04-18 11:25:33,718 - services.database - INFO - 🔧 Table creation completed
+2026-04-18 11:25:33,718 - services.database - INFO - Database initialized successfully
+2026-04-18 11:25:33,718 - services.database - DEBUG - [DB_OP] Database initialization completed in 0.0002s
+2026-04-18 11:25:33,718 - core.config - DEBUG - Read dynamic attribute local_admin_email from environment variable LOCAL_ADMIN_EMAIL
+2026-04-18 11:25:33,718 - core.config - DEBUG - Read dynamic attribute local_admin_username from environment variable LOCAL_ADMIN_USERNAME
+2026-04-18 11:25:33,718 - core.config - DEBUG - Read dynamic attribute local_admin_password from environment variable LOCAL_ADMIN_PASSWORD
+2026-04-18 11:25:33,725 - services.auth - DEBUG - Admin user local-admin already exists
+2026-04-18 11:25:33,726 - main - INFO - === Application startup completed successfully ===
+2026-04-18 11:25:36,474 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:36,474 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-18 11:25:36,529 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-04-18 11:25:36,529 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-18 11:25:36,529 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-18 11:25:36,538 - core.auth - DEBUG - Authentication token created for user hash: 8aa20392
+2026-04-18 11:25:36,538 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0642s
+2026-04-18 11:25:37,072 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:25:37,111 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,111 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:37,112 - routers.products - DEBUG - Querying productss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,115 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,115 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:37,116 - routers.receiving_documents - DEBUG - Querying receiving_documentss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,118 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,118 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-18 11:25:37,119 - routers.stock_movements - DEBUG - Querying stock_movementss: query=None, sort=-created_at, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,122 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,122 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:37,122 - routers.inventory_lots - DEBUG - Querying inventory_lotss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,124 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,124 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:37,124 - routers.branches - DEBUG - Querying branchess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,126 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,126 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:37,126 - routers.warehouses - DEBUG - Querying warehousess: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,139 - routers.receiving_documents - DEBUG - Found 5 receiving_documentss
+2026-04-18 11:25:37,139 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0244s
+2026-04-18 11:25:37,140 - routers.stock_movements - DEBUG - Found 7 stock_movementss
+2026-04-18 11:25:37,141 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0224s
+2026-04-18 11:25:37,141 - routers.branches - DEBUG - Found 4 branchess
+2026-04-18 11:25:37,142 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0179s
+2026-04-18 11:25:37,142 - routers.products - DEBUG - Found 8 productss
+2026-04-18 11:25:37,142 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0309s
+2026-04-18 11:25:37,146 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:37,146 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0001s
+2026-04-18 11:25:37,146 - routers.stock_transfers - DEBUG - Querying stock_transferss: query=None, sort=None, skip=0, limit=200, fields=None
+2026-04-18 11:25:37,147 - routers.inventory_lots - DEBUG - Found 10 inventory_lotss
+2026-04-18 11:25:37,147 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0252s
+2026-04-18 11:25:37,150 - routers.warehouses - DEBUG - Found 3 warehousess
+2026-04-18 11:25:37,151 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0250s
+2026-04-18 11:25:37,154 - routers.stock_transfers - DEBUG - Found 3 stock_transferss
+2026-04-18 11:25:37,154 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0085s
+2026-04-18 11:25:43,259 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:25:43,259 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-18 11:25:43,259 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:25:43,259 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:25:43,260 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:25:43,263 - services.user - DEBUG - [DB_OP] list_users completed in 0.0035s - count: 1
+2026-04-18 11:25:43,263 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0042s
+2026-04-18 11:27:21,718 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:27:21,776 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:27:21,777 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0129s
+2026-04-18 11:27:21,778 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:27:21,778 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:27:21,783 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:27:21,787 - services.user - DEBUG - [DB_OP] list_users completed in 0.0088s - count: 1
+2026-04-18 11:27:21,787 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0229s
+2026-04-18 11:28:53,066 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:28:53,113 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:28:53,161 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0476s
+2026-04-18 11:28:53,161 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:28:53,161 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:28:53,170 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:28:53,175 - services.user - DEBUG - [DB_OP] list_users completed in 0.0138s - count: 1
+2026-04-18 11:28:53,176 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0628s
+2026-04-18 11:29:32,516 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:29:32,538 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:29:32,538 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-18 11:29:32,539 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:29:32,539 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:29:32,541 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:29:32,551 - services.user - DEBUG - [DB_OP] list_users completed in 0.0117s - count: 1
+2026-04-18 11:29:32,551 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0133s
+2026-04-18 11:30:34,262 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:30:34,283 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:30:34,284 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0012s
+2026-04-18 11:30:34,284 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:30:34,285 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:30:34,297 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:30:34,313 - services.user - DEBUG - [DB_OP] list_users completed in 0.0279s - count: 1
+2026-04-18 11:30:34,315 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0325s
+2026-04-18 11:30:43,690 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:30:43,691 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-04-18 11:30:43,691 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:30:43,691 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:30:43,692 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:30:43,695 - services.user - DEBUG - [DB_OP] list_users completed in 0.0042s - count: 1
+2026-04-18 11:30:43,696 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0055s
+2026-04-18 11:31:41,208 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:31:41,228 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:31:41,229 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-18 11:31:41,229 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:31:41,229 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:31:41,235 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:31:41,243 - services.user - DEBUG - [DB_OP] list_users completed in 0.0142s - count: 1
+2026-04-18 11:31:41,244 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0155s
+2026-04-18 11:33:36,910 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:33:36,937 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-18 11:33:36,937 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-04-18 11:33:36,938 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:33:36,939 - services.user - DEBUG - [DB_OP] Starting list_users
+2026-04-18 11:33:36,966 - core.auth - DEBUG - Authentication token validated for user hash: 8aa20392
+2026-04-18 11:33:36,971 - services.user - DEBUG - [DB_OP] list_users completed in 0.0326s - count: 1
+2026-04-18 11:33:36,971 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.0348s
+2026-04-18 11:36:08,932 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-18 11:36:08,957 - core.database - INFO - Database connection closed and engine disposed
+2026-04-18 11:36:08,957 - services.database - INFO - Database connections closed
+2026-04-18 11:36:08,957 - services.database - DEBUG - [DB_OP] Database close completed in 0.0247s

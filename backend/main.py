@@ -6,6 +6,7 @@ import traceback
 from contextlib import asynccontextmanager
 from datetime import datetime
 
+from core.auth import AccessTokenError, decode_access_token
 from core.config import settings
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,8 +15,12 @@ from fastapi.routing import APIRouter
 
 # MODULE_IMPORTS_START
 from services.database import initialize_database, close_database
-from services.mock_data import initialize_mock_data
+from services.mock_data import initialize_demo_data
 from services.auth import initialize_admin_user
+from services.rbac import initialize_default_roles
+from services.notifications import create_update_notifications_for_all_users
+from core.database import db_manager
+from models.notifications import Notification
 # MODULE_IMPORTS_END
 
 
@@ -67,7 +72,9 @@ async def lifespan(app: FastAPI):
 
     # MODULE_STARTUP_START
     await initialize_database()
-    await initialize_mock_data()
+    async with db_manager.async_session_maker() as db:
+        await initialize_default_roles(db)
+    await initialize_demo_data()
     await initialize_admin_user()
     # MODULE_STARTUP_END
 
@@ -96,6 +103,155 @@ app.add_middleware(
     expose_headers=["*"],
 )
 # MODULE_MIDDLEWARE_END
+
+
+READ_METHODS = {"GET", "HEAD", "OPTIONS"}
+
+ENTITY_PERMISSION_POLICY = {
+    "bins": {"read": "inventory.view", "write": "inventory.manage"},
+    "bom_lines": {"read": "production.view", "write": "production.manage"},
+    "bom_recipes": {"read": "production.view", "write": "production.manage"},
+    "branches": {"read": "dashboard.view", "write": "settings.manage"},
+    "inventory_lots": {"read": "inventory.view", "write": "inventory.manage"},
+    "label_templates": {"read": "production.view", "write": "production.manage"},
+    "payment_types": {"read": "inventory.view", "write": "settings.manage"},
+    "product_categories": {"read": "inventory.view", "write": "settings.manage"},
+    "product_sub_categories": {"read": "inventory.view", "write": "settings.manage"},
+    "brands": {"read": "inventory.view", "write": "settings.manage"},
+    "manufacturers": {"read": "inventory.view", "write": "settings.manage"},
+    "product_types": {"read": "inventory.view", "write": "settings.manage"},
+    "item_groups": {"read": "inventory.view", "write": "settings.manage"},
+    "products": {"read": "inventory.view", "write": "settings.manage"},
+    "receiving_documents": {"read": "operations.view", "write": "operations.execute"},
+    "receiving_lines": {"read": "operations.view", "write": "operations.execute"},
+    "stock_movements": {"read": "inventory.view", "write": "operations.execute"},
+    "stock_transfers": {"read": "operations.view", "write": "operations.execute"},
+    "suppliers": {"read": "inventory.view", "write": "settings.manage"},
+    "uhf_readers": {"read": "inventory.view", "write": "inventory.manage"},
+    "uhf_tag_reads": {"read": "inventory.view", "write": "operations.execute"},
+    "uhf_tags": {"read": "inventory.view", "write": "inventory.manage"},
+    "units": {"read": "inventory.view", "write": "settings.manage"},
+    "warehouses": {"read": "inventory.view", "write": "settings.manage"},
+    "zones": {"read": "inventory.view", "write": "settings.manage"},
+}
+
+PUBLIC_PATH_PREFIXES = (
+    "/api/config",
+    "/api/v1/auth",
+    "/api/v1/health",
+    "/api/v1/notifications",
+    "/docs",
+    "/openapi.json",
+    "/redoc",
+    "/health",
+)
+
+
+def _extract_bearer_token(request: Request) -> str | None:
+    authorization = request.headers.get("authorization", "")
+    scheme, _, token = authorization.partition(" ")
+    if scheme.lower() != "bearer" or not token:
+        return None
+    return token
+
+
+def _required_permission_for_request(path: str, method: str) -> str | None:
+    if method == "OPTIONS":
+        return None
+
+    if any(path == prefix or path.startswith(f"{prefix}/") for prefix in PUBLIC_PATH_PREFIXES):
+        return None
+
+    if path.startswith("/api/v1/entities/"):
+        parts = path.split("/")
+        entity_name = parts[4] if len(parts) > 4 else ""
+        action = "read" if method in READ_METHODS else "write"
+        policy = ENTITY_PERMISSION_POLICY.get(entity_name)
+        if policy:
+            return policy[action]
+        return "inventory.view" if action == "read" else "inventory.manage"
+
+    if path.startswith("/api/v1/aihub"):
+        return "analytics.view"
+
+    if path.startswith("/api/v1/settings") or path.startswith("/api/v1/storage"):
+        return "settings.manage"
+
+    return None
+
+
+def _should_create_update_notification(path: str, method: str, status_code: int) -> bool:
+    if status_code >= 400 or method in READ_METHODS:
+        return False
+    if path.startswith("/api/v1/notifications"):
+        return False
+    return (
+        path.startswith("/api/v1/entities/")
+        or path.startswith("/api/v1/users")
+        or path.startswith("/api/v1/rbac")
+        or path.startswith("/api/v1/settings")
+    )
+
+
+async def _create_update_notification(request: Request, payload: dict, response_status_code: int) -> None:
+    method = request.method.upper()
+    path = request.url.path
+    if not _should_create_update_notification(path, method, response_status_code):
+        return
+
+    if not db_manager.async_session_maker:
+        return
+
+    try:
+        async with db_manager.async_session_maker() as db:
+            await create_update_notifications_for_all_users(
+                db,
+                method=method,
+                path=path,
+                actor_id=payload.get("sub"),
+                actor_email=payload.get("email"),
+            )
+    except Exception:
+        logging.getLogger(__name__).exception("Failed to create update notification")
+
+
+@app.middleware("http")
+async def enforce_jwt_rbac(request: Request, call_next):
+    required_permission = _required_permission_for_request(request.url.path, request.method.upper())
+    if not required_permission:
+        return await call_next(request)
+
+    token = _extract_bearer_token(request)
+    if not token:
+        return JSONResponse(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            content={"detail": "Authentication credentials were not provided"},
+        )
+
+    try:
+        payload = decode_access_token(token)
+    except AccessTokenError as exc:
+        return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content={"detail": exc.message})
+
+    if payload.get("role") == "admin":
+        response = await call_next(request)
+        await _create_update_notification(request, payload, response.status_code)
+        return response
+
+    permissions = {
+        str(permission)
+        for permission in payload.get("permissions", [])
+        if isinstance(permission, str) and permission.strip()
+    }
+    if required_permission not in permissions:
+        return JSONResponse(
+            status_code=status.HTTP_403_FORBIDDEN,
+            content={"detail": f"Missing permission: {required_permission}"},
+        )
+
+    response = await call_next(request)
+    await _create_update_notification(request, payload, response.status_code)
+    return response
 
 
 # Auto-discover and include all routers from the local `routers` package
